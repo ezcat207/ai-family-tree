@@ -3,7 +3,7 @@ import vercel from '@astrojs/vercel';
 import rehypeCite from './src/lib/rehype-cite.mjs';
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://ai-family-tree.vercel.app',
+  site: process.env.SITE_URL || 'https://ai-family-tree-xi.vercel.app',
   trailingSlash: 'ignore',
   output: 'static',
   adapter: vercel(),
