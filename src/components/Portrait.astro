@@ -1,5 +1,5 @@
 ---
-import { portraitSVG, type Variant } from '../lib/portrait';
+import { portraitSVG, logoPortraitSVG, type Variant } from '../lib/portrait';
 interface Props {
   family: string;
   variant: Variant;
@@ -10,8 +10,20 @@ interface Props {
   label?: string;
   class?: string;
 }
+// 各家族的真实商标（public/avatars/，指称性使用，来源见 public/avatars/CREDITS.md）。
+// 有商标的家族用商标；没有的回退到程序化画像。
+const FAMILY_LOGO: Record<string, { src: string; w: number; h: number }> = {
+  chatgpt: { src: '/avatars/family-chatgpt.svg', w: 150, h: 150 },
+  claude: { src: '/avatars/family-claude.svg', w: 150, h: 150 },
+  deepseek: { src: '/avatars/family-deepseek.svg', w: 150, h: 150 },
+  doubao: { src: '/avatars/family-doubao.svg', w: 150, h: 150 },
+  muse: { src: '/avatars/family-muse.svg', w: 200, h: 60 },
+};
 const { family, variant, color, dead = false, uid, size = 120, label = '', class: cls = '' } = Astro.props;
-const svg = portraitSVG({ family, variant, color, dead, uid });
+const logo = FAMILY_LOGO[family];
+const svg = logo
+  ? logoPortraitSVG({ logo: logo.src, boxW: logo.w, boxH: logo.h, color, dead, uid })
+  : portraitSVG({ family, variant, color, dead, uid });
 const w = typeof size === 'number' ? `${size}px` : size;
 ---
 <span class:list={['portrait', cls, { dead }]} style={`--w:${w}`} aria-label={label} role="img" set:html={svg} />
