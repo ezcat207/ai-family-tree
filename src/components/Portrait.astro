@@ -1,5 +1,5 @@
 ---
-import { portraitSVG, logoPortraitSVG, type Variant } from '../lib/portrait';
+import { portraitSVG, logoPortraitSVG, FAMILY_CREST, FAMILY_MASCOT, type Variant } from '../lib/portrait';
 interface Props {
   family: string;
   variant: Variant;
@@ -12,21 +12,6 @@ interface Props {
   /** auto：拟人形象 > 家徽 > 程序化兜底；crest：强制显示家徽（家族页顶部） */
   mode?: 'auto' | 'crest';
 }
-// 各家族的家徽：真实商标（public/avatars/family-*.svg），指称性使用，来源见 CREDITS.md。
-export const FAMILY_CREST: Record<string, { src: string; w: number; h: number }> = {
-  chatgpt: { src: '/avatars/family-chatgpt.svg', w: 150, h: 150 },
-  claude: { src: '/avatars/family-claude.svg', w: 150, h: 150 },
-  deepseek: { src: '/avatars/family-deepseek.svg', w: 150, h: 150 },
-  doubao: { src: '/avatars/family-doubao.svg', w: 150, h: 150 },
-  muse: { src: '/avatars/family-muse.svg', w: 200, h: 60 },
-};
-// 各家族成员的拟人形象（真实出处，见 CREDITS.md；社区二创已标注非官方）。
-// 尚无可靠形象的家族回退到家徽，不再使用程序化假画像。
-export const FAMILY_MASCOT: Record<string, { src: string; w: number; h: number }> = {
-  claude: { src: '/avatars/mascot-claude.png', w: 200, h: 200 },
-  deepseek: { src: '/avatars/mascot-deepseek.png', w: 160, h: 284 },
-  muse: { src: '/avatars/mascot-muse.png', w: 200, h: 200 },
-};
 const { family, variant, color, dead = false, uid, size = 120, label = '', class: cls = '', mode = 'auto' } = Astro.props;
 const mascot = mode === 'auto' ? FAMILY_MASCOT[family] : undefined;
 const img = mascot ?? FAMILY_CREST[family];
