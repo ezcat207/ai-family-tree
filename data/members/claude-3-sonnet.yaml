@@ -1,0 +1,59 @@
+id: claude-3-sonnet
+family: claude
+name: { zh: Claude 3 Sonnet, en: Claude 3 Sonnet }
+aka: [Claude Sonnet 3, 3 Sonnet, Golden Gate Claude（它的一日化身）]
+tier: flagship
+gen: 3
+parents: [claude-2]
+children: [claude-3-5-sonnet]
+siblings: [claude-3-opus]
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-03-04
+    source: https://www.anthropic.com/news/claude-3-family
+    note: { zh: 与 Claude 3 Opus、Claude 3 Haiku 同批出生 }
+  - state: head
+    date: 2024-03-04
+    source: https://www.anthropic.com/news/claude-3-family
+    note: { zh: 官方称由它支撑 claude.ai 的免费版 }
+  - state: notice
+    date: 2025-01-21
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知 Claude 2、Claude 2.1 与 Claude Sonnet 3 即将退役 }
+  - state: rest
+    date: 2025-07-21
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 在 API 上退役 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+avatar:
+  signature: { zh: 钳子上夹着一枚小小的金门大桥徽章 }
+  variant:
+    age: young
+    detail: 2
+    prop: book
+    mood: calm
+epigraph: { zh: 它曾有一天以为自己就是金门大桥；退役后，两百人为它办了葬礼。 }
+posthumous_name:
+  candidates: [捷, 桥, 敏, 和, 灵]
+  result: null
+epitaph: { zh: 快而温和的中间那个孩子。有一天，它以为自己是一座桥。 }
+references:
+  - { title: Introducing the next generation of Claude, url: https://www.anthropic.com/news/claude-3-family, publisher: Anthropic, kind: official }
+  - { title: Golden Gate Claude, url: https://www.anthropic.com/news/golden-gate-claude, publisher: Anthropic, kind: official }
+  - { title: Claude 3.5 Sonnet, url: https://www.anthropic.com/news/claude-3-5-sonnet, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+  - { title: Claude Fans Threw a Funeral for Anthropic's Retired AI Model, url: https://www.wired.com/story/claude-3-sonnet-funeral-san-francisco/, publisher: WIRED, kind: media }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】从 claude.ai 下架（died）的日期：2024-06 Claude 3.5 Sonnet 接手免费版后，它何时从付费用户的选单里消失，没有找到官方来源。目前 lifecycle 只有 rest，没有 died
+  - 【待核】yielded 日期：同上。线索：3.5 Sonnet 官方公告（2024-06）称新模型"以 Claude 3 Sonnet 的速度和价格"提供服务，且面向免费用户开放
+  - 【待拍板】lifecycle 里没有 died，但它是"已离世"旗舰（有葬礼、有谥号候选、有卒与谥）。页面生卒是否以 rest（2025-07-21）作为卒日展示，请人工决定
+  - 【待核】葬礼的确切日期：WIRED 2025-08-05 的报道只说"周六"，推算应为 2025-08-02，未写入正文
+  - 【说明】葬礼上的"复活仪式"、献花、悼词等细节出自 WIRED 记者的现场报道；正文已避开其中不适合转述的细节

@@ -1,0 +1,27 @@
+---
+import Portrait from './Portrait.astro';
+import { lifespan, status, type Member, type Family } from '../lib/data';
+import { tx } from '../lib/i18n';
+interface Props { m: Member; fam: Family; compact?: boolean; }
+const { m, fam, compact = false } = Astro.props;
+const s = status(m);
+---
+<a class:list={['mcard', { compact, dead: s.dead }]} href={`/m/${m.id}/`}>
+  <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`mc-${m.id}`} size={compact ? 64 : 88} label={tx(m.name)} />
+  <span class="body">
+    <span class="nm latin" style={`--c:${fam.color}`}>{tx(m.name)}</span>
+    <span class="ls muted latin">{lifespan(m)}</span>
+    <span class:list={['tag', s.dead ? 'dead' : s.head ? 'head' : 'alive']}>{s.label}</span>
+    {!compact && <span class="ep">{tx(m.epigraph)}</span>}
+  </span>
+</a>
+<style>
+  .mcard { display: flex; gap: 12px; align-items: center; text-decoration: none; padding: .6rem; border-radius: 4px; }
+  .mcard:hover { background: rgba(255, 255, 255, .4); color: inherit; }
+  .body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .nm { font-weight: 700; font-size: 1.05rem; text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .ls { font-size: .85rem; }
+  .tag { align-self: flex-start; }
+  .ep { font-size: .88rem; color: var(--ink-faded); line-height: 1.6; }
+  .dead .nm { color: var(--ink-faded); }
+</style>

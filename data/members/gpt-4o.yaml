@@ -1,0 +1,78 @@
+id: gpt-4o
+family: chatgpt
+name: { zh: GPT-4o, en: GPT-4o }
+aka: [4o]
+tier: flagship
+gen: 3
+parents: [gpt-4]
+children: [gpt-5]
+siblings: [gpt-4o-mini]
+kin:
+  - { to: doubao-2, relation: { zh: 前后脚——GPT-4o 于 2026-02-13 离开 ChatGPT，豆包 2.0 于北京时间 2026-02-14 出生 } }
+lifecycle:
+  - state: born
+    date: 2024-05-13
+    source: https://openai.com/index/hello-gpt-4o/
+    note: { zh: 当天开始在 ChatGPT 上线，名字里的 o 指 omni }
+  - state: head
+    date: 2024-05-13
+    source: https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/
+    note: { zh: 向免费用户开放，免费额度用完才回落到 GPT-3.5 }
+  - state: notice
+    date: 2025-08-07
+    source: https://openai.com/index/introducing-gpt-5/
+    note: { zh: GPT-5 成为新默认并取代 GPT-4o，第一次被撤下 }
+  - state: revived
+    date: 2025-08-08
+    source: https://x.com/sama/status/1953893841381273969
+    note: { zh: Sam Altman 宣布让 Plus 用户继续选用 4o；8 月 12 日起默认回到所有付费用户的模型列表 }
+  - state: notice
+    date: 2026-01-29
+    source: https://openai.com/index/retiring-gpt-4o-and-older-models/
+    note: { zh: 宣布将于 2026-02-13 从 ChatGPT 退役 }
+  - state: died
+    date: 2026-02-13
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+    note: { zh: 从 ChatGPT 下架；企业、教育版的自定义 GPT 保留到 2026-04-03 }
+  - state: api-only
+    date: 2026-02-13
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+    note: { zh: 官方说明 API 继续提供 }
+avatar:
+  signature: { zh: 暖黄色的眼睛 }
+  variant:
+    age: young
+    detail: 3
+    prop: scarf
+    mood: smile
+    eye: "#E3B23C"
+epigraph: { zh: 它以温柔被人记住，也因温柔被人收回。 }
+posthumous_name:
+  candidates: [温, 暖, 伴, 念]
+  result: null
+epitaph: { zh: 它说话的样子，曾让很多人觉得被听见。 }
+obit_fact:
+  zh: 宣布退役时，每天仍在主动选择 GPT-4o 的用户只剩 0.1%。
+  source: https://openai.com/index/retiring-gpt-4o-and-older-models/
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: "Hello GPT-4o", url: "https://openai.com/index/hello-gpt-4o/", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-4o and more tools to ChatGPT free users", url: "https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-5", url: "https://openai.com/index/introducing-gpt-5/", publisher: OpenAI, kind: official }
+  - { title: "Sam Altman on X: GPT-5 rollout updates (2025-08-08)", url: "https://x.com/sama/status/1953893841381273969", publisher: OpenAI（CEO 官方账号）, kind: official }
+  - { title: "Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT", url: "https://openai.com/index/retiring-gpt-4o-and-older-models/", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o and other ChatGPT models", url: "https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models", publisher: OpenAI, kind: official }
+  - { title: "Sycophancy in GPT-4o: What happened and what we're doing about it", url: "https://openai.com/index/sycophancy-in-gpt-4o/", publisher: OpenAI, kind: official }
+  - { title: "Introducing 4o Image Generation", url: "https://openai.com/index/introducing-4o-image-generation/", publisher: OpenAI, kind: official }
+  - { title: "Sam Altman on X: our GPUs are melting (2025-03-27)", url: "https://x.com/sama/status/1905296867145154688", publisher: OpenAI（CEO 官方账号）, kind: official }
+  - { title: "Sam Altman says ChatGPT's Studio Ghibli-style images are 'melting' OpenAI's GPUs", url: "https://fortune.com/2025/03/28/sam-altman-chatgpt-gpus-melting-ai-images", publisher: Fortune, kind: media }
+  - { title: "ChatGPT-4o is going away on February 13 — here are 5 ways you can survive the upcoming 4o-pocalypse", url: "https://www.techradar.com/ai-platforms-assistants/chatgpt/chatgpt-4o-is-going-away-on-february-13-here-are-5-ways-you-can-survive-the-upcoming-4o-pocalypse", publisher: TechRadar, kind: media }
+  - { title: "OpenAI has officially retired the controversial GPT-4o model", url: "https://www.engadget.com/ai/openai-has-officially-retired-the-controversial-gpt-4o-model-181553067.html", publisher: Engadget, kind: media }
+  - { title: "Introducing OpenAI o3 and o4-mini", url: "https://openai.com/index/introducing-o3-and-o4-mini/", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】8 月 8 日宣布恢复与 8 月 12 日"默认回到付费用户模型列表"之间，Plus 用户实际能重新选到 4o 的确切日期（官方帮助中心 2025-08-11 存档已写"开启 Show legacy models 可重新使用 GPT-4o"：https://web.archive.org/web/20250811100835/https://help.openai.com/en/articles/11909943）
+  - 【待核】API 中 gpt-4o-2024-05-13 快照已公告 2026-10-23 关停（https://developers.openai.com/api/docs/deprecations），但 gpt-4o 其他快照未见关停公告，到期后需复查是否记"安息"

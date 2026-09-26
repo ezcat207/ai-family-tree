@@ -1,0 +1,33 @@
+id: claude-sonnet-4-5
+family: claude
+name: { zh: Claude Sonnet 4.5, en: Claude Sonnet 4.5 }
+aka: [Sonnet 4.5]
+tier: regular
+gen: 7
+parents: [claude-4]
+children: [claude-5]
+siblings: [claude-opus-4-5]
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-09-29
+    source: https://www.anthropic.com/news/claude-sonnet-4-5
+    note: { zh: 与 Claude Code 的一批更新同日发布 }
+avatar:
+  signature: { zh: 一枚随时能翻回上一页的书签 }
+  variant:
+    age: young
+    detail: 4
+    prop: book
+    mood: smile
+epigraph: { zh: 它满一岁的那一天，才开始有可能退休。 }
+references:
+  - { title: Introducing Claude Sonnet 4.5, url: https://www.anthropic.com/news/claude-sonnet-4-5, publisher: Anthropic, kind: official }
+  - { title: Release notes（Claude Help Center）, url: https://support.claude.com/en/articles/12138966-release-notes, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】head：没有找到官方明确说它成为 claude.ai 默认模型的来源
+  - 【待核】它是否仍在 claude.ai 选单里：没有找到官方说明。弃用页（2026-09-26 查看）显示其 API 状态为 Active，"最早不早于 2026-09-29 退役"，需在 9 月底后复查

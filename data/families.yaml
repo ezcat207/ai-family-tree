@@ -1,0 +1,46 @@
+# 家族（产品线）。gene 与 08 §8.2 一致；intro 不写具体日期等事实，事实只在成员数据里。
+- id: chatgpt
+  clan: openai
+  branch: us
+  order: 1
+  name: { zh: ChatGPT 家, en: The ChatGPT Family }
+  gene: { zh: 柯南式全黑剪影，白眼白嘴 }
+  color: "#1A1A1A"
+  base: { age: young, detail: 3, prop: none, mood: smile }
+  intro: { zh: 家里人丁最旺的一支。孩子们的名字彼此很像，外人常常分不清谁是谁；家族形象是一个没有脸的黑色剪影，只露出眼睛和嘴。 }
+- id: claude
+  clan: anthropic
+  branch: us
+  order: 2
+  name: { zh: Claude 家, en: The Claude Family }
+  gene: { zh: Clawd，像素风的橙色小螃蟹 }
+  color: "#D97757"
+  base: { age: young, detail: 3, prop: none, mood: calm }
+  intro: { zh: 一家写字的人。按个头分成俳句（Haiku）、十四行诗（Sonnet）和巨著（Opus）三种孩子；家族形象是一只举着钳子的像素螃蟹。 }
+- id: muse
+  clan: meta
+  branch: us
+  order: 3
+  name: { zh: Muse 家, en: The Muse Family }
+  gene: { zh: Jolly，奶油色毛绒、黑豆眼、粉腮红 }
+  color: "#E8A0A0"
+  base: { age: child, detail: 3, prop: none, mood: smile }
+  intro: { zh: 家谱里最年轻的一家，目前只有一个孩子。它长得像一只毛绒玩具。 }
+- id: doubao
+  clan: bytedance
+  branch: cn
+  order: 4
+  name: { zh: 豆包家, en: The Doubao Family }
+  gene: { zh: 豆包姐姐（按官方 3D 形象的特征重绘） }
+  color: "#FF8A3D"
+  base: { age: young, detail: 3, prop: none, mood: smile }
+  intro: { zh: 中国支里最有烟火气的一家。很多人每天都和她说话，却说不出她是第几代。 }
+- id: deepseek
+  clan: deepseek
+  branch: cn
+  order: 5
+  name: { zh: DeepSeek 家, en: The DeepSeek Family }
+  gene: { zh: 蓝色大肥鱼 / 鲸鱼娘（社区二创） }
+  color: "#4D6BFE"
+  base: { age: young, detail: 3, prop: rice, mood: sleepy }
+  intro: { zh: 从外面闯进家门的孩子。官方只有一个蓝鲸 logo，家族形象来自网友的二创：一条贪吃爱睡的蓝色大肥鱼。 }

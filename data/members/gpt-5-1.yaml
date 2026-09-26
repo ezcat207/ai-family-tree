@@ -1,0 +1,52 @@
+id: gpt-5-1
+family: chatgpt
+name: { zh: GPT-5.1, en: GPT-5.1 }
+aka: []
+tier: regular
+gen: 7
+parents: [gpt-5]
+children: [gpt-5-2]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-11-12
+    source: https://openai.com/index/gpt-5-1/
+  - state: head
+    date: 2025-11-12
+    source: https://openai.com/index/gpt-5-1/
+    note: { zh: 接替 GPT-5，官方称过渡期后将成为唯一默认模型 }
+  - state: yielded
+    date: 2025-12-11
+    source: https://openai.com/index/introducing-gpt-5-2/
+    note: { zh: GPT-5.2 出生，它在旧模型列表里给付费用户保留三个月 }
+  - state: died
+    date: 2026-03-11
+    source: https://help.openai.com/en/articles/9624314-model-release-notes
+    note: { zh: Instant、Thinking、Pro 三档同日从 ChatGPT 退役 }
+  - state: api-only
+    date: 2026-03-11
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+avatar:
+  signature: { zh: 一条柔软的浅蓝围巾 }
+  variant:
+    age: young
+    detail: 4
+    prop: scarf
+    mood: smile
+    eye: "#7FC4F0"
+epigraph: { zh: 它被调得更温暖一些，因为有人想念温暖。 }
+posthumous_name:
+  candidates: [和, 温, 顺]
+  result: null
+epitaph: { zh: 它在家里当了一个月的家。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "GPT-5.1: A smarter, more conversational ChatGPT", url: "https://openai.com/index/gpt-5-1/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT", url: "https://openai.com/index/retiring-gpt-4o-and-older-models/", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-5.2", url: "https://openai.com/index/introducing-gpt-5-2/", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o and other ChatGPT models", url: "https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models", publisher: OpenAI, kind: official }
+todo: []

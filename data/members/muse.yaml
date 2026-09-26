@@ -1,0 +1,45 @@
+id: muse
+family: muse
+name: { zh: Muse（Jolly）, en: Muse (Jolly) }
+aka: [Jolly]
+tier: flagship
+gen: 1
+parents: []
+children: []
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2026-09-08
+    source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
+    note: { zh: Meta 发布个人 AI 助理 Muse，先在美国上线 iOS、Android 与网页版 }
+avatar:
+  signature: { zh: 一枚能揣进口袋的钥匙扣小屏（Muse Charm） }
+  variant:
+    age: child
+    detail: 5
+    prop: charm
+    mood: curious
+epigraph: { zh: 家谱里最小的孩子，生得一副毛绒模样，一出生就想替人把事情都办了。 }
+references:
+  - { title: "Introducing Muse: The World's First Personal AI Agent Built for Everyone", url: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/, publisher: Meta, kind: official }
+  - { title: "Introducing Muse Spark: Meta's Most Powerful Model Yet", url: https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/, publisher: Meta, kind: official }
+  - { title: The Biggest News From Connect 2026, url: https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/, publisher: Meta, kind: official }
+  - { title: Everything We Announced at Meta Connect 2026, url: https://www.meta.com/blog/meta-connect-2026-everything-we-announced/, publisher: Meta, kind: official }
+  - { title: About Muse subscriptions (Meta Help Centre), url: https://www.meta.com/en-gb/help/subscriptions/1021145227643680/, publisher: Meta, kind: official }
+  - { title: "It's cute. It's cuddly. And it wants your data.", url: https://www.nbcnews.com/tech/tech-news/meta-muse-ai-agent-response-animated-avatar-cute-rcna599736, publisher: NBC News, kind: media }
+  - { title: "Everything new coming to Meta's AI agent Muse", url: https://techcrunch.com/2026/09/23/everything-new-coming-to-metas-ai-agent-muse/, publisher: TechCrunch, kind: media }
+  - { title: Meta made a Tamagotchi-like wearable for its Muse AI agent, url: https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/, publisher: TechCrunch, kind: media }
+  - { title: Meta Launches Adults-Only Muse AI Agent with Kawaii Mascot Jolly, url: https://www.memesita.com/meta-launches-adults-only-muse-ai-agent-with-kawaii-mascot-jolly/, publisher: Memesita, kind: media }
+  - { title: "Meta's AI agent on a keychain: What Muse Charm is, and whether you can use it here", url: https://gulfnews.com/technology/meta-muse-and-muse-charm-explained-what-they-do-and-what-they-cost-1.500686025, publisher: Gulf News, kind: media }
+  - { title: "Meta Wants Its New AI Agent Inside Your Inbox, Browser And Wallet", url: https://dailycaller.com/2026/09/10/meta-muse-ai-agent-rory-mir/, publisher: The Daily Caller, kind: media }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】"Jolly" 这个名字目前只见于媒体转述扎克伯格在 Meta Connect 2026 上的说法（TechCrunch、NBC），尚未在 Meta 官方页面上找到；name 字段里的（Jolly）是否保留，请人工确认
+  - 【待核】Axios（https://www.axios.com/2026/09/25/ai-doom-meta-muse-mascot）返回 403 未能打开，未引用
+  - 【待核】登顶 App Store 的具体日期与榜单（免费总榜？）：线索 NBC News 2026-09-24，未找到官方或 Apple 榜单截图来源
+  - 【待核】Muse Charm 上市日期与价格：Meta 官方只说"later this year"（https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/），TechCrunch 转述扎克伯格称 12 月假期前发货
+  - 【待核】Muse 进入 AI 眼镜的日期：官方只说"coming soon / in the coming months"
+  - 【说明】不设 head 事件：Muse 是独立 App 本身，不存在"成为某个 App 默认模型"这一步；如需用 head 表示"它就是 Muse App 的当家"，请人工拍板

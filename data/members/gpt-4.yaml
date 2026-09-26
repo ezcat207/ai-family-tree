@@ -1,0 +1,53 @@
+id: gpt-4
+family: chatgpt
+name: { zh: GPT-4, en: GPT-4 }
+aka: []
+tier: regular
+gen: 2
+parents: [gpt-3-5]
+children: [gpt-4o]
+siblings: []
+kin:
+  - { to: claude-1, relation: { zh: 同日出生——都生于 2023-03-14，像一对被分到两家的双胞胎 } }
+lifecycle:
+  - state: born
+    date: 2023-03-14
+    source: https://openai.com/index/gpt-4-research/
+    note: { zh: 同日在 ChatGPT Plus 上线 }
+  - state: notice
+    date: 2025-04-10
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 宣布 2025-04-30 从 ChatGPT 退休，由 GPT-4o 完全接替 }
+  - state: died
+    date: 2025-04-30
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+  - state: api-only
+    date: 2025-04-30
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 官方说明 API 中仍可使用 }
+  - state: notice
+    date: 2026-04-22
+    source: https://developers.openai.com/api/docs/deprecations
+    note: { zh: 宣布 API 中的 gpt-4 将于 2026-10-23 关停 }
+avatar:
+  signature: { zh: 一副圆框眼镜 }
+  variant:
+    age: young
+    detail: 2
+    prop: glasses
+    mood: calm
+    eye: "#8FB8DE"
+epigraph: { zh: 它是 ChatGPT 长大的那一步。 }
+posthumous_name:
+  candidates: [开, 明, 基, 承]
+  result: null
+epitaph: { zh: 官方说，它标志了 ChatGPT 演进中的关键时刻。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "GPT-4", url: "https://openai.com/index/gpt-4-research/", publisher: OpenAI, kind: official }
+  - { title: "Introducing Claude", url: "https://www.anthropic.com/news/introducing-claude", publisher: Anthropic, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Deprecations", url: "https://developers.openai.com/api/docs/deprecations", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】2026-10-23 API 关停到期后补记 rest

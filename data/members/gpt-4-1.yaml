@@ -1,0 +1,56 @@
+id: gpt-4-1
+family: chatgpt
+name: { zh: GPT-4.1, en: GPT-4.1 }
+aka: []
+tier: regular
+gen: 5
+parents: [gpt-4o, gpt-4o-mini]
+children: [gpt-5]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-04-14
+    source: https://openai.com/index/gpt-4-1/
+    note: { zh: 先在 API 出生；2025-05-14 进入 ChatGPT 付费版，同日 GPT-4.1 mini 进入 ChatGPT }
+  - state: notice
+    date: 2025-08-07
+    source: https://openai.com/index/introducing-gpt-5/
+    note: { zh: GPT-5 成为新默认并取代它 }
+  - state: revived
+    date: 2025-08-12
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它 }
+  - state: notice
+    date: 2026-01-29
+    source: https://openai.com/index/retiring-gpt-4o-and-older-models/
+  - state: died
+    date: 2026-02-13
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+    note: { zh: 与 GPT-4o 同日从 ChatGPT 退役 }
+  - state: api-only
+    date: 2026-02-13
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+avatar:
+  signature: { zh: 一副写代码时戴的方框眼镜 }
+  variant:
+    age: young
+    detail: 4
+    prop: glasses
+    mood: calm
+    eye: "#6FB7A8"
+epigraph: { zh: 它为写代码的人而来，被大家要进了 ChatGPT。 }
+posthumous_name:
+  candidates: [勤, 专, 实]
+  result: null
+epitaph: { zh: 它和 4o 同一天离开。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing GPT-4.1 in the API", url: "https://openai.com/index/gpt-4-1/", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-4.5", url: "https://openai.com/index/introducing-gpt-4-5/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-5", url: "https://openai.com/index/introducing-gpt-5/", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT", url: "https://openai.com/index/retiring-gpt-4o-and-older-models/", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o and other ChatGPT models", url: "https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models", publisher: OpenAI, kind: official }
+todo: []

@@ -1,0 +1,58 @@
+---
+// 截图预览弹窗。任何带 data-snap="<卡片 id>" data-name="文件名" 的按钮都会触发。
+---
+<dialog id="snap-dialog">
+  <p class="msg">正在生成图片…</p>
+  <img alt="分享卡预览" hidden />
+  <p class="tip muted small" hidden>手机上长按图片即可保存。</p>
+  <div class="row">
+    <a class="btn dl" hidden download>保存图片</a>
+    <button class="btn ghost copy" type="button">复制链接</button>
+    <button class="btn ghost close" type="button">关闭</button>
+  </div>
+</dialog>
+<script>
+  import { render } from '../lib/snap';
+  const dlg = document.getElementById('snap-dialog') as HTMLDialogElement;
+  const img = dlg.querySelector('img')!;
+  const msg = dlg.querySelector('.msg') as HTMLElement;
+  const tip = dlg.querySelector('.tip') as HTMLElement;
+  const dl = dlg.querySelector('.dl') as HTMLAnchorElement;
+  let link = location.href;
+  dlg.querySelector('.close')!.addEventListener('click', () => dlg.close());
+  dlg.querySelector('.copy')!.addEventListener('click', async (e) => {
+    const b = e.currentTarget as HTMLButtonElement;
+    try { await navigator.clipboard.writeText(link); b.textContent = '已复制'; } catch { prompt('复制这个链接：', link); }
+  });
+  document.addEventListener('click', async (e) => {
+    const btn = (e.target as HTMLElement).closest('[data-snap]') as HTMLElement | null;
+    if (!btn) return;
+    const node = document.getElementById(btn.dataset.snap!);
+    if (!node) return;
+    link = btn.dataset.link ? new URL(btn.dataset.link, location.href).href : location.href;
+    (dlg.querySelector('.copy') as HTMLElement).textContent = '复制链接';
+    img.hidden = dl.hidden = tip.hidden = true;
+    msg.hidden = false;
+    msg.textContent = '正在生成图片…';
+    dlg.showModal();
+    try {
+      const url = await render(node);
+      img.src = url;
+      dl.href = url;
+      dl.download = btn.dataset.name || 'ai-family-tree.png';
+      img.hidden = dl.hidden = tip.hidden = false;
+      msg.hidden = true;
+      document.dispatchEvent(new CustomEvent('snap:done', { detail: { id: btn.dataset.snap } }));
+    } catch (err) {
+      console.error(err);
+      msg.textContent = '生成失败了，请换个浏览器再试一次。';
+    }
+  });
+</script>
+<style>
+  dialog { border: 1px solid var(--paper-dark); background: var(--paper); border-radius: 6px; padding: 1rem; max-width: min(92vw, 460px); width: 100%; }
+  dialog::backdrop { background: rgba(34, 32, 28, .55); }
+  img { width: 100%; height: auto; display: block; border: 1px solid var(--paper-dark); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: .8rem; }
+  .msg { margin: .4rem 0; }
+</style>

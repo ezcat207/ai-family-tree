@@ -1,0 +1,40 @@
+id: doubao-1-6
+family: doubao
+name: { zh: 豆包 1.6, en: Doubao-Seed-1.6 }
+aka: [Seed1.6, 豆包1.6]
+tier: regular
+gen: 3
+parents: [doubao-1-5-pro]
+children: [doubao-2]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-06
+    source: https://docs.volcengine.com/docs/ark/model-release-announcement-2025
+    note: { zh: 火山方舟 202506 记录 doubao-seed-1-6-250615 等"新发布"；具体日 6 月 11 日（火山引擎 Force 原动力大会）仅有媒体来源，官方活动页 volcengine.com/event/force-2506 只显示议程日期 6.11 }
+  - state: rest
+    date: 2026-09-21
+    source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
+    note: { zh: 火山方舟第九批模型下线：2026-09-21 14:00（北京时间）停止服务，doubao-seed-1-6-250615 / 251015 / flash / vision 均在列；thinking 与 lite 版本已在更早批次下线 }
+avatar:
+  signature: { zh: 一盏能开、能关、也能自己拿主意的台灯 }
+  variant:
+    age: young
+    detail: 4
+    prop: lamp
+    mood: curious
+epigraph: { zh: 想不想先想一想，它可以自己拿主意。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: 模型发布公告 2025, url: https://docs.volcengine.com/docs/ark/model-release-announcement-2025, publisher: 火山引擎, kind: official }
+  - { title: Seed1.6 系列模型技术介绍, url: https://seed.bytedance.com/zh/blog/introduction-to-techniques-used-in-seed1-6, publisher: 字节跳动 Seed, kind: official }
+  - { title: 2025火山引擎春季FORCE原动力大会, url: https://www.volcengine.com/event/force-2506, publisher: 火山引擎, kind: official }
+  - { title: 火山引擎发布豆包大模型1.6，加速Agent大规模应用, url: http://www.news.cn/tech/20250611/db9b3c0ef97d49058413563b1c434951/c.html, publisher: 新华网, kind: media }
+  - { title: 模型下线公告, url: https://docs.volcengine.com/docs/ark/model-deprecation-notice, publisher: 火山引擎, kind: official }
+todo:
+  - 【待核】出生具体日 2025-06-11 的官方原文（目前官方只能确认到月份；新华网报道 6 月 11 日发布）
+  - 【待核】1.6 何时成为/不再是豆包 App 的默认模型（head / died）：App 不公开标注模型版本
+  - 【待核】豆包 1.8（doubao-seed-1-8-251228，火山方舟 202512 "新发布"）不在本期成员名单，1.6 与 2.0 之间实际隔着它

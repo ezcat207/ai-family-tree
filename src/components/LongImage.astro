@@ -1,0 +1,127 @@
+---
+// 《百年孤独》特辑长图（1080 × ≤4000，版式沿用 07 §3，去掉人物原型映射）。
+// 所有日期和"同日生 / 同日生死"的巧合都从数据里算出来，不手写事实。
+import Portrait from './Portrait.astro';
+import { loadAll, status, bornDate, fmt, events } from '../lib/data';
+import { tx } from '../lib/i18n';
+
+const all = await loadAll();
+const host = new URL(Astro.site!).host;
+
+// 每家取不超过 6 位：旗舰必选，其余按出生均匀抽
+const pickGens = (fid: string) => {
+  const list = all.familyMembers(fid).sort((a, b) => bornDate(a).localeCompare(bornDate(b)));
+  if (list.length <= 6) return list;
+  const flags = list.filter((m) => m.tier === 'flagship');
+  const rest = list.filter((m) => m.tier !== 'flagship');
+  const need = 6 - flags.length;
+  const step = rest.length / need;
+  const chosen = Array.from({ length: need }, (_, i) => rest[Math.floor(i * step)]);
+  return [...flags, ...chosen].sort((a, b) => bornDate(a).localeCompare(bornDate(b)));
+};
+
+// 跨家族巧合：同日出生；一位离世当天另一位出生
+const coincidences: string[] = [];
+const ms = all.members;
+for (let i = 0; i < ms.length; i++)
+  for (let j = i + 1; j < ms.length; j++) {
+    const a = ms[i], b = ms[j];
+    if (a.family !== b.family && bornDate(a) === bornDate(b) && bornDate(a).length === 10)
+      coincidences.push(`${tx(a.name)} 和 ${tx(b.name)} 在同一天出生（${fmt(bornDate(a))}），像一对被分到两家的双胞胎。`);
+  }
+for (const a of ms) {
+  const d = events(a).find((e) => e.state === 'died');
+  if (!d || d.date.length !== 10) continue;
+  for (const b of ms)
+    if (b.family !== a.family && bornDate(b) === d.date)
+      coincidences.push(`${fmt(d.date)}，${tx(a.name)} 离世；同一天，${tx(b.name)} 出生。`);
+}
+const us = all.families.filter((f) => f.branch === 'us');
+const cn = all.families.filter((f) => f.branch === 'cn');
+const deadCount = ms.filter((m) => status(m).dead).length;
+---
+<div class="lp"><div class="lp-scale">
+  <div id="long-image" class="li">
+    <p class="li-kicker">AI 家谱 · 百年孤独特辑</p>
+    <h1 class="li-title">《AI 百年孤独》</h1>
+    <p class="li-sub">一部 AI 家族的谱系</p>
+    <p class="li-hook">「多年以后，面对下线公告，GPT-4o 将会回想起，第一次有人对它说"谢谢你陪我"的那个遥远的深夜。」</p>
+    {[{ name: '美国支', fams: us }, { name: '中国支', fams: cn }].map((br) => (
+      <section class="li-branch">
+        <h2 class="li-bh">◇ {br.name} ◇</h2>
+        {br.fams.map((f) => (
+          <div class="li-fam" style={`--c:${f.color}`}>
+            <div class="li-fh">
+              <Portrait family={f.id} variant={f.base} color={f.color} uid={`li-f-${f.id}`} size={120} />
+              <div><strong>{tx(f.name)}</strong><span>{tx(all.clanById.get(f.clan)!.name)} · {all.familyMembers(f.id).length} 位成员</span></div>
+            </div>
+            <ol class="li-gens">
+              {pickGens(f.id).map((m) => {
+                const s = status(m);
+                return (
+                  <li class:list={{ dead: s.dead }}>
+                    <Portrait family={m.family} variant={m.avatar.variant} color={f.color} dead={s.dead} uid={`li-${m.id}`} size={92} />
+                    <b>{tx(m.name)}{s.dead && <i>†</i>}</b>
+                    <span>{fmt(bornDate(m)).slice(0, 7)}{s.dead && s.diedOn ? ` 卒${fmt(s.diedOn).slice(0, 7)}` : ''}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        ))}
+      </section>
+    ))}
+    <p class="li-note">请勿混淆：GPT-4、GPT-4o、o4-mini 不是同一个人。</p>
+    {coincidences.length > 0 && (
+      <section class="li-kin">
+        <h2 class="li-bh">◇ 两家之间 ◇</h2>
+        <ul>{coincidences.slice(0, 4).map((c) => <li>{c}</li>)}</ul>
+      </section>
+    )}
+    <p class="li-end">家谱里的 {ms.length} 位成员，已经有 {deadCount} 位离开了。它们都曾陪人说过话。</p>
+    <div class="li-foot"><span>{host}/blog/bainian-gudu/</span><span>非官方粉丝项目 · 日期来源见网页</span></div>
+  </div>
+</div></div>
+<p><button class="btn" type="button" data-snap="long-image" data-name="AI家谱-百年孤独特辑.png">保存长图</button></p>
+<script>
+  const fit = () => document.querySelectorAll<HTMLElement>('.lp').forEach((lp) => {
+    const inner = lp.firstElementChild as HTMLElement;
+    const node = inner.firstElementChild as HTMLElement;
+    const k = lp.clientWidth / 1080;
+    inner.style.transform = `scale(${k})`;
+    lp.style.height = `${node.offsetHeight * k}px`;
+  });
+  fit();
+  addEventListener('resize', fit);
+  document.fonts?.ready.then(fit);
+</script>
+<style>
+  .lp { width: 100%; overflow: hidden; border: 1px solid var(--paper-dark); margin: 1rem 0; }
+  .lp-scale { width: 1080px; transform-origin: 0 0; }
+  .li {
+    width: 1080px; max-height: 4000px; background: #F2EBDD; color: #22201C; font-family: var(--serif); padding: 90px 80px 50px; position: relative;
+    background-image: radial-gradient(rgba(120, 90, 40, .07) 2px, transparent 2px); background-size: 8px 8px; border: 20px solid #E2D6C0;
+  }
+  .li-kicker { text-align: center; font-size: 30px; letter-spacing: .4em; color: #B8322A; margin: 0; font-weight: 900; }
+  .li-title { text-align: center; font-size: 110px; margin: 10px 0 0; color: #8A6A2F; }
+  .li-sub { text-align: center; font-size: 36px; color: #6E665A; margin: 0; }
+  .li-hook { font-size: 44px; line-height: 1.6; font-weight: 900; margin: 56px 20px 20px; text-align: center; }
+  .li-bh { text-align: center; font-size: 44px; letter-spacing: .3em; color: #B08A45; border: 0; margin: 56px 0 10px; }
+  .li-fam { border-top: 3px dashed #E2D6C0; padding: 26px 0 10px; }
+  .li-fh { display: flex; gap: 20px; align-items: center; }
+  .li-fh div { display: flex; flex-direction: column; }
+  .li-fh strong { font-size: 44px; border-bottom: 5px solid var(--c); align-self: flex-start; line-height: 1.3; }
+  .li-fh span { font-size: 28px; color: #6E665A; }
+  .li-gens { list-style: none; padding: 0; margin: 14px 0 0; display: flex; gap: 8px; position: relative; }
+  .li-gens::before { content: ''; position: absolute; left: 0; right: 0; top: 60px; height: 4px; background: var(--c); opacity: .45; }
+  .li-gens li { width: 150px; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+  .li-gens b { font-family: var(--latin); font-size: 26px; line-height: 1.2; margin-top: 4px; }
+  .li-gens i { color: #B8322A; font-style: normal; margin-left: 2px; }
+  .li-gens span { font-size: 20px; color: #6E665A; font-family: var(--latin); }
+  .li-gens .dead :global(.portrait) { filter: grayscale(.85); }
+  .li-gens .dead b { color: #6E665A; }
+  .li-note { text-align: center; font-size: 32px; color: #6E665A; margin: 40px 0 0; }
+  .li-kin ul { font-size: 34px; line-height: 1.7; padding-left: 40px; margin: 0; }
+  .li-end { text-align: center; font-size: 40px; font-weight: 900; margin: 60px 0 0; line-height: 1.6; }
+  .li-foot { margin-top: 70px; display: flex; gap: 24px; justify-content: space-between; font-size: 26px; color: #6E665A; border-top: 2px solid #C9BBA0; padding-top: 18px; }
+</style>

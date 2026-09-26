@@ -1,0 +1,45 @@
+id: gpt-4o-mini
+family: chatgpt
+name: { zh: GPT-4o mini, en: GPT-4o mini }
+aka: [4o mini]
+tier: regular
+gen: 3
+parents: [gpt-3-5]
+children: [gpt-4-1]
+siblings: [gpt-4o]
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-07-18
+    source: https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/
+    note: { zh: 当天在 ChatGPT 接替 GPT-3.5 的位置 }
+  - state: died
+    date: 2025-05-14
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: GPT-4.1 mini 在 ChatGPT 中取代了它 }
+  - state: api-only
+    date: 2025-05-14
+    source: https://developers.openai.com/api/docs/models/gpt-4o-mini
+avatar:
+  signature: { zh: 一条小一号的暖色围巾 }
+  variant:
+    age: child
+    detail: 3
+    prop: scarf
+    mood: smile
+    eye: "#F0CF7A"
+epigraph: { zh: 它替哥哥们接住了额度用完之后的那些对话。 }
+posthumous_name:
+  candidates: [小, 勤, 继]
+  result: null
+epitaph: { zh: 个子小，接的班不小。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "GPT-4o mini: advancing cost-efficient intelligence", url: "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/", publisher: OpenAI, kind: official }
+  - { title: "Hello GPT-4o", url: "https://openai.com/index/hello-gpt-4o/", publisher: OpenAI, kind: official }
+  - { title: "Introducing OpenAI o3 and o4-mini", url: "https://openai.com/index/introducing-o3-and-o4-mini/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "GPT-4o Mini Model", url: "https://developers.openai.com/api/docs/models/gpt-4o-mini", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】SPEC 称它"成为免费默认模型"；官方原文是"in place of GPT-3.5"（取代 3.5 的位置），未见"默认"字样，故未记 head

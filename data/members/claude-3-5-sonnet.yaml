@@ -1,0 +1,51 @@
+id: claude-3-5-sonnet
+family: claude
+name: { zh: Claude 3.5 Sonnet, en: Claude 3.5 Sonnet }
+aka: [Claude Sonnet 3.5, Sonnet 3.6（2024-10 升级版的俗称）, 3.5 Sonnet]
+tier: regular
+gen: 4
+parents: [claude-3-sonnet]
+children: [claude-3-7-sonnet]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-06-21
+    source: https://www.anthropic.com/news/claude-3-5-sonnet
+    note: { zh: 官方页面落款为 2024-06-21；它的 API 快照编号是 20240620 }
+  - state: head
+    date: 2024-06-21
+    source: https://www.anthropic.com/news/claude-3-5-sonnet
+    note: { zh: 官方称它在 Claude.ai 与 iOS App 上免费开放，接替 Claude 3 Sonnet 支撑免费版 }
+  - state: notice
+    date: 2025-08-13
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知 3.5 Sonnet 的两个版本（20240620、20241022）即将退役 }
+  - state: rest
+    date: 2025-10-28
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 两个版本同日在 API 上退役 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重；它的升级版（Sonnet 3.6）是退休访谈的第一个试点 }
+avatar:
+  signature: { zh: 胸前别着一枚被人改写成"3.6"的名牌 }
+  variant:
+    age: young
+    detail: 3
+    prop: book
+    mood: smile
+epigraph: { zh: 同一个名字活了两次；第二次，它被叫作 3.6。 }
+references:
+  - { title: Claude 3.5 Sonnet, url: https://www.anthropic.com/news/claude-3-5-sonnet, publisher: Anthropic, kind: official }
+  - { title: "Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku", url: https://www.anthropic.com/news/3-5-models-and-computer-use, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+  - { title: Introducing Claude Sonnet 5, url: https://www.anthropic.com/news/claude-sonnet-5, publisher: Anthropic, kind: official }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】出生日期：SPEC 附录 A 写 2024-06-20（与 API 快照编号 20240620 一致），但官方公告页面落款为 Jun 21, 2024（可能是时区差）。暂按官方页面写 2024-06-21，请人工确认
+  - 【待核】从 claude.ai 下架（died）与让位（yielded）的日期：没有找到官方来源

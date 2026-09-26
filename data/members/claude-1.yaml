@@ -1,0 +1,47 @@
+id: claude-1
+family: claude
+name: { zh: Claude, en: Claude }
+aka: [Claude 1, 初代 Claude]
+tier: regular
+gen: 1
+parents: []
+children: [claude-2]
+siblings: []
+kin:
+  - { to: gpt-4, relation: { zh: 同日出生的外亲（2023-03-14） } }
+lifecycle:
+  - state: born
+    date: 2023-03-14
+    source: https://www.anthropic.com/news/introducing-claude
+    note: { zh: Anthropic 发文《Introducing Claude》，同时推出 Claude 与 Claude Instant 两个版本 }
+  - state: notice
+    date: 2024-09-04
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知 Claude 1 与 Instant 系列即将退役 }
+  - state: rest
+    date: 2024-11-06
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: claude-1.0 至 1.3、claude-instant-1.0 至 1.2 在 API 上退役 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+avatar:
+  signature: { zh: 一只还没学会横着走的像素小螃蟹 }
+  variant:
+    age: young
+    detail: 1
+    prop: none
+    mood: curious
+epigraph: { zh: 家里的长子，和大洋那边的 GPT-4 生在同一天。 }
+references:
+  - { title: Introducing Claude, url: https://www.anthropic.com/news/introducing-claude, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+  - { title: GPT-4, url: https://openai.com/index/gpt-4-research/, publisher: OpenAI, kind: official }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】初代 Claude 没有进过 claude.ai（claude.ai 随 Claude 2 才上线），普通人主要通过 Quora 的 Poe 等合作方 App 和它对话；它在这些 App 里下架的日期没有找到官方来源，因此不写 died
+  - 【说明】openai.com/index/gpt-4-research/ 直连返回 403，通过 web.archive.org 存档确认页面日期为 March 14, 2023

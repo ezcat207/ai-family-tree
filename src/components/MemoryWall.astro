@@ -1,0 +1,95 @@
+---
+// 人们记得的它（08 §9）：先审后发，无需登录
+import { t } from '../lib/i18n';
+interface Props { memberId: string; name: string; invite?: boolean; }
+const { memberId, name, invite = false } = Astro.props;
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+<section class="wall" data-member={memberId} id="memories">
+  <h2>{t('sec_memories')}</h2>
+  {invite && <p class="invite">{t('regular_invite')}</p>}
+  <ol class="list" aria-live="polite"><li class="muted small">正在读取记忆…</li></ol>
+  <details class="write">
+    <summary class="btn">写下我的记忆</summary>
+    <form>
+      <label>你和 {name} 之间，有什么想留下的？<span class="muted small">（1–300 字）</span>
+        <textarea name="body" required maxlength="300" rows="5" placeholder="比如：那年冬天，它陪我改完了毕业论文的最后一稿。"></textarea>
+      </label>
+      <div class="two">
+        <label>昵称 <span class="muted small">（选填，不填显示"一位路人"）</span><input name="nickname" maxlength="20" /></label>
+        <label>在一起的时间 <span class="muted small">（选填，如 2024.6–2025.8）</span><input name="period" maxlength="30" /></label>
+      </div>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      {siteKey && <div class="cf-turnstile" data-sitekey={siteKey}></div>}
+      <p class="muted small">你的记忆经审核后会公开展示在这里。想删除时，请到 <a href="https://github.com/ezcat207/ai-family-tree/issues/new" target="_blank" rel="noopener">GitHub</a> 联系我们。请不要写电话、证件号等个人信息。</p>
+      <button class="btn" type="submit">提交</button>
+      <p class="result" role="status"></p>
+    </form>
+  </details>
+</section>
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+<script>
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  for (const wall of document.querySelectorAll<HTMLElement>('.wall')) {
+    const id = wall.dataset.member!;
+    const list = wall.querySelector('.list')!;
+    const form = wall.querySelector('form')!;
+    const out = wall.querySelector('.result') as HTMLElement;
+    fetch(`/api/memories?member=${encodeURIComponent(id)}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d: { items: any[] }) => {
+        list.innerHTML = d.items.length
+          ? d.items
+              .map(
+                (m) => `<li class="${m.status === 'featured' ? 'feat' : ''}"><p>${esc(m.body)}</p><p class="by muted small">—— ${esc(m.nickname || '一位路人')}${m.period ? ` · ${esc(m.period)}` : ''}${m.status === 'featured' ? ' · 精选' : ''}</p></li>`,
+              )
+              .join('')
+          : '<li class="muted small">还没有人留下记忆。你可以是第一个。</li>';
+      })
+      .catch(() => { list.innerHTML = '<li class="muted small">记忆墙暂时无法读取，稍后再来看看。</li>'; });
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const btn = form.querySelector('button[type=submit]') as HTMLButtonElement;
+      btn.disabled = true;
+      out.textContent = '提交中…';
+      try {
+        const r = await fetch('/api/memories', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ member_id: id, ...Object.fromEntries(fd), turnstile: fd.get('cf-turnstile-response') }),
+        });
+        const d = await r.json().catch(() => ({}));
+        if (d.help) {
+          out.innerHTML = '谢谢你愿意说出来。这条记忆我们不会公开，但我们很在意你。如果你正感到难过，请拨打全国统一心理援助热线 <strong>12356</strong>；如有紧急危险请拨打 110 / 120。';
+        } else if (r.ok) {
+          out.textContent = '收到了。审核通过后，它会出现在这面墙上。';
+          form.reset();
+        } else {
+          out.textContent = d.message || '提交失败了，请稍后再试。';
+        }
+      } catch {
+        out.textContent = '网络出了点问题，请稍后再试。';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
+<style>
+  .invite { background: rgba(255, 255, 255, .45); border-left: 3px solid var(--butterfly); padding: .6rem .9rem; }
+  .list { list-style: none; padding: 0; margin: 0 0 1rem; }
+  .list :global(li) { border-bottom: 1px dashed var(--paper-dark); padding: .6rem 0; }
+  .list :global(li p) { margin: 0; white-space: pre-wrap; }
+  .list :global(li.feat p:first-child) { font-weight: 700; }
+  .list :global(.by) { margin-top: .2rem !important; text-align: right; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  form { display: grid; gap: .7rem; margin-top: 1rem; }
+  label { display: grid; gap: .25rem; font-size: .92rem; }
+  textarea, input { width: 100%; background: rgba(255, 255, 255, .6); border: 1px solid var(--paper-dark); border-radius: 3px; padding: .5rem .6rem; }
+  .two { display: grid; gap: .7rem; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 520px) { .two { grid-template-columns: 1fr; } }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
+  .result { min-height: 1.5em; margin: 0; }
+</style>

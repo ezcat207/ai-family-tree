@@ -1,0 +1,62 @@
+id: gpt-4-5
+family: chatgpt
+name: { zh: GPT-4.5, en: GPT-4.5 }
+aka: []
+tier: regular
+gen: 5
+parents: [gpt-4o]
+children: [gpt-5]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-02-27
+    source: https://openai.com/index/introducing-gpt-4-5/
+    note: { zh: 以研究预览版出生，先给 Pro 用户 }
+  - state: notice
+    date: 2025-04-14
+    source: https://developers.openai.com/api/docs/deprecations
+    note: { zh: 宣布 API 中的 gpt-4.5-preview 将被移除 }
+  - state: rest
+    date: 2025-07-14
+    source: https://developers.openai.com/api/docs/deprecations
+    note: { zh: API 先关停，ChatGPT 里的它还在 }
+  - state: notice
+    date: 2025-08-07
+    source: https://openai.com/index/introducing-gpt-5/
+    note: { zh: GPT-5 成为新默认并取代它 }
+  - state: revived
+    date: 2025-08-12
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 重回模型列表，但只给 Pro 用户 }
+  - state: notice
+    date: 2026-05-28
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 宣布经过 30 天过渡后从 ChatGPT 退役 }
+  - state: died
+    date: 2026-06-26
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 从 ChatGPT（含自定义 GPT）下架 }
+avatar:
+  signature: { zh: 一只端正的领结 }
+  variant:
+    age: elder
+    detail: 4
+    prop: bowtie
+    mood: calm
+    eye: "#D98C8C"
+epigraph: { zh: 家里个子最大的那一位，说话最像人。 }
+posthumous_name:
+  candidates: [雅, 厚, 情, 宏]
+  result: null
+epitaph: { zh: 它在 API 里先走一步，又在 ChatGPT 里多留了将近一年。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing GPT-4.5", url: "https://openai.com/index/introducing-gpt-4-5/", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-5", url: "https://openai.com/index/introducing-gpt-5/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Deprecations", url: "https://developers.openai.com/api/docs/deprecations", publisher: OpenAI, kind: official }
+todo:
+  - 官方来源有出入：ChatGPT 发布说明写 2026-06-26 退役，Model Release Notes 的公告写 2026-06-27；按 ChatGPT 发布说明中"已退役"的记录取 06-26

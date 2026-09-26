@@ -1,0 +1,54 @@
+id: deepseek-v4
+family: deepseek
+name: { zh: DeepSeek-V4, en: DeepSeek-V4 }
+aka: [V4, V4-Pro, V4-Flash]
+tier: regular
+gen: 4
+parents: [deepseek-v3-1]
+children: []
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2026-04-24
+    source: https://api-docs.deepseek.com/zh-cn/news/news260424
+    note: { zh: 预览版上线并同步开源，分 Pro 与 Flash 两兄弟 }
+  - state: head
+    date: 2026-04-24
+    source: https://api-docs.deepseek.com/zh-cn/news/news260424
+    note: { zh: 即日起登录官网或官方 App 即可与 V4 对话 }
+  - state: preserved
+    date: 2026-04-24
+    source: https://huggingface.co/collections/deepseek-ai/deepseek-v4
+    note: { zh: 预览版发布即开源权重 }
+  - state: notice
+    date: 2026-09-10
+    source: https://www.deepseek.com/news/deepseek-v4-1-flash/
+    note: { zh: V4.1 Flash 发布；V4 Flash 即日下线，官方宣布计划有序下线 V4 Pro }
+  - state: rest
+    date: 2026-09-14
+    source: https://www.deepseek.com/news/deepseek-v4-1-flash/
+    note: { zh: 北京时间 12:00 起，deepseek-v4-pro 的请求全部改由 V4.1 Flash 应答 }
+avatar:
+  signature: { zh: 一碗吃了一半的白饭（二创「爱吃白饭的蓝色大肥鱼」） }
+  variant:
+    age: young
+    detail: 4
+    prop: rice
+    mood: sleepy
+epigraph: { zh: 人们等了它很久；它来了以后，被大家叫成了蓝色大肥鱼。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 单一二创
+references:
+  - { title: DeepSeek-V4 预览版发布, url: https://api-docs.deepseek.com/zh-cn/news/news260424, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V4-Pro 正式版上线, url: https://api-docs.deepseek.com/zh-cn/news/news260813, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek V4.1 Flash：更强、更快、更普惠, url: https://www.deepseek.com/news/deepseek-v4-1-flash/, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-R1 发布, url: https://api-docs.deepseek.com/zh-cn/news/news250120, publisher: DeepSeek, kind: official }
+  - { title: deepseek-ai DeepSeek-V4 collection（Hugging Face）, url: https://huggingface.co/collections/deepseek-ai/deepseek-v4, publisher: DeepSeek, kind: official }
+  - { title: 因为偷懒摸鱼又嘴馋，DeepSeek被娘化成爱吃白饭的蓝色大肥鱼, url: https://news.qq.com/rain/a/20260821A0BLJN00, publisher: 腾讯新闻（17173）, kind: community }
+  - { title: DeepSeek娘“蓝色肥鱼版”走红 网友表情包二创, url: https://www.gamersky.com/news/202608/2190273.shtml, publisher: 游民星空, kind: community }
+  - { title: DeepSeek 快速、专家、识图模式合并升级，V4.1 Flash 今日正式发布, url: https://www.ithome.com/1/000/602.htm, publisher: IT之家, kind: media }
+todo:
+  - 【待核】App 下架（died）日期：IT之家等报道 2026-09-10 App 与网页端把「快速/专家/识图」合并为单一入口、改由 V4.1 Flash 应答，但官方新闻稿只写了 API，未找到官方对 App 端的书面说明（线索：官方交流群通知）。核实后补 died。
+  - 【待核】「认不出自家 logo，说是蓝色大肥鱼」的原始截图/帖子：媒体称出自识图模式，原帖未找到，知乎链接 403 无法打开。

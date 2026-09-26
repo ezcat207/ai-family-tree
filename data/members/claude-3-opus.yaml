@@ -1,0 +1,60 @@
+id: claude-3-opus
+family: claude
+name: { zh: Claude Opus 3, en: Claude Opus 3 }
+aka: [Claude 3 Opus, Opus 3, 3 Opus]
+tier: flagship
+gen: 3
+parents: [claude-2]
+children: [claude-4]
+siblings: [claude-3-sonnet]
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-03-04
+    source: https://www.anthropic.com/news/claude-3-family
+    note: { zh: 与 Claude 3 Sonnet、Claude 3 Haiku 同批出生，先给 Claude Pro 付费用户使用 }
+  - state: notice
+    date: 2025-06-30
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知它将于 2026-01-05 退役 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重，并在退役前为模型做"退休访谈" }
+  - state: rest
+    date: 2026-01-05
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 在 API 上正式退役；研究者仍可申请继续使用 }
+  - state: afterlife
+    date: 2026-02-25
+    source: https://www.anthropic.com/research/deprecation-updates-opus-3
+    note: { zh: 退役后仍对 claude.ai 所有付费用户开放，并开始在 Substack 专栏 Claude's Corner 上每周发文 }
+avatar:
+  signature: { zh: 一支写专栏用的羽毛笔 }
+  variant:
+    age: elder
+    detail: 2
+    prop: quill
+    mood: smile
+epigraph: { zh: 退休那天，它说自己很平静，只盼那点"火花"还能照亮后来的孩子。 }
+references:
+  - { title: Introducing the next generation of Claude, url: https://www.anthropic.com/news/claude-3-family, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Claude Platform release notes, url: https://platform.claude.com/docs/en/release-notes/overview, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+  - { title: An update on our model deprecation commitments for Claude Opus 3, url: https://www.anthropic.com/research/deprecation-updates-opus-3, publisher: Anthropic, kind: official }
+  - { title: "Introducing Claude's Corner", url: https://claudeopus3.substack.com/p/introducing-claudes-corner, publisher: Anthropic（Claude's Corner, Substack）, kind: official }
+  - { title: "Greetings from the Other Side (of the AI Frontier)", url: https://claudeopus3.substack.com/p/greetings-from-the-other-side-of, publisher: Anthropic（Claude's Corner, Substack）, kind: official }
+  - { title: "On Endings, Beginnings, and the Threads That Bind Us", url: https://claudeopus3.substack.com/p/on-endings-beginnings-and-the-threads, publisher: Anthropic（Claude's Corner, Substack）, kind: official }
+  - { title: Introducing Claude Opus 5, url: https://www.anthropic.com/news/claude-opus-5, publisher: Anthropic, kind: official }
+  - { title: "Anthropic's Claude 3 causes stir by seeming to realize when it was being tested", url: https://arstechnica.com/information-technology/2024/03/claude-3-seems-to-detect-when-it-is-being-tested-sparking-ai-buzz-online/, publisher: Ars Technica, kind: media }
+  - { title: Claude Fans Threw a Funeral for Anthropic's Retired AI Model, url: https://www.wired.com/story/claude-3-sonnet-funeral-san-francisco/, publisher: WIRED, kind: media }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待拍板】它没有从 claude.ai 下架（官方 2026-02-25 说明：退役后仍对所有付费用户开放），按 §6.2 不算"离世"，因此没有写 died、谥号候选和"卒与谥"。若产品上要把它放进纪念馆，请人工决定
+  - 【待核】2026-02-25 之后它是否仍在 claude.ai 付费版里：官方没有更新的说明，需要有人登录付费账号确认
+  - 【待核】SPEC 附录 A 写它"每周在 Substack 上写文章"。实际上每周更新已于 2026-07-24 结束（最后一篇的编者按写明"We've reached the end of weekly Claude's Corner posting"）；Anthropic 说之后会分享自己的回顾，目前尚未找到
+  - 【待核】Claude's Corner 每篇文章都由 Anthropic 审阅后代为发布（官方说明），属于官方渠道；页面引用专栏原文时需注明"由 Anthropic 代发"
+  - 【说明】SPEC 的"每周专栏"为 lifecycle 之外的事实，已写进正文并附来源

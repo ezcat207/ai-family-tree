@@ -1,0 +1,62 @@
+id: o3
+family: chatgpt
+name: { zh: o3, en: OpenAI o3 }
+aka: []
+tier: regular
+gen: 5
+parents: [o1]
+children: [gpt-5]
+siblings: [o4-mini]
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-04-16
+    source: https://openai.com/index/introducing-o3-and-o4-mini/
+    note: { zh: 当天在 ChatGPT 取代 o1 }
+  - state: notice
+    date: 2025-08-07
+    source: https://openai.com/index/introducing-gpt-5/
+    note: { zh: GPT-5 成为新默认并取代它 }
+  - state: revived
+    date: 2025-08-12
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它 }
+  - state: notice
+    date: 2026-05-28
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 宣布经过 90 天过渡后从 ChatGPT 退役，API 不变 }
+  - state: notice
+    date: 2026-06-11
+    source: https://developers.openai.com/api/docs/deprecations
+    note: { zh: 宣布 API 快照 o3-2025-04-16 将于 2026-12-11 关停 }
+  - state: died
+    date: 2026-08-26
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 按官方公告的计划日期 }
+  - state: api-only
+    date: 2026-08-26
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 官方说明退役只涉及 ChatGPT，API 不变 }
+avatar:
+  signature: { zh: 一盏提着去找答案的灯 }
+  variant:
+    age: young
+    detail: 4
+    prop: lantern
+    mood: curious
+    eye: "#7E6BC4"
+epigraph: { zh: 它是家里第一个会自己去翻工具箱的思考者。 }
+posthumous_name:
+  candidates: [睿, 明, 博]
+  result: null
+epitaph: { zh: 它想得久，也想得远。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing OpenAI o3 and o4-mini", url: "https://openai.com/index/introducing-o3-and-o4-mini/", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Introducing GPT-5", url: "https://openai.com/index/introducing-gpt-5/", publisher: OpenAI, kind: official }
+  - { title: "Deprecations", url: "https://developers.openai.com/api/docs/deprecations", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】2026-08-26 实际下架：官方只有 2026-05-28 的计划公告，未找到"已退役"的官方确认；died 暂按计划日期记，需人工复核

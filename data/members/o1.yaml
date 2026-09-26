@@ -1,0 +1,50 @@
+id: o1
+family: chatgpt
+name: { zh: o1, en: OpenAI o1 }
+aka: [o1-preview]
+tier: regular
+gen: 4
+parents: [gpt-4o]
+children: [o3]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-09-12
+    source: https://openai.com/index/introducing-openai-o1-preview/
+    note: { zh: 以 o1-preview 之名出生，同时出生的还有 o1-mini }
+  - state: died
+    date: 2025-04-16
+    source: https://openai.com/index/introducing-o3-and-o4-mini/
+    note: { zh: o3 在 ChatGPT 模型列表中取代了它 }
+  - state: api-only
+    date: 2025-04-16
+    source: https://developers.openai.com/api/docs/models/o1
+  - state: notice
+    date: 2026-04-22
+    source: https://developers.openai.com/api/docs/deprecations
+    note: { zh: 宣布 API 中的 o1 将于 2026-10-23 关停 }
+avatar:
+  signature: { zh: 一本随身的思考笔记 }
+  variant:
+    age: young
+    detail: 3
+    prop: book
+    mood: curious
+    eye: "#9B8AC4"
+epigraph: { zh: 家里第一个先想一想、再开口的孩子。 }
+posthumous_name:
+  candidates: [思, 省, 慎]
+  result: null
+epitaph: { zh: 它教会了家里人先想一想再说话。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing OpenAI o1", url: "https://openai.com/index/introducing-openai-o1-preview/", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Introducing OpenAI o3 and o4-mini", url: "https://openai.com/index/introducing-o3-and-o4-mini/", publisher: OpenAI, kind: official }
+  - { title: "o1 Model", url: "https://developers.openai.com/api/docs/models/o1", publisher: OpenAI, kind: official }
+  - { title: "Deprecations", url: "https://developers.openai.com/api/docs/deprecations", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】正式版 o1（非 preview）进入 ChatGPT 的日期（线索：2024-12-05），未找到官方页面确认前不入 lifecycle
+  - 【待核】2026-10-23 API 关停到期后补记 rest

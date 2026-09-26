@@ -1,0 +1,20 @@
+- id: openai
+  name: { zh: OpenAI, en: OpenAI }
+  branch: us
+  url: https://openai.com/
+- id: anthropic
+  name: { zh: Anthropic, en: Anthropic }
+  branch: us
+  url: https://www.anthropic.com/
+- id: meta
+  name: { zh: Meta, en: Meta }
+  branch: us
+  url: https://about.meta.com/
+- id: bytedance
+  name: { zh: 字节跳动, en: ByteDance }
+  branch: cn
+  url: https://www.bytedance.com/
+- id: deepseek
+  name: { zh: 深度求索, en: DeepSeek }
+  branch: cn
+  url: https://www.deepseek.com/

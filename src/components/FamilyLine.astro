@@ -1,0 +1,50 @@
+---
+// 一个家族的世代线：家族基础形象 + 按出生排列的成员圆点（08 §12.1）
+import Portrait from './Portrait.astro';
+import { status, bornDate, fmt, type Member, type Family } from '../lib/data';
+import { tx } from '../lib/i18n';
+interface Props { fam: Family; members: Member[]; clanName: string; }
+const { fam, members, clanName } = Astro.props;
+const list = [...members].sort((a, b) => bornDate(a).localeCompare(bornDate(b)));
+---
+<section class="fline" style={`--c:${fam.color}`}>
+  <a class="head" href={`/family/${fam.id}/`}>
+    <Portrait family={fam.id} variant={fam.base} color={fam.color} uid={`fl-${fam.id}`} size={76} label={tx(fam.name)} />
+    <span>
+      <strong>{tx(fam.name)}</strong>
+      <span class="muted small">{clanName} · {list.length} 位成员</span>
+    </span>
+  </a>
+  <ol class="gens">
+    {list.map((m) => {
+      const s = status(m);
+      return (
+        <li class:list={{ dead: s.dead, flag: m.tier === 'flagship' }}>
+          <a href={`/m/${m.id}/`} title={`${tx(m.name)} · ${s.label}`}>
+            <span class="pw"><Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`fd-${m.id}`} size={m.tier === 'flagship' ? 60 : 46} label={tx(m.name)} /></span>
+            <span class="n latin">{tx(m.name)}{s.dead && <span class="cross">†</span>}</span>
+            <span class="y muted latin">{fmt(bornDate(m)).slice(0, 7)}</span>
+          </a>
+        </li>
+      );
+    })}
+  </ol>
+</section>
+<style>
+  .fline { padding: 1rem 0; border-bottom: 1px dashed var(--paper-dark); }
+  .head { display: inline-flex; gap: 10px; align-items: center; text-decoration: none; }
+  .head span { display: flex; flex-direction: column; line-height: 1.5; }
+  .gens { list-style: none; margin: .6rem 0 0; padding: 0 0 .4rem; display: flex; gap: 4px; overflow-x: auto; position: relative; align-items: flex-start; scrollbar-width: thin; }
+  .gens li::before { content: ''; position: absolute; left: 0; right: -4px; top: 38px; height: 2px; background: var(--c); opacity: .5; z-index: 0; }
+  .gens li:first-child::before { left: 50%; }
+  .gens li:last-child::before { right: 50%; }
+  .pw { height: 76px; display: flex; align-items: center; position: relative; z-index: 1; }
+  .gens li { flex: none; width: 76px; text-align: center; position: relative; }
+  .gens a { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
+  .n { font-size: .8rem; line-height: 1.25; margin-top: 4px; min-height: 2.5em; display: flex; align-items: flex-start; justify-content: center; }
+  .y { font-size: .72rem; }
+  .dead :global(.portrait) { filter: grayscale(.85); }
+  .dead .n { color: var(--ink-faded); }
+  .cross { color: var(--cinnabar); margin-left: 2px; }
+  .flag .n { font-weight: 700; }
+</style>

@@ -1,0 +1,36 @@
+id: doubao-2
+family: doubao
+name: { zh: 豆包 2.0, en: Doubao-Seed-2.0 }
+aka: [Seed2.0, 豆包2.0]
+tier: regular
+gen: 4
+parents: [doubao-1-6]
+children: []
+siblings: []
+kin:
+  - { to: gpt-4o, relation: { zh: 前后脚：大洋那边有人离世，这边有人出生，中间只隔一夜时差 } }
+lifecycle:
+  - state: born
+    date: 2026-02-14
+    source: "https://seed.bytedance.com/zh/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83"
+    note: { zh: Seed 团队发布文章日期 2026-02-14；Pro 当天在豆包 App「专家」模式上线；火山方舟 202602 记录 doubao-seed-2-0-pro-260215 等"新发布" }
+avatar:
+  signature: { zh: 手机屏幕上亮着"专家"两个字 }
+  variant:
+    age: young
+    detail: 5
+    prop: phone
+    mood: curious
+epigraph: { zh: 它出生的那一夜，大洋那边有一位外亲刚刚离开。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: Seed2.0 正式发布, url: "https://seed.bytedance.com/zh/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83", publisher: 字节跳动 Seed, kind: official }
+  - { title: 模型发布公告, url: https://docs.volcengine.com/docs/ark/model-release-announcement, publisher: 火山引擎, kind: official }
+  - { title: 字节大模型，重磅发布！, url: https://www.stcn.com/article/detail/3644236.html, publisher: 证券时报网, kind: media }
+  - { title: OpenAI removes access to controversial ChatGPT-4o model, url: https://techcrunch.com/2026/02/13/openai-removes-access-to-controversial-chatgpt-4o-model, publisher: TechCrunch, kind: media }
+todo:
+  - 【待核】2.0 是否成为豆包 App 默认模型（head）：官方只写 Pro 在「专家」模式上线
+  - 豆包 2.1（doubao-seed-2-1-pro-260628，火山方舟 202606 "新发布"）不在本期成员名单，如需建档另议
+  - 注意：火山方舟第十批下线公告中 doubao-seed-2-0-lite/mini-260215 两个快照 2026-10-22 停服，属同代日期小更新，不算安息

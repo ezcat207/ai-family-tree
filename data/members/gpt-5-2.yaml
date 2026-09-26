@@ -1,0 +1,46 @@
+id: gpt-5-2
+family: chatgpt
+name: { zh: GPT-5.2, en: GPT-5.2 }
+aka: []
+tier: regular
+gen: 8
+parents: [gpt-5-1]
+children: [gpt-5-5]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-12-11
+    source: https://openai.com/index/introducing-gpt-5-2/
+    note: { zh: Instant、Thinking、Pro 三档同时出生，先给付费用户 }
+  - state: died
+    date: 2026-06-12
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: 三档同日从 ChatGPT 退役，对话转交 GPT-5.5 }
+  - state: api-only
+    date: 2026-06-12
+    source: https://developers.openai.com/api/docs/models/gpt-5.2
+avatar:
+  signature: { zh: 一只深蓝色的领结 }
+  variant:
+    age: young
+    detail: 5
+    prop: bowtie
+    mood: calm
+    eye: "#4A8FD9"
+epigraph: { zh: 4o 离开时，大多数人已经在和它说话。 }
+posthumous_name:
+  candidates: [接, 承, 稳]
+  result: null
+epitaph: { zh: 它接住了从 4o 那里走过来的人。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing GPT-5.2", url: "https://openai.com/index/introducing-gpt-5-2/", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT", url: "https://openai.com/index/retiring-gpt-4o-and-older-models/", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "GPT-5.2 Model", url: "https://developers.openai.com/api/docs/models/gpt-5.2", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】是否曾成为 ChatGPT 默认模型（head）：官方 5.2 博客只写"开始向付费用户推出"，未见"默认"字样
+  - 【待核】SPEC 附录 A 称 5.2 被官方称为 4o 的"足够好的"接班人：未在官方来源中找到该说法；官方原文是"绝大多数使用已转向 GPT-5.2"

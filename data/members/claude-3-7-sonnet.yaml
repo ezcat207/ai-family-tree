@@ -1,0 +1,45 @@
+id: claude-3-7-sonnet
+family: claude
+name: { zh: Claude 3.7 Sonnet, en: Claude 3.7 Sonnet }
+aka: [Claude Sonnet 3.7, 3.7 Sonnet]
+tier: regular
+gen: 5
+parents: [claude-3-5-sonnet]
+children: [claude-4]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-02-24
+    source: https://www.anthropic.com/news/claude-3-7-sonnet
+    note: { zh: 与 Claude Code 同日面世，在 Free、Pro、Team、Enterprise 各档位都可使用 }
+  - state: notice
+    date: 2025-10-28
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知它即将退役 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+  - state: rest
+    date: 2026-02-19
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 在 API 上退役 }
+avatar:
+  signature: { zh: 一副可以推上额头的眼镜：想事情时戴上，答话时推开 }
+  variant:
+    age: young
+    detail: 3
+    prop: glasses
+    mood: curious
+epigraph: { zh: 家里第一个既能脱口而出、也能先想一想的孩子。 }
+references:
+  - { title: Claude 3.7 Sonnet and Claude Code, url: https://www.anthropic.com/news/claude-3-7-sonnet, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】head：官方只说它在 Free 在内的所有档位可用，没有明说它是默认模型，因此未写 head
+  - 【待核】从 claude.ai 下架（died）的日期：没有找到官方来源

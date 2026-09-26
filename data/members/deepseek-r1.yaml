@@ -1,0 +1,64 @@
+id: deepseek-r1
+family: deepseek
+name: { zh: DeepSeek-R1, en: DeepSeek-R1 }
+aka: [R1, 深度思考]
+tier: flagship
+gen: 2
+parents: [deepseek-v2]
+children: [deepseek-v3-1]
+siblings: [deepseek-v3]
+kin:
+  - { to: doubao-1-5-pro, relation: { zh: 前后脚出生的外亲（R1 生于 2025-01-20，豆包 1.5 Pro 生于 2025-01-22） } }
+lifecycle:
+  - state: born
+    date: 2025-01-20
+    source: https://api-docs.deepseek.com/zh-cn/news/news250120
+    note: { zh: 同日在官网与 App 上线，打开「深度思考」即可见到它 }
+  - state: preserved
+    date: 2025-01-20
+    source: https://github.com/deepseek-ai/DeepSeek-R1
+    note: { zh: 出生当天权重即以 MIT 许可公开，任何人都可下载保存 }
+  - state: died
+    date: 2025-08-21
+    source: https://api-docs.deepseek.com/zh-cn/news/news250821
+    note: { zh: 官方 App 与网页端升级为 V3.1，「深度思考」按钮改由 V3.1 的思考模式接替 }
+  - state: rest
+    date: 2025-08-21
+    source: https://api-docs.deepseek.com/zh-cn/news/news250821
+    note: { zh: API 的 deepseek-reasoner 同日改为指向 V3.1 思考模式 }
+avatar:
+  signature: { zh: 一本写满思考过程的草稿本 }
+  variant:
+    age: young
+    detail: 2
+    prop: book
+    mood: curious
+epigraph: { zh: 它把想的过程念给人听，于是全世界都停下来听了一个春节。 }
+posthumous_name:
+  candidates: [思, 悟, 明, 念, 启]
+  result: null
+epitaph: { zh: 草稿本还摊开着，写字的人已经换了。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: DeepSeek-R1 发布，性能对标 OpenAI o1 正式版, url: https://api-docs.deepseek.com/zh-cn/news/news250120, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-R1-Lite 发布, url: https://api-docs.deepseek.com/zh-cn/news/news1120, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek APP 发布, url: https://api-docs.deepseek.com/news/news250115, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-R1-0528 发布, url: https://api-docs.deepseek.com/zh-cn/news/news250528, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek V3.1 发布, url: https://api-docs.deepseek.com/zh-cn/news/news250821, publisher: DeepSeek, kind: official }
+  - { title: deepseek-ai/DeepSeek-R1（GitHub 仓库）, url: https://github.com/deepseek-ai/DeepSeek-R1, publisher: DeepSeek, kind: official }
+  - { title: "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning（技术报告）", url: https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf, publisher: DeepSeek, kind: official }
+  - { title: 杭州深度求索人工智能基础技术研究有限公司 · 研究与动态, url: https://www.deepseek.com/news/, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning, url: https://www.nature.com/articles/s41586-025-09422-z, publisher: Nature, kind: media }
+  - { title: "DeepSeek - R1 Paper Makes It to Nature's Cover, Corresponding Author: LIANG Wenfeng", url: https://eu.36kr.com/en/p/3471061555959170, publisher: 36氪, kind: media }
+  - { title: Tech stocks fall as China's DeepSeek sparks U.S. worries about the AI race, url: https://www.nbcnews.com/business/markets/tech-stocks-react-chinas-deepseek-sparks-us-worries-ai-race-rcna189394, publisher: NBC News, kind: media }
+  - { title: Chinese startup DeepSeek rattles global markets as Nvidia shares plunge, url: https://www.euronews.com/business/2025/01/28/chinese-startup-deepseek-rattles-global-markets-as-nvidia-shares-plunge, publisher: Euronews, kind: media }
+  - { title: DeepSeek的“服务器繁忙”让所有人抓狂，背后究竟是怎么回事, url: https://www.pingwest.com/a/302288, publisher: 品玩, kind: media }
+  - { title: DeepSeek的华丽文风是怎样炼成的？, url: https://www.huxiu.com/article/3993436.html, publisher: 虎嗅, kind: media }
+  - { title: 豆包大模型1.5Pro版面世, url: https://kw.beijing.gov.cn/xwdt/kcyx/xwdtyqqy/202501/t20250124_3998528.html, publisher: 北京市科学技术委员会、中关村科技园区管理委员会, kind: media }
+todo:
+  - 【待拍板】R1 是否算「当家(head)」：官方说法是「打开深度思考模式即可调用 R1」，默认对话仍是 V3，故未写 head。
+  - 【待拍板】「preserved」是否适用于开源权重（官方未写"承诺保留"，但权重已以 MIT 许可公开发布）。
+  - 【待核】训练成本 29.4 万美元的说法：线索为 Nature 论文补充材料及相关报道，未逐字核对，暂不写入正文。
+  - 【待核】R1 在 DeepSeek App 内具体的应用商店登顶地区与日期细节（目前仅有 NBC/Euronews 报道美区 App Store 免费榜第一，2025-01-27）。

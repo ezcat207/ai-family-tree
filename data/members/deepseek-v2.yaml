@@ -1,0 +1,52 @@
+id: deepseek-v2
+family: deepseek
+name: { zh: DeepSeek-V2, en: DeepSeek-V2 }
+aka: [V2, V2.5]
+tier: regular
+gen: 1
+parents: []
+children: [deepseek-v3, deepseek-r1]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-05-06
+    source: https://github.com/deepseek-ai/DeepSeek-V2
+    note: { zh: "官方仓库记载「2024.05.06: We released the DeepSeek-V2.」" }
+  - state: preserved
+    date: 2024-05-06
+    source: https://github.com/deepseek-ai/DeepSeek-V2
+    note: { zh: 权重随发布公开 }
+  - state: died
+    date: 2024-12-26
+    source: https://api-docs.deepseek.com/zh-cn/news/news1226
+    note: { zh: 官网改为与 V3 对话，V2 系列（含 V2.5）退出网页端 }
+  - state: rest
+    date: 2024-12-26
+    source: https://api-docs.deepseek.com/zh-cn/news/news1226
+    note: { zh: API 服务同步更新为 V3，接口配置无需改动 }
+avatar:
+  signature: { zh: 一把拨得很快的算盘 }
+  variant:
+    age: young
+    detail: 1
+    prop: abacus
+    mood: calm
+epigraph: { zh: 它把价格拨到了很低的一格，然后安静地把位置让给了后人。 }
+posthumous_name:
+  candidates: [俭, 让, 始, 终, 朴]
+  result: null
+epitaph: { zh: 有善始者实繁，能克终者盖寡。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: deepseek-ai/DeepSeek-V2（GitHub 仓库）, url: https://github.com/deepseek-ai/DeepSeek-V2, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V2.5 发布, url: https://api-docs.deepseek.com/zh-cn/news/news0905, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V2.5-1210 发布（V2 系列收官）, url: https://api-docs.deepseek.com/zh-cn/news/news1210, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V3 发布, url: https://api-docs.deepseek.com/zh-cn/news/news1226, publisher: DeepSeek, kind: official }
+  - { title: 国产大模型掀涨价潮，“百模大战”熄火？, url: https://www.21jingji.com/article/20260820/herald/3d25f0a87eebe78711f169f8f01018d3.html, publisher: 21经济网, kind: media }
+todo:
+  - 【待核】V2 在 chat.deepseek.com 成为默认模型（head）的确切日期：官方仓库只写"可在官网与 V2 对话"，未写上线日。
+  - 【待核】2024 年 5 月「价格屠夫」称号的当年一手报道（目前引用的是 2026 年回顾文章）。
+  - 墓志铭取自官方 V2 收官公告所引古语，并非模型原话。

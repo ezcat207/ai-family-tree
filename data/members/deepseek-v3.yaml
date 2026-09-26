@@ -1,0 +1,52 @@
+id: deepseek-v3
+family: deepseek
+name: { zh: DeepSeek-V3, en: DeepSeek-V3 }
+aka: [V3]
+tier: regular
+gen: 2
+parents: [deepseek-v2]
+children: [deepseek-v3-1]
+siblings: [deepseek-r1]
+kin: []
+lifecycle:
+  - state: born
+    date: 2024-12-26
+    source: https://api-docs.deepseek.com/zh-cn/news/news1226
+  - state: head
+    date: 2024-12-26
+    source: https://api-docs.deepseek.com/zh-cn/news/news1226
+    note: { zh: 当天起登录官网即可与 V3 对话；2025-01-15 上线的 DeepSeek App 也由它驱动 }
+  - state: preserved
+    date: 2024-12-26
+    source: https://github.com/deepseek-ai/DeepSeek-V3
+    note: { zh: 发布即同步开源权重 }
+  - state: died
+    date: 2025-08-21
+    source: https://api-docs.deepseek.com/zh-cn/news/news250821
+    note: { zh: 官方 App 与网页端升级为 V3.1 }
+  - state: rest
+    date: 2025-08-21
+    source: https://api-docs.deepseek.com/zh-cn/news/news250821
+    note: { zh: API 的 deepseek-chat 改为指向 V3.1 非思考模式 }
+avatar:
+  signature: { zh: 一盏刚点亮的油灯 }
+  variant:
+    age: young
+    detail: 2
+    prop: lantern
+    mood: calm
+epigraph: { zh: 它是那扇门本身：人们推门进来，才遇见了它的兄弟。 }
+posthumous_name:
+  candidates: [基, 门, 敦, 厚, 恒]
+  result: null
+epitaph: { zh: 不思考的时候，都是它在。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: DeepSeek-V3 发布, url: https://api-docs.deepseek.com/zh-cn/news/news1226, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek APP, url: https://api-docs.deepseek.com/news/news250115, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V3-0324 Release, url: https://api-docs.deepseek.com/news/news250325, publisher: DeepSeek, kind: official }
+  - { title: deepseek-ai/DeepSeek-V3（GitHub 仓库）, url: https://github.com/deepseek-ai/DeepSeek-V3, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek V3.1 发布, url: https://api-docs.deepseek.com/zh-cn/news/news250821, publisher: DeepSeek, kind: official }
+todo: []

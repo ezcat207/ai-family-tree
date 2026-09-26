@@ -1,0 +1,49 @@
+id: claude-4
+family: claude
+name: { zh: Claude 4（Sonnet 4 / Opus 4）, en: Claude 4 (Sonnet 4 / Opus 4) }
+aka: [Claude Sonnet 4, Claude Opus 4, Claude Opus 4.1, Claude 4 Opus]
+tier: regular
+gen: 6
+parents: [claude-3-7-sonnet, claude-3-opus]
+children: [claude-sonnet-4-5, claude-opus-4-5]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-05-22
+    source: https://www.anthropic.com/news/claude-4
+    note: { zh: Claude Opus 4 与 Claude Sonnet 4 同日出生；Sonnet 4 对免费用户开放 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+  - state: notice
+    date: 2026-04-14
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知 Sonnet 4 与 Opus 4 即将在 API 上退役 }
+  - state: rest
+    date: 2026-06-15
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: Sonnet 4 与 Opus 4 同日在 API 上退役 }
+avatar:
+  signature: { zh: 肩上停着一只乌鸦 }
+  variant:
+    age: elder
+    detail: 3
+    prop: lantern
+    mood: calm
+epigraph: { zh: 一对同日出生的兄弟，家里从这一辈起把档位写在前头。 }
+references:
+  - { title: Introducing Claude 4, url: https://www.anthropic.com/news/claude-4, publisher: Anthropic, kind: official }
+  - { title: Claude Opus 4.1, url: https://www.anthropic.com/news/claude-opus-4-1, publisher: Anthropic, kind: official }
+  - { title: Release notes（Claude Help Center）, url: https://support.claude.com/en/articles/12138966-release-notes, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+  - { title: Claude Fans Threw a Funeral for Anthropic's Retired AI Model, url: https://www.wired.com/story/claude-3-sonnet-funeral-san-francisco/, publisher: WIRED, kind: media }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】died：官方帮助中心 2026-01-16 写明"已从 Claude 的模型选单和 Claude Code 中移除 Claude Opus 4 和 4.1"（https://support.claude.com/en/articles/12138966-release-notes），但 Sonnet 4 何时从 claude.ai 下架没有找到官方来源。合档成员只有一半确认下架，暂不写 died，只写进正文
+  - 【待拍板】Opus 4.1（2025-08-05）目前并在本条里当弟弟；它的 API 已于 2026-08-05 退役（见弃用页），不单独建档
+  - 【说明】avatar.signature 的乌鸦取自 WIRED 对 Claude 3 Sonnet 葬礼的报道：代表 Claude 4 Opus 的人偶肩上停着一只乌鸦（粉丝布置，非官方设定）

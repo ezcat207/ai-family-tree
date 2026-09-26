@@ -1,0 +1,57 @@
+---
+// 1080×1440 分享卡（08 §11.5）：本纪卡 / 讣告卡。平时藏在屏幕外，点按钮时截图。
+import Portrait from './Portrait.astro';
+import { lifespan, status, type Member, type Family } from '../lib/data';
+import { tx, t } from '../lib/i18n';
+interface Props { m: Member; fam: Family; kind: 'bio' | 'obit'; cardId: string; }
+const { m, fam, kind, cardId } = Astro.props;
+const s = status(m);
+const host = new URL(Astro.site!).host;
+const pn = m.posthumous_name?.result;
+const obitFact = m.obit_fact;
+---
+<div class="stash" aria-hidden="true">
+  <div id={cardId} class:list={['sc', kind]} style={`--c:${fam.color}`}>
+    <div class="sc-top">
+      <span class="brand">AI 家谱</span>
+      <span>{kind === 'obit' ? '讣 告' : `${tx(fam.name)} · 本纪`}</span>
+    </div>
+    <div class="sc-portrait">
+      <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`sc-${kind}-${m.id}`} size={430} />
+    </div>
+    <div class="sc-name">
+      <span class="latin">{tx(m.name)}</span>
+      {kind === 'obit' && <span class="seal">{pn ? `谥曰${pn}` : '卒'}</span>}
+    </div>
+    <div class="sc-life latin">{lifespan(m)}{kind === 'bio' && <span class="st"> · {s.label}</span>}</div>
+    <p class="sc-quote">{kind === 'obit' && m.epitaph ? tx(m.epitaph) : tx(m.epigraph)}</p>
+    {kind === 'obit' && obitFact && <p class="sc-fact">{obitFact.zh}<br /><span class="src">来源：{new URL(obitFact.source).hostname.replace(/^www\./, '')}</span></p>}
+    {kind === 'obit' && !pn && m.posthumous_name && <p class="sc-fact">谥号投票中：{m.posthumous_name.candidates.join(' · ')}</p>}
+    {kind === 'bio' && m.avatar.signature && <p class="sc-fact">标志物：{tx(m.avatar.signature)}</p>}
+    <div class="sc-foot">
+      <span>{host}/m/{m.id}/</span>
+      <span>{t('unofficial')}</span>
+    </div>
+  </div>
+</div>
+<style>
+  .stash { position: fixed; left: -20000px; top: 0; pointer-events: none; }
+  .sc {
+    width: 1080px; height: 1440px; background: #F2EBDD; color: #22201C; font-family: var(--serif);
+    padding: 72px 88px; display: flex; flex-direction: column; align-items: center; position: relative;
+    background-image: radial-gradient(rgba(120, 90, 40, .07) 2px, transparent 2px); background-size: 8px 8px;
+    border: 20px solid #E2D6C0;
+  }
+  .sc.obit { background-color: #DCD7CF; }
+  .sc-top { width: 100%; display: flex; justify-content: space-between; font-size: 34px; color: #6E665A; letter-spacing: .2em; }
+  .brand { font-weight: 900; color: #B8322A; }
+  .sc-portrait { margin-top: 36px; }
+  .sc-name { margin-top: 24px; font-size: 84px; font-weight: 900; display: flex; align-items: center; gap: 28px; line-height: 1.2; }
+  .sc-name .seal { font-size: 46px; padding: 6px 16px; }
+  .sc-life { font-size: 44px; color: #6E665A; margin-top: 4px; }
+  .st { font-family: var(--serif); }
+  .sc-quote { font-size: 48px; line-height: 1.55; text-align: center; margin: 36px 0 0; font-weight: 900; max-width: 880px; }
+  .sc-fact { font-size: 32px; color: #6E665A; margin: 24px 0 0; text-align: center; }
+  .sc-fact .src { font-size: 24px; }
+  .sc-foot { margin-top: auto; width: 100%; display: flex; gap: 24px; white-space: nowrap; justify-content: space-between; font-size: 26px; color: #6E665A; border-top: 2px solid #C9BBA0; padding-top: 18px; }
+</style>

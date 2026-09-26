@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import Portrait from '../../components/Portrait.astro';
+import MemberCard from '../../components/MemberCard.astro';
+import { loadAll, status, bornDate, fmt } from '../../lib/data';
+import { tx } from '../../lib/i18n';
+
+export async function getStaticPaths() {
+  const all = await loadAll();
+  return all.families.map((f) => ({ params: { id: f.id }, props: { id: f.id } }));
+}
+const { id } = Astro.props;
+const all = await loadAll();
+const fam = all.famById.get(id)!;
+const clan = all.clanById.get(fam.clan)!;
+const members = all.familyMembers(id);
+const gens = [...new Set(members.map((m) => m.gen))].sort((a, b) => a - b).map((g) => ({
+  g,
+  list: members.filter((m) => m.gen === g),
+}));
+const alive = members.filter((m) => !status(m).dead);
+const dead = members.filter((m) => status(m).dead);
+---
+<Base title={tx(fam.name)} description={tx(fam.intro)}>
+  <div class="wrap">
+    <header class="head">
+      <Portrait family={fam.id} variant={fam.base} color={fam.color} uid={`fam-${fam.id}`} size={180} label={tx(fam.name)} />
+      <div>
+        <h1>{tx(fam.name)}</h1>
+        <p class="muted">氏族：<a href={clan.url} target="_blank" rel="noopener">{tx(clan.name)}</a> · {members.length} 位成员</p>
+        <p>{tx(fam.intro)}</p>
+        <p class="muted small">家族形象：{tx(fam.gene)}</p>
+      </div>
+    </header>
+
+    <h2>谱系</h2>
+    <ol class="tree" style={`--c:${fam.color}`}>
+      {gens.map(({ g, list }) => (
+        <li>
+          <span class="gen muted small">第 {g} 代 · <span class="latin">{fmt(bornDate(list[0])).slice(0, 7)}</span></span>
+          <div class="sibs">
+            {list.map((m) => {
+              const s = status(m);
+              return (
+                <a href={`/m/${m.id}/`} class:list={['node', { dead: s.dead }]}>
+                  <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`ft-${m.id}`} size={56} />
+                  <span class="latin">{tx(m.name)}</span>
+                  <span class="muted small">{s.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <h2>在世（{alive.length}）</h2>
+    {alive.length ? alive.map((m) => <MemberCard m={m} fam={fam} />) : <p class="muted">这一家已经没有在世的成员了。</p>}
+
+    <h2>已故（{dead.length}）</h2>
+    {dead.length ? dead.map((m) => <MemberCard m={m} fam={fam} />) : <p class="muted">这一家还没有人离世。</p>}
+  </div>
+</Base>
+<style>
+  .head { display: flex; gap: 20px; align-items: center; margin-top: 1.6rem; }
+  .head h1 { margin: 0; font-size: 2rem; }
+  .head p { margin: .3rem 0; }
+  @media (max-width: 560px) { .head { flex-direction: column; text-align: center; } }
+  .tree { list-style: none; padding: 0 0 0 22px; margin: 0; position: relative; }
+  .tree::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--c); opacity: .5; }
+  .tree li { position: relative; padding: .4rem 0 .8rem; }
+  .tree li::before { content: ''; position: absolute; left: -19px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
+  .sibs { display: flex; gap: 12px; flex-wrap: wrap; margin-top: .3rem; }
+  .node { display: flex; flex-direction: column; align-items: center; width: 96px; text-align: center; text-decoration: none; line-height: 1.35; font-size: .88rem; }
+  .node.dead :global(.portrait) { filter: grayscale(.85); }
+</style>

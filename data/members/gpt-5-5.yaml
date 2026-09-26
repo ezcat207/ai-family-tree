@@ -1,0 +1,38 @@
+id: gpt-5-5
+family: chatgpt
+name: { zh: GPT-5.5, en: GPT-5.5 }
+aka: []
+tier: regular
+gen: 9
+parents: [gpt-5-2]
+children: []
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2026-04-23
+    source: https://openai.com/index/introducing-gpt-5-5/
+    note: { zh: Thinking 与 Pro 先出生，先给付费用户 }
+  - state: head
+    date: 2026-05-05
+    source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+    note: { zh: GPT-5.5 Instant 成为 ChatGPT 新默认模型 }
+avatar:
+  signature: { zh: 一顶深蓝色的礼帽 }
+  variant:
+    age: young
+    detail: 5
+    prop: hat
+    mood: calm
+    eye: "#3C6FD1"
+epigraph: { zh: 家里最近的一位当家人，故事还没写完。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing GPT-5.5", url: "https://openai.com/index/introducing-gpt-5-5/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Model Release Notes", url: "https://help.openai.com/en/articles/9624314-model-release-notes", publisher: OpenAI, kind: official }
+  - { title: "GPT-5.6 and GPT-6 Pro in ChatGPT", url: "https://help.openai.com/en/articles/20001354", publisher: OpenAI, kind: official }
+todo:
+  - 【待核】yielded：2026-08-06 发布说明称 GPT-5.6 Luna"本周"成为 Free/Go 默认，付费用户由 GPT-5.6 Sol 驱动；但 GPT-5.5 是否仍可手动选择官方只说"earlier models may remain available where supported"，未入 lifecycle
+  - 【待核】SPEC 附录 A 的代号 Spud：官方 GPT-5.5 博客未提及，未写入正文

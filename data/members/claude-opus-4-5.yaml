@@ -1,0 +1,34 @@
+id: claude-opus-4-5
+family: claude
+name: { zh: Claude Opus 4.5, en: Claude Opus 4.5 }
+aka: [Opus 4.5]
+tier: regular
+gen: 7
+parents: [claude-4]
+children: [claude-5]
+siblings: [claude-sonnet-4-5]
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-11-24
+    source: https://www.anthropic.com/news/claude-opus-4-5
+    note: { zh: 当天即在 Claude App、API 和三大云平台上线 }
+avatar:
+  signature: { zh: 一盏长明灯：长长的对话不再撞墙 }
+  variant:
+    age: elder
+    detail: 4
+    prop: lantern
+    mood: calm
+epigraph: { zh: Opus 3 在 API 上退役那天，官方推荐的接替者就是它。 }
+references:
+  - { title: Introducing Claude Opus 4.5, url: https://www.anthropic.com/news/claude-opus-4-5, publisher: Anthropic, kind: official }
+  - { title: Claude Platform release notes, url: https://platform.claude.com/docs/en/release-notes/overview, publisher: Anthropic, kind: official }
+  - { title: Release notes（Claude Help Center）, url: https://support.claude.com/en/articles/12138966-release-notes, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】head：没有找到官方明确说它成为 claude.ai 默认模型的来源
+  - 【说明】弃用页（2026-09-26 查看）显示其 API 状态为 Active，最早不早于 2026-11-24 退役；弃用页当前给 Opus 3 列出的推荐替代已改为 Opus 4.8，2026-01-05 的 API 更新日志里写的是 Opus 4.5

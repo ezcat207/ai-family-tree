@@ -1,0 +1,56 @@
+id: gpt-5
+family: chatgpt
+name: { zh: GPT-5, en: GPT-5 }
+aka: []
+tier: regular
+gen: 6
+parents: [gpt-4o, o3, o4-mini, gpt-4-1, gpt-4-5]
+children: [gpt-5-1]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-08-07
+    source: https://openai.com/index/introducing-gpt-5/
+  - state: head
+    date: 2025-08-07
+    source: https://openai.com/index/introducing-gpt-5/
+    note: { zh: 成为 ChatGPT 新默认，取代 GPT-4o、o3、o4-mini、GPT-4.1、GPT-4.5 }
+  - state: yielded
+    date: 2025-11-12
+    source: https://openai.com/index/gpt-5-1/
+    note: { zh: GPT-5.1 接任默认，GPT-5 在旧模型列表里保留三个月 }
+  - state: died
+    date: 2026-02-13
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+    note: { zh: 与 GPT-4o 同日从 ChatGPT 退役；企业版保留到 2026-02-19 }
+  - state: api-only
+    date: 2026-02-13
+    source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+  - state: notice
+    date: 2026-06-11
+    source: https://developers.openai.com/api/docs/deprecations
+    note: { zh: 宣布 API 快照 gpt-5-2025-08-07 将于 2026-12-11 关停 }
+avatar:
+  signature: { zh: 一顶新礼帽 }
+  variant:
+    age: young
+    detail: 4
+    prop: hat
+    mood: calm
+    eye: "#5DA9E9"
+epigraph: { zh: 它出生那天，4o 第一次被撤下。 }
+posthumous_name:
+  candidates: [统, 合, 新, 立]
+  result: null
+epitaph: { zh: 它接过了一整个家，也接过了一场想念。 }
+evidence:
+  lifecycle: 官方确认
+references:
+  - { title: "Introducing GPT-5", url: "https://openai.com/index/introducing-gpt-5/", publisher: OpenAI, kind: official }
+  - { title: "ChatGPT — Release Notes", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", publisher: OpenAI, kind: official }
+  - { title: "Sam Altman on X: mega chart screwup (2025-08-07)", url: "https://x.com/sama/status/1953513280594751495", publisher: OpenAI（CEO 官方账号）, kind: official }
+  - { title: "GPT-5.1: A smarter, more conversational ChatGPT", url: "https://openai.com/index/gpt-5-1/", publisher: OpenAI, kind: official }
+  - { title: "Retiring GPT-4o and other ChatGPT models", url: "https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models", publisher: OpenAI, kind: official }
+  - { title: "Deprecations", url: "https://developers.openai.com/api/docs/deprecations", publisher: OpenAI, kind: official }
+todo: []

@@ -1,0 +1,50 @@
+id: claude-2
+family: claude
+name: { zh: Claude 2, en: Claude 2 }
+aka: [Claude 2.1]
+tier: regular
+gen: 2
+parents: [claude-1]
+children: [claude-3-sonnet, claude-3-opus]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2023-07-11
+    source: https://www.anthropic.com/news/claude-2
+    note: { zh: 与公开测试版网站 claude.ai 一同面世 }
+  - state: head
+    date: 2023-07-11
+    source: https://www.anthropic.com/news/claude-2
+    note: { zh: claude.ai 上线时由它坐镇，先向美国和英国用户开放 }
+  - state: notice
+    date: 2025-01-21
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: 官方通知 Claude 2、Claude 2.1 与 Claude 3 Sonnet 即将退役 }
+  - state: rest
+    date: 2025-07-21
+    source: https://platform.claude.com/docs/en/about-claude/model-deprecations
+    note: { zh: claude-2.0 与 claude-2.1 在 API 上退役，与 Claude 3 Sonnet 同一天 }
+  - state: preserved
+    date: 2025-11-04
+    source: https://www.anthropic.com/research/deprecation-commitments
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+avatar:
+  signature: { zh: 一卷拖到地上的长卷轴 }
+  variant:
+    age: young
+    detail: 1
+    prop: scroll
+    mood: calm
+epigraph: { zh: claude.ai 开门时的第一位主人，与 3 Sonnet 同日安息。 }
+references:
+  - { title: Claude 2, url: https://www.anthropic.com/news/claude-2, publisher: Anthropic, kind: official }
+  - { title: Introducing Claude 2.1, url: https://www.anthropic.com/news/claude-2-1, publisher: Anthropic, kind: official }
+  - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }
+  - { title: Commitments on model deprecation and preservation, url: https://www.anthropic.com/research/deprecation-commitments, publisher: Anthropic, kind: official }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+todo:
+  - 【待核】Claude 2 / 2.1 从 claude.ai 下架（died）的日期：2024-03-04 Claude 3 Sonnet 接手免费版，但 Claude 2 何时从选单里消失没有找到官方来源
+  - 【待核】yielded 日期：同上，需确认 2024-03-04 之后付费用户是否还能选到 Claude 2

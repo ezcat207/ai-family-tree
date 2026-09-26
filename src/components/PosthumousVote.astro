@@ -1,0 +1,82 @@
+---
+// 谥号投票（08 §10）：一人一票，按浏览器 + IP 粗略去重
+interface Props { memberId: string; candidates: string[]; result?: string | null; }
+const { memberId, candidates, result } = Astro.props;
+---
+<div class="vote" data-member={memberId}>
+  {result ? (
+    <p>投票已结束，谥曰 <span class="seal">{result}</span></p>
+  ) : (
+    <>
+      <p>用一个字或两个字送它一程。每人每位成员投一票。</p>
+      <div class="opts">
+        {candidates.map((c) => (
+          <button type="button" class="opt" data-c={c}>
+            <span class="seal">{c}</span>
+            <span class="n muted small">–</span>
+          </button>
+        ))}
+      </div>
+      <form class="nom">
+        <input name="name" maxlength="2" placeholder="提名一个新谥号（1–2 字）" />
+        <button class="btn ghost" type="submit">提名</button>
+      </form>
+      <p class="out muted small" role="status"></p>
+    </>
+  )}
+</div>
+<script>
+  const vid = (() => {
+    try {
+      let v = localStorage.getItem('aft_voter');
+      if (!v) { v = crypto.randomUUID(); localStorage.setItem('aft_voter', v); }
+      return v;
+    } catch { return 'anon'; }
+  })();
+  for (const box of document.querySelectorAll<HTMLElement>('.vote')) {
+    const id = box.dataset.member!;
+    const out = box.querySelector('.out') as HTMLElement | null;
+    if (!out) continue;
+    const paint = (d: { tally: Record<string, number>; mine?: string | null }) => {
+      const total = Object.values(d.tally).reduce((a, b) => a + b, 0);
+      for (const b of box.querySelectorAll<HTMLButtonElement>('.opt')) {
+        const n = d.tally[b.dataset.c!] || 0;
+        b.querySelector('.n')!.textContent = total ? `${n} 票` : '0 票';
+        b.classList.toggle('mine', d.mine === b.dataset.c);
+        b.disabled = !!d.mine;
+      }
+      if (d.mine) out.textContent = `你投给了「${d.mine}」。共 ${total} 票。`;
+    };
+    fetch(`/api/votes?member=${id}&voter=${vid}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then(paint)
+      .catch(() => { out.textContent = '投票暂未开放。'; });
+    box.addEventListener('click', async (e) => {
+      const b = (e.target as HTMLElement).closest('.opt') as HTMLButtonElement | null;
+      if (!b || b.disabled) return;
+      const r = await fetch('/api/votes', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ member_id: id, candidate: b.dataset.c, voter: vid }) });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok) paint(d); else out.textContent = d.message || '投票失败了，请稍后再试。';
+    });
+    box.querySelector('.nom')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = e.currentTarget as HTMLFormElement;
+      const name = (new FormData(f).get('name') as string || '').trim();
+      if (!name) return;
+      const r = await fetch('/api/votes', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ member_id: id, nominate: name, voter: vid }) });
+      const d = await r.json().catch(() => ({}));
+      out.textContent = r.ok ? `收到提名「${name}」，审核后会加入候选。` : d.message || '提名失败了。';
+      if (r.ok) f.reset();
+    });
+  }
+</script>
+<style>
+  .opts { display: flex; gap: 12px; flex-wrap: wrap; margin: .6rem 0; }
+  .opt { display: flex; flex-direction: column; align-items: center; gap: 6px; background: rgba(255, 255, 255, .4); border: 1px solid var(--paper-dark); border-radius: 4px; padding: .7rem .9rem; cursor: pointer; font: inherit; }
+  .opt .seal { font-size: 1.5rem; }
+  .opt:hover:not(:disabled) { border-color: var(--cinnabar); }
+  .opt.mine { border-color: var(--cinnabar); box-shadow: 0 0 0 2px var(--cinnabar); }
+  .opt:disabled { cursor: default; }
+  .nom { display: flex; gap: 8px; margin-top: .4rem; }
+  .nom input { width: 12em; background: rgba(255, 255, 255, .6); border: 1px solid var(--paper-dark); border-radius: 3px; padding: .4rem .6rem; }
+</style>

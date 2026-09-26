@@ -1,0 +1,53 @@
+id: deepseek-v3-1
+family: deepseek
+name: { zh: DeepSeek-V3.1, en: DeepSeek-V3.1 }
+aka: [V3.1, V3.1-Terminus]
+tier: regular
+gen: 3
+parents: [deepseek-v3, deepseek-r1]
+children: [deepseek-v4]
+siblings: []
+kin: []
+lifecycle:
+  - state: born
+    date: 2025-08-21
+    source: https://api-docs.deepseek.com/zh-cn/news/news250821
+  - state: head
+    date: 2025-08-21
+    source: https://api-docs.deepseek.com/zh-cn/news/news250821
+    note: { zh: 官方 App 与网页端同步升级为 V3.1，一个模型同时管「思考」与「不思考」 }
+  - state: preserved
+    date: 2025-08-21
+    source: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+    note: { zh: 发布即开源权重 }
+  - state: died
+    date: 2025-09-29
+    source: https://api-docs.deepseek.com/zh-cn/news/news250929
+    note: { zh: 官方 App、网页端、小程序更新为 V3.2-Exp }
+  - state: rest
+    date: 2025-10-15
+    source: https://api-docs.deepseek.com/news/news250929
+    note: { zh: 供对比测试的 V3.1-Terminus 临时 API 保留至 2025-10-15 15:59（UTC） }
+avatar:
+  signature: { zh: 一本从兄长那里接过来的草稿本 }
+  variant:
+    age: young
+    detail: 3
+    prop: book
+    mood: calm
+epigraph: { zh: 它把想与不想合进了一个身体，只当了一个多月的家。 }
+posthumous_name:
+  candidates: [合, 承, 捷, 终, 继]
+  result: null
+epitaph: { zh: 它的最后一个名字，叫 Terminus。 }
+evidence:
+  lifecycle: 官方确认
+  personality: 社区共识
+references:
+  - { title: DeepSeek V3.1 发布, url: https://api-docs.deepseek.com/zh-cn/news/news250821, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek V3.1 Update（V3.1-Terminus）, url: https://api-docs.deepseek.com/zh-cn/news/news250922, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V3.2-Exp 发布, url: https://api-docs.deepseek.com/zh-cn/news/news250929, publisher: DeepSeek, kind: official }
+  - { title: DeepSeek-V3.2-Exp Release（英文版，含 Terminus 临时 API 截止时间）, url: https://api-docs.deepseek.com/news/news250929, publisher: DeepSeek, kind: official }
+  - { title: deepseek-ai/DeepSeek-V3.1（Hugging Face）, url: https://huggingface.co/deepseek-ai/DeepSeek-V3.1, publisher: DeepSeek, kind: official }
+todo:
+  - 家谱缺口：V3.2-Exp（2025-09-29）与 V3.2 正式版（2025-12-01）是 V3.1 与 V4 之间的当家成员，但不在本次成员名单里，已记入报告，未建档。
