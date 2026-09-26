@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Portrait, { FAMILY_MASCOT } from '../../components/Portrait.astro';
+import Portrait from '../../components/Portrait.astro';
+import { FAMILY_MASCOT } from '../../lib/portrait';
 import MemberCard from '../../components/MemberCard.astro';
 import { loadAll, status, bornDate, fmt } from '../../lib/data';
 import { tx } from '../../lib/i18n';
