@@ -1,6 +1,7 @@
-// 程序化画像：家族基因 + 世代变体（08 §8）。
+// 家族画像：优先使用各家族的真实商标（public/avatars/family-<id>.svg），
+// 程序化画像（家族基因 + 世代变体）作为兜底（08 §8）。
 // 输出纯 SVG 字符串，网页、分享卡、批量导出共用一套。
-// 这是 08 §18 的降级方案：正式画像到位后，放进 public/avatars/<id>.png 即可替换（见 Portrait.astro）。
+// 商标为指称性使用（nominative use），来源见 public/avatars/CREDITS.md。
 
 export type Variant = {
   age?: 'child' | 'young' | 'elder';
@@ -224,15 +225,42 @@ export function figureSVG(family: string, variant: Variant, color: string) {
   }
 }
 
-/** 完整画像：旧式椭圆肖像框 + 家族色内衬 + 人物；离世成员蒙纱、停一只黄蝴蝶 */
-export function portraitSVG({ family, variant, color, dead, uid, frame = true }: PortraitOpts) {
+/** 框体：旧式椭圆肖像框 + 羊皮纸底 + 家族色内衬；离世成员蒙纱、停一只黄蝴蝶 */
+function frameWrap(uid: string, color: string, dead: boolean | undefined, frame: boolean, inner: string) {
   const clip = `clip-${uid}`;
-  const fig = figureSVG(family, variant, color);
   const veil = dead
     ? `<g clip-path="url(#${clip})"><rect width="240" height="300" fill="rgba(255,255,255,.45)"/><path d="M0 40 L240 10 M0 120 L240 90 M0 200 L240 170 M0 280 L240 250" stroke="#FFF" stroke-width="10" opacity=".25"/></g>`
     : '';
   const frameSvg = frame
     ? `<ellipse cx="120" cy="150" rx="112" ry="142" fill="none" stroke="${GOLD}" stroke-width="10"/><ellipse cx="120" cy="150" rx="104" ry="134" fill="none" stroke="${GOLD_DARK}" stroke-width="1.5"/><ellipse cx="120" cy="150" rx="117" ry="147" fill="none" stroke="${GOLD_DARK}" stroke-width="1.5"/>`
     : '';
-  return `<svg viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="${clip}"><ellipse cx="120" cy="150" rx="104" ry="134"/></clipPath><radialGradient id="bg-${uid}" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="${PAPER}"/><stop offset="1" stop-color="#E2D6C0"/></radialGradient></defs><g clip-path="url(#${clip})"><rect width="240" height="300" fill="url(#bg-${uid})"/><rect width="240" height="300" fill="${color}" opacity=".1"/><g transform="translate(-6 34) scale(1.26)">${fig}</g></g>${veil}${frameSvg}${dead ? butterfly(206, 38, 1.3) : ''}</svg>`;
+  return `<svg viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="${clip}"><ellipse cx="120" cy="150" rx="104" ry="134"/></clipPath><radialGradient id="bg-${uid}" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="${PAPER}"/><stop offset="1" stop-color="#E2D6C0"/></radialGradient></defs><g clip-path="url(#${clip})"><rect width="240" height="300" fill="url(#bg-${uid})"/><rect width="240" height="300" fill="${color}" opacity=".1"/>${inner}</g>${veil}${frameSvg}${dead ? butterfly(206, 38, 1.3) : ''}</svg>`;
+}
+
+/** 程序化画像：家族基因 + 世代变体；没有真实商标时的兜底 */
+export function portraitSVG({ family, variant, color, dead, uid, frame = true }: PortraitOpts) {
+  const fig = figureSVG(family, variant, color);
+  return frameWrap(uid, color, dead, frame, `<g transform="translate(-6 34) scale(1.26)">${fig}</g>`);
+}
+
+export type LogoPortraitOpts = {
+  logo: string; // 站内路径，如 /avatars/family-chatgpt.svg
+  boxW?: number; // logo 在框内的显示尺寸（默认 150×150）
+  boxH?: number;
+  color: string;
+  dead?: boolean;
+  uid: string;
+};
+
+/** 真实商标画像：官方 logo 放在同一套框体里；logo 本体不改色、不裁剪 */
+export function logoPortraitSVG({ logo, boxW = 150, boxH = 150, color, dead, uid }: LogoPortraitOpts) {
+  const x = (240 - boxW) / 2;
+  const y = (300 - boxH) / 2;
+  return frameWrap(
+    uid,
+    color,
+    dead,
+    true,
+    `<image href="${logo}" x="${x}" y="${y}" width="${boxW}" height="${boxH}" preserveAspectRatio="xMidYMid meet"/>`,
+  );
 }
