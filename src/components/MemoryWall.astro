@@ -72,6 +72,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         out.textContent = '网络出了点问题，请稍后再试。';
       } finally {
         btn.disabled = false;
+        (window as any).turnstile?.reset?.(form.querySelector('.cf-turnstile'));
       }
     });
   }

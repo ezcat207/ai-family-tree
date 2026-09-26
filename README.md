@@ -14,6 +14,11 @@ scripts/              数据校验、批量导出分享卡
 docs/                 数据规范、候选与待拍板
 ```
 
+## 部署
+- Vercel：https://ai-family-tree-xi.vercel.app （push main 自动部署）
+- Cloudflare Pages：https://ai-family-tree.pages.dev （push main 后由 GitHub Actions 部署；本地可用 `npm run deploy:cf`）
+- 架构和已拍板的决定见 `docs/design.md`，待人工处理的事项见 `human_todo.md`。
+
 ## 本地开发
 ```bash
 npm install

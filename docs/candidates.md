@@ -10,13 +10,8 @@
 | 豆包 | 豆包 1.8（2025-12）、豆包 2.1（2026-06） | https://docs.volcengine.com/docs/ark/model-release-announcement | 补档 |
 | Claude | Claude 5 一代拆档（Fable 5 / Sonnet 5 / Opus 5 / Fable 5.1 / Opus 5.5） | https://www.anthropic.com/news/claude-fable-5-mythos-5 | 【待拍板】目前合为 `claude-5` |
 
-## 【待拍板】数据口径
-1. **豆包旗舰 `doubao` 代表 App / 家族长子**。初代模型 Doubao-pro 在 2025-04-15 从火山方舟下线，这件事写在生平里，没有作为 rest 事件，否则首页会显示"豆包已离世"。
-2. **找不到 App 下架官方日期时，以 API 关停（rest）作为卒日**（Claude 家大多如此）。已写进 /about/。
-3. **DeepSeek 开源权重算不算"遗体保存（preserved）"**：agent 给 5 位都加了，日期取出生日，来源是官方 GitHub / Hugging Face。官方没有说过"承诺保留"。
-4. **Claude Opus 3**：API 已退役，但仍对 claude.ai 付费用户开放，状态显示为"退而不休"，进纪念馆，不设谥号投票。
-5. **GPT-4o 与豆包 2.0 "同日生死"**：豆包 2.0 官方发布日是 2026-02-14（北京时间），4o 下架是美国时间 02-13。严格说不是同一天，站内按事实写"前后脚"。
-6. **R1 算不算"当家"**：官方口径是"打开深度思考才调用 R1"，默认应答是 V3，所以没写 head。
+## 数据口径
+已于 2026-09-26 拍板，记录在 `docs/design.md` §2。
 
 ## 新想法（不做）
 - 模型监控 + 自动建档、出生证明卡、英文版、截图上传（08 §18.1 明确不做）。

@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:data": "node scripts/check-data.mjs",
-    "export:cards": "node scripts/export-cards.mjs"
+    "export:cards": "node scripts/export-cards.mjs",
+    "build:cf": "DEPLOY_TARGET=cloudflare astro build && find dist -name '._*' -delete",
+    "deploy:cf": "npm run build:cf && wrangler pages deploy dist --project-name ai-family-tree --branch main --commit-dirty=true"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.11",
@@ -20,6 +22,8 @@
     "js-yaml": "^5.4.2"
   },
   "devDependencies": {
-    "playwright": "^1.63.0"
+    "@astrojs/cloudflare": "^12.6.13",
+    "playwright": "^1.63.0",
+    "wrangler": "^4.141.0"
   }
 }

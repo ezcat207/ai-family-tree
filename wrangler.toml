@@ -1,0 +1,5 @@
+# Cloudflare Pages（国内访问用的第二个部署）。部署：npm run deploy:cf
+name = "ai-family-tree"
+pages_build_output_dir = "./dist"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
