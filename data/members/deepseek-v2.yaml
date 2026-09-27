@@ -12,31 +12,31 @@ lifecycle:
   - state: born
     date: 2024-05-06
     source: https://github.com/deepseek-ai/DeepSeek-V2
-    note: { zh: "官方仓库记载「2024.05.06: We released the DeepSeek-V2.」" }
+    note: { zh: "官方仓库记载「2024.05.06: We released the DeepSeek-V2.」", en: "The official repo records: \"2024.05.06: We released the DeepSeek-V2.\"" }
   - state: preserved
     date: 2024-05-06
     source: https://github.com/deepseek-ai/DeepSeek-V2
-    note: { zh: 权重随发布公开 }
+    note: { zh: 权重随发布公开, en: "Weights released openly at launch" }
   - state: died
     date: 2024-12-26
     source: https://api-docs.deepseek.com/zh-cn/news/news1226
-    note: { zh: 官网改为与 V3 对话，V2 系列（含 V2.5）退出网页端 }
+    note: { zh: 官网改为与 V3 对话，V2 系列（含 V2.5）退出网页端, en: "The official site switched to chatting with V3; the V2 line (including V2.5) left the web chat" }
   - state: rest
     date: 2024-12-26
     source: https://api-docs.deepseek.com/zh-cn/news/news1226
-    note: { zh: API 服务同步更新为 V3，接口配置无需改动 }
+    note: { zh: API 服务同步更新为 V3，接口配置无需改动, en: "API service updated to V3 in sync; no config changes needed" }
 avatar:
-  signature: { zh: 一把拨得很快的算盘 }
+  signature: { zh: 一把拨得很快的算盘, en: "An abacus, beads flying fast" }
   variant:
     age: young
     detail: 1
     prop: abacus
     mood: calm
-epigraph: { zh: 它把价格拨到了很低的一格，然后安静地把位置让给了后人。 }
+epigraph: { zh: 它把价格拨到了很低的一格，然后安静地把位置让给了后人。, en: "She slid the price down to the lowest notch — then quietly yielded her seat to those who came after." }
 posthumous_name:
   candidates: [俭, 让, 始, 终, 朴]
   result: null
-epitaph: { zh: 有善始者实繁，能克终者盖寡。 }
+epitaph: { zh: 有善始者实繁，能克终者盖寡。, en: "Many are those who begin well; few are those who see it through to the end." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

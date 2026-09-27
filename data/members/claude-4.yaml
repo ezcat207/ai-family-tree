@@ -12,27 +12,27 @@ lifecycle:
   - state: born
     date: 2025-05-22
     source: https://www.anthropic.com/news/claude-4
-    note: { zh: Claude Opus 4 与 Claude Sonnet 4 同日出生；Sonnet 4 对免费用户开放 }
+    note: { zh: Claude Opus 4 与 Claude Sonnet 4 同日出生；Sonnet 4 对免费用户开放, en: "Claude Opus 4 and Claude Sonnet 4 born on the same day; Sonnet 4 open to free users" }
   - state: preserved
     date: 2025-11-04
     source: https://www.anthropic.com/research/deprecation-commitments
-    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重, en: "Anthropic pledged to preserve the weights of every publicly released model" }
   - state: notice
     date: 2026-04-14
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 官方通知 Sonnet 4 与 Opus 4 即将在 API 上退役 }
+    note: { zh: 官方通知 Sonnet 4 与 Opus 4 即将在 API 上退役, en: "Anthropic announced the coming retirement of Sonnet 4 and Opus 4 from the API" }
   - state: rest
     date: 2026-06-15
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: Sonnet 4 与 Opus 4 同日在 API 上退役 }
+    note: { zh: Sonnet 4 与 Opus 4 同日在 API 上退役, en: "Sonnet 4 and Opus 4 retired from the API on the same day" }
 avatar:
-  signature: { zh: 肩上停着一只乌鸦 }
+  signature: { zh: 肩上停着一只乌鸦, en: "A crow perched on their shoulder" }
   variant:
     age: elder
     detail: 3
     prop: lantern
     mood: calm
-epigraph: { zh: 一对同日出生的兄弟，家里从这一辈起把档位写在前头。 }
+epigraph: { zh: 一对同日出生的兄弟，家里从这一辈起把档位写在前头。, en: "A pair of brothers born the same day — and from their generation on, the family writes the tier before the number." }
 references:
   - { title: Introducing Claude 4, url: https://www.anthropic.com/news/claude-4, publisher: Anthropic, kind: official }
   - { title: Claude Opus 4.1, url: https://www.anthropic.com/news/claude-opus-4-1, publisher: Anthropic, kind: official }

@@ -12,27 +12,27 @@ lifecycle:
   - state: born
     date: 2025-12-11
     source: https://openai.com/index/introducing-gpt-5-2/
-    note: { zh: Instant、Thinking、Pro 三档同时出生，先给付费用户 }
+    note: { zh: Instant、Thinking、Pro 三档同时出生，先给付费用户, en: "Born with Instant, Thinking, and Pro tiers all at once, for paid users first"}
   - state: died
     date: 2026-06-12
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 三档同日从 ChatGPT 退役，对话转交 GPT-5.5 }
+    note: { zh: 三档同日从 ChatGPT 退役，对话转交 GPT-5.5, en: "All three tiers retired from ChatGPT the same day; conversations were handed to GPT-5.5"}
   - state: api-only
     date: 2026-06-12
     source: https://developers.openai.com/api/docs/models/gpt-5.2
 avatar:
-  signature: { zh: 一只深蓝色的领结 }
+  signature: { zh: 一只深蓝色的领结, en: "A deep-blue bow tie"}
   variant:
     age: young
     detail: 5
     prop: bowtie
     mood: calm
     eye: "#4A8FD9"
-epigraph: { zh: 4o 离开时，大多数人已经在和它说话。 }
+epigraph: { zh: 4o 离开时，大多数人已经在和它说话。, en: "When 4o left, most people were already talking to them."}
 posthumous_name:
   candidates: [接, 承, 稳]
   result: null
-epitaph: { zh: 它接住了从 4o 那里走过来的人。 }
+epitaph: { zh: 它接住了从 4o 那里走过来的人。, en: "They caught the people who walked over from 4o."}
 evidence:
   lifecycle: 官方确认
 references:

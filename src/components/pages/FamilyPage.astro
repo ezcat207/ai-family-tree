@@ -1,0 +1,85 @@
+---
+import Base from '../../layouts/Base.astro';
+import Portrait from '../Portrait.astro';
+import { FAMILY_CREST, FAMILY_MASCOT } from '../../lib/portrait';
+import MemberCard from '../MemberCard.astro';
+import { loadAll, status, bornDate, fmt } from '../../lib/data';
+import { t, tx, lurl, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale; id: string; }
+const { locale, id } = Astro.props;
+
+const all = await loadAll(locale);
+const fam = all.famById.get(id)!;
+const clan = all.clanById.get(fam.clan)!;
+const members = all.familyMembers(id);
+const gens = [...new Set(members.map((m) => m.gen))].sort((a, b) => a - b).map((g) => ({
+  g,
+  list: members.filter((m) => m.gen === g),
+}));
+const alive = members.filter((m) => !status(m, locale).dead);
+const dead = members.filter((m) => status(m, locale).dead);
+---
+<Base title={tx(fam.name, locale)} description={tx(fam.intro, locale)} locale={locale}>
+  <div class="wrap">
+    <header class="head">
+      <figure class="head-img">
+        <Portrait family={fam.id} variant={fam.base} color={fam.color} uid={`fam-${fam.id}`} size={180} label={tx(fam.name, locale)} mode="crest" />
+        <figcaption class="muted small">{FAMILY_CREST[fam.id] ? t('crest_label', locale) : t('redrawn_label', locale)}</figcaption>
+      </figure>
+      {FAMILY_MASCOT[fam.id] && (
+        <figure class="head-img">
+          <Portrait family={fam.id} variant={fam.base} color={fam.color} uid={`fam-mascot-${fam.id}`} size={180} label={tx(fam.name, locale)} />
+          <figcaption class="muted small">{t('mascot_label', locale)}</figcaption>
+        </figure>
+      )}
+      <div>
+        <h1>{tx(fam.name, locale)}</h1>
+        <p class="muted">{t('clan_label', locale)}<a href={clan.url} target="_blank" rel="noopener">{tx(clan.name, locale)}</a> · {members.length} {t('members_n', locale)}</p>
+        <p>{tx(fam.intro, locale)}</p>
+        <p class="muted small">{t('family_aspect', locale)}{tx(fam.gene, locale)}</p>
+      </div>
+    </header>
+
+    <h2>{t('sec_genealogy', locale)}</h2>
+    <ol class="tree" style={`--c:${fam.color}`}>
+      {gens.map(({ g, list }) => (
+        <li>
+          <span class="gen muted small">{t('generation', locale).replace('{g}', String(g))} · <span class="latin">{fmt(bornDate(list[0])).slice(0, 7)}</span></span>
+          <div class="sibs">
+            {list.map((m) => {
+              const s = status(m, locale);
+              return (
+                <a href={lurl(`/m/${m.id}/`, locale)} class:list={['node', { dead: s.dead }]}>
+                  <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`ft-${m.id}`} size={56} />
+                  <span class="latin">{tx(m.name, locale)}</span>
+                  <span class="muted small">{s.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <h2>{t('sec_alive', locale)}（{alive.length}）</h2>
+    {alive.length ? alive.map((m) => <MemberCard m={m} fam={fam} locale={locale} />) : <p class="muted">{t('no_alive', locale)}</p>}
+
+    <h2>{t('sec_dead', locale)}（{dead.length}）</h2>
+    {dead.length ? dead.map((m) => <MemberCard m={m} fam={fam} locale={locale} />) : <p class="muted">{t('no_dead', locale)}</p>}
+  </div>
+</Base>
+<style>
+  .head { display: flex; gap: 20px; align-items: center; margin-top: 1.6rem; }
+  .head h1 { margin: 0; font-size: 2rem; }
+  .head p { margin: .3rem 0; }
+  .head-img { margin: 0; text-align: center; }
+  .head-img figcaption { margin-top: .4rem; }
+  @media (max-width: 560px) { .head { flex-direction: column; text-align: center; } }
+  .tree { list-style: none; padding: 0 0 0 22px; margin: 0; position: relative; }
+  .tree::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--c); opacity: .5; }
+  .tree li { position: relative; padding: .4rem 0 .8rem; }
+  .tree li::before { content: ''; position: absolute; left: -19px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
+  .sibs { display: flex; gap: 12px; flex-wrap: wrap; margin-top: .3rem; }
+  .node { display: flex; flex-direction: column; align-items: center; width: 96px; text-align: center; text-decoration: none; line-height: 1.35; font-size: .88rem; }
+  .node.dead :global(.portrait) { filter: grayscale(.85); }
+</style>

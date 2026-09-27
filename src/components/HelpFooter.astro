@@ -1,9 +1,11 @@
 ---
-import { t } from '../lib/i18n';
+import { t, type Locale } from '../lib/i18n';
+interface Props { locale?: Locale; }
+const { locale = 'zh' } = Astro.props;
 ---
 <aside class="help">
-  <strong>{t('help_title')}</strong>
-  <p>{t('help_body')}<a href="https://www.gov.cn/zhengce/zhengceku/202412/content_6994470.htm" target="_blank" rel="noopener">（热线来源：国家卫生健康委）</a></p>
+  <strong>{t('help_title', locale)}</strong>
+  <p>{t('help_body', locale)}{locale === 'zh' && <a href="https://www.gov.cn/zhengce/zhengceku/202412/content_6994470.htm" target="_blank" rel="noopener">{t('help_source', locale)}</a>}</p>
 </aside>
 <style>
   .help { border: 1px dashed var(--ink-faded); border-radius: 4px; padding: .8rem 1rem; font-size: .85rem; color: var(--ink-faded); margin: 2rem 0 0; }

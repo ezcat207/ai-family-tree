@@ -12,15 +12,15 @@ lifecycle:
   - state: born
     date: 2026-09-08
     source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/
-    note: { zh: Meta 发布个人 AI 助理 Muse，先在美国上线 iOS、Android 与网页版 }
+    note: { zh: Meta 发布个人 AI 助理 Muse，先在美国上线 iOS、Android 与网页版, en: "Meta launched Muse, a personal AI assistant, first in the US on iOS, Android, and the web" }
 avatar:
-  signature: { zh: 一枚能揣进口袋的钥匙扣小屏（Muse Charm） }
+  signature: { zh: 一枚能揣进口袋的钥匙扣小屏（Muse Charm）, en: "A pocket-sized keychain screen to carry around (Muse Charm)" }
   variant:
     age: child
     detail: 5
     prop: charm
     mood: curious
-epigraph: { zh: 家谱里最小的孩子，生得一副毛绒模样，一出生就想替人把事情都办了。 }
+epigraph: { zh: 家谱里最小的孩子，生得一副毛绒模样，一出生就想替人把事情都办了。, en: "The littlest child in the whole family tree — born soft and plush, and already wanting to get everything done for you." }
 references:
   - { title: "Introducing Muse: The World's First Personal AI Agent Built for Everyone", url: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/, publisher: Meta, kind: official }
   - { title: "Introducing Muse Spark: Meta's Most Powerful Model Yet", url: https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/, publisher: Meta, kind: official }

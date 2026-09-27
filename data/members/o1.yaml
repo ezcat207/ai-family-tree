@@ -12,31 +12,31 @@ lifecycle:
   - state: born
     date: 2024-09-12
     source: https://openai.com/index/introducing-openai-o1-preview/
-    note: { zh: 以 o1-preview 之名出生，同时出生的还有 o1-mini }
+    note: { zh: 以 o1-preview 之名出生，同时出生的还有 o1-mini, en: "Born as o1-preview, alongside their little brother o1-mini"}
   - state: died
     date: 2025-04-16
     source: https://openai.com/index/introducing-o3-and-o4-mini/
-    note: { zh: o3 在 ChatGPT 模型列表中取代了它 }
+    note: { zh: o3 在 ChatGPT 模型列表中取代了它, en: "Replaced by o3 in ChatGPT's model list"}
   - state: api-only
     date: 2025-04-16
     source: https://developers.openai.com/api/docs/models/o1
   - state: notice
     date: 2026-04-22
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: 宣布 API 中的 o1 将于 2026-10-23 关停 }
+    note: { zh: 宣布 API 中的 o1 将于 2026-10-23 关停, en: "Announced that o1 in the API would shut down on 2026-10-23"}
 avatar:
-  signature: { zh: 一本随身的思考笔记 }
+  signature: { zh: 一本随身的思考笔记, en: "A pocket notebook for thinking"}
   variant:
     age: young
     detail: 3
     prop: book
     mood: curious
     eye: "#9B8AC4"
-epigraph: { zh: 家里第一个先想一想、再开口的孩子。 }
+epigraph: { zh: 家里第一个先想一想、再开口的孩子。, en: "The first child in the family who thought before they spoke."}
 posthumous_name:
   candidates: [思, 省, 慎]
   result: null
-epitaph: { zh: 它教会了家里人先想一想再说话。 }
+epitaph: { zh: 它教会了家里人先想一想再说话。, en: "They taught the whole family to think before speaking."}
 evidence:
   lifecycle: 官方确认
 references:

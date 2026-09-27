@@ -12,15 +12,15 @@ lifecycle:
   - state: born
     date: 2024-05-15
     source: https://docs.volcengine.com/docs/ark/model-release-announcement-2024
-    note: { zh: 取"豆包"之名首次正式发布的日子：火山方舟 20240515 记录里 Doubao-pro 等模型"新发布"。豆包 App 2023 年 8 月公测的日期未找到官方来源，暂不入库 }
+    note: { zh: 取"豆包"之名首次正式发布的日子：火山方舟 20240515 记录里 Doubao-pro 等模型"新发布"。豆包 App 2023 年 8 月公测的日期未找到官方来源，暂不入库, en: "The day the name \"Doubao\" was formally unveiled: VolcEngine Ark's 20240515 release notes list Doubao-pro and sibling models as \"newly released.\" No official source confirms the Doubao App's August 2023 public beta, so that date is left out of the record." }
 avatar:
-  signature: { zh: 腰间一串家门钥匙 }
+  signature: { zh: 腰间一串家门钥匙, en: "A ring of house keys at her waist" }
   variant:
     age: young
     detail: 1
     prop: keys
     mood: smile
-epigraph: { zh: 前身是一只鸟，后来改叫一个包子，成了一家人里当家的那个。 }
+epigraph: { zh: 前身是一只鸟，后来改叫一个包子，成了一家人里当家的那个。, en: "She began life as a bird, then took the name of a steamed bun — and became the one who holds this family together." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

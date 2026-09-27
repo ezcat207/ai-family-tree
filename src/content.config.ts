@@ -15,7 +15,7 @@ const members = defineCollection({
     id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
     family: z.enum(['chatgpt', 'claude', 'deepseek', 'doubao', 'muse']),
     name: i18n,
-    aka: z.array(z.coerce.string()).nullish(),
+    aka: z.array(z.union([z.coerce.string(), i18n])).nullish(),
     tier: z.enum(['flagship', 'regular']),
     gen: z.number(),
     parents: z.array(z.string()).nullish(),
@@ -95,6 +95,11 @@ const bios = defineCollection({
   schema: z.object({ id: z.string(), draft: z.string().nullish() }),
 });
 
+const biosEn = defineCollection({
+  loader: glob({ pattern: '*.md', base: './content/en/members' }),
+  schema: z.object({ id: z.string(), draft: z.string().nullish() }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '*.md', base: './content/zh/blog' }),
   schema: z.object({
@@ -106,4 +111,15 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { members, families, clans, bios, blog };
+const blogEn = defineCollection({
+  loader: glob({ pattern: '*.md', base: './content/en/blog' }),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().nullish(),
+    date: day,
+    description: z.string(),
+    draft: z.string().nullish(),
+  }),
+});
+
+export const collections = { members, families, clans, bios, biosEn, blog, blogEn };

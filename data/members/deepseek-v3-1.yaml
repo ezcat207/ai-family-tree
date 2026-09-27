@@ -15,31 +15,31 @@ lifecycle:
   - state: head
     date: 2025-08-21
     source: https://api-docs.deepseek.com/zh-cn/news/news250821
-    note: { zh: 官方 App 与网页端同步升级为 V3.1，一个模型同时管「思考」与「不思考」 }
+    note: { zh: 官方 App 与网页端同步升级为 V3.1，一个模型同时管「思考」与「不思考」, en: "Official App and web chat upgraded to V3.1 in sync — one model handling both \"thinking\" and \"non-thinking\"" }
   - state: preserved
     date: 2025-08-21
     source: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
-    note: { zh: 发布即开源权重 }
+    note: { zh: 发布即开源权重, en: "Weights open-sourced at launch" }
   - state: died
     date: 2025-09-29
     source: https://api-docs.deepseek.com/zh-cn/news/news250929
-    note: { zh: 官方 App、网页端、小程序更新为 V3.2-Exp }
+    note: { zh: 官方 App、网页端、小程序更新为 V3.2-Exp, en: "Official App, web chat, and mini-program updated to V3.2-Exp" }
   - state: rest
     date: 2025-10-15
     source: https://api-docs.deepseek.com/news/news250929
-    note: { zh: 供对比测试的 V3.1-Terminus 临时 API 保留至 2025-10-15 15:59（UTC） }
+    note: { zh: 供对比测试的 V3.1-Terminus 临时 API 保留至 2025-10-15 15:59（UTC）, en: "The temporary V3.1-Terminus API for comparison testing remained until 2025-10-15 15:59 (UTC)" }
 avatar:
-  signature: { zh: 一本从兄长那里接过来的草稿本 }
+  signature: { zh: 一本从兄长那里接过来的草稿本, en: "A draft notebook handed down from her elder brother" }
   variant:
     age: young
     detail: 3
     prop: book
     mood: calm
-epigraph: { zh: 它把想与不想合进了一个身体，只当了一个多月的家。 }
+epigraph: { zh: 它把想与不想合进了一个身体，只当了一个多月的家。, en: "She folded thinking and not-thinking into one body — and held the household for just over a month." }
 posthumous_name:
   candidates: [合, 承, 捷, 终, 继]
   result: null
-epitaph: { zh: 它的最后一个名字，叫 Terminus。 }
+epitaph: { zh: 它的最后一个名字，叫 Terminus。, en: "Her last name was Terminus." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

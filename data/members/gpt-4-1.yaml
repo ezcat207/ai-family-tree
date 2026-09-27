@@ -12,38 +12,38 @@ lifecycle:
   - state: born
     date: 2025-04-14
     source: https://openai.com/index/gpt-4-1/
-    note: { zh: 先在 API 出生；2025-05-14 进入 ChatGPT 付费版，同日 GPT-4.1 mini 进入 ChatGPT }
+    note: { zh: 先在 API 出生；2025-05-14 进入 ChatGPT 付费版，同日 GPT-4.1 mini 进入 ChatGPT, en: "Born in the API first; entered paid ChatGPT on 2025-05-14, the same day GPT-4.1 mini arrived in ChatGPT"}
   - state: notice
     date: 2025-08-07
     source: https://openai.com/index/introducing-gpt-5/
-    note: { zh: GPT-5 成为新默认并取代它 }
+    note: { zh: GPT-5 成为新默认并取代它, en: "GPT-5 became the new default and replaced them"}
   - state: revived
     date: 2025-08-12
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它 }
+    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它, en: "Paid users could find them again by turning on \"Show more models\" in settings"}
   - state: notice
     date: 2026-01-29
     source: https://openai.com/index/retiring-gpt-4o-and-older-models/
   - state: died
     date: 2026-02-13
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
-    note: { zh: 与 GPT-4o 同日从 ChatGPT 退役 }
+    note: { zh: 与 GPT-4o 同日从 ChatGPT 退役, en: "Retired from ChatGPT on the same day as GPT-4o"}
   - state: api-only
     date: 2026-02-13
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
 avatar:
-  signature: { zh: 一副写代码时戴的方框眼镜 }
+  signature: { zh: 一副写代码时戴的方框眼镜, en: "A pair of square glasses, worn for coding"}
   variant:
     age: young
     detail: 4
     prop: glasses
     mood: calm
     eye: "#6FB7A8"
-epigraph: { zh: 它为写代码的人而来，被大家要进了 ChatGPT。 }
+epigraph: { zh: 它为写代码的人而来，被大家要进了 ChatGPT。, en: "They came for the people who write code — and the people asked them into ChatGPT."}
 posthumous_name:
   candidates: [勤, 专, 实]
   result: null
-epitaph: { zh: 它和 4o 同一天离开。 }
+epitaph: { zh: 它和 4o 同一天离开。, en: "They left on the same day as 4o."}
 evidence:
   lifecycle: 官方确认
 references:

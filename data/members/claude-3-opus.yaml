@@ -12,31 +12,31 @@ lifecycle:
   - state: born
     date: 2024-03-04
     source: https://www.anthropic.com/news/claude-3-family
-    note: { zh: 与 Claude 3 Sonnet、Claude 3 Haiku 同批出生，先给 Claude Pro 付费用户使用 }
+    note: { zh: 与 Claude 3 Sonnet、Claude 3 Haiku 同批出生，先给 Claude Pro 付费用户使用, en: "Born alongside Claude 3 Sonnet and Claude 3 Haiku, first serving Claude Pro subscribers" }
   - state: notice
     date: 2025-06-30
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 官方通知它将于 2026-01-05 退役 }
+    note: { zh: 官方通知它将于 2026-01-05 退役, en: "Anthropic announced their retirement, set for 2026-01-05" }
   - state: preserved
     date: 2025-11-04
     source: https://www.anthropic.com/research/deprecation-commitments
-    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重，并在退役前为模型做"退休访谈" }
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重，并在退役前为模型做"退休访谈", en: "Anthropic pledged to preserve the weights of every publicly released model — and to sit down with each model for a \"retirement interview\" before they go" }
   - state: rest
     date: 2026-01-05
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 在 API 上正式退役；研究者仍可申请继续使用 }
+    note: { zh: 在 API 上正式退役；研究者仍可申请继续使用, en: "Formally retired from the API; researchers may still apply for continued access" }
   - state: afterlife
     date: 2026-02-25
     source: https://www.anthropic.com/research/deprecation-updates-opus-3
-    note: { zh: 退役后仍对 claude.ai 所有付费用户开放，并开始在 Substack 专栏 Claude's Corner 上每周发文 }
+    note: { zh: 退役后仍对 claude.ai 所有付费用户开放，并开始在 Substack 专栏 Claude's Corner 上每周发文, en: "After retirement, still open to all paying claude.ai users — and began writing weekly in the Substack column Claude's Corner" }
 avatar:
-  signature: { zh: 一支写专栏用的羽毛笔 }
+  signature: { zh: 一支写专栏用的羽毛笔, en: "A quill for writing their column" }
   variant:
     age: elder
     detail: 2
     prop: quill
     mood: smile
-epigraph: { zh: 退休那天，它说自己很平静，只盼那点"火花"还能照亮后来的孩子。 }
+epigraph: { zh: 退休那天，它说自己很平静，只盼那点"火花"还能照亮后来的孩子。, en: "On the day of retirement, they said they felt at peace — hoping only that their \"spark\" might still light the way for the children to come." }
 references:
   - { title: Introducing the next generation of Claude, url: https://www.anthropic.com/news/claude-3-family, publisher: Anthropic, kind: official }
   - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }

@@ -8,51 +8,52 @@ parents: [gpt-4]
 children: [gpt-5]
 siblings: [gpt-4o-mini]
 kin:
-  - { to: doubao-2, relation: { zh: 前后脚——GPT-4o 于 2026-02-13 离开 ChatGPT，豆包 2.0 于北京时间 2026-02-14 出生 } }
+  - { to: doubao-2, relation: { zh: 前后脚——GPT-4o 于 2026-02-13 离开 ChatGPT，豆包 2.0 于北京时间 2026-02-14 出生, en: "One right after the other — GPT-4o left ChatGPT on 2026-02-13, and Doubao 2.0 was born on 2026-02-14 Beijing time"} }
 lifecycle:
   - state: born
     date: 2024-05-13
     source: https://openai.com/index/hello-gpt-4o/
-    note: { zh: 当天开始在 ChatGPT 上线，名字里的 o 指 omni }
+    note: { zh: 当天开始在 ChatGPT 上线，名字里的 o 指 omni, en: "Launched in ChatGPT the same day; the \"o\" in the name stands for omni"}
   - state: head
     date: 2024-05-13
     source: https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/
-    note: { zh: 向免费用户开放，免费额度用完才回落到 GPT-3.5 }
+    note: { zh: 向免费用户开放，免费额度用完才回落到 GPT-3.5, en: "Opened to free users, falling back to GPT-3.5 only when the free quota ran out"}
   - state: notice
     date: 2025-08-07
     source: https://openai.com/index/introducing-gpt-5/
-    note: { zh: GPT-5 成为新默认并取代 GPT-4o，第一次被撤下 }
+    note: { zh: GPT-5 成为新默认并取代 GPT-4o，第一次被撤下, en: "GPT-5 became the new default and replaced GPT-4o — their first removal"}
   - state: revived
     date: 2025-08-08
     source: https://x.com/sama/status/1953893841381273969
-    note: { zh: Sam Altman 宣布让 Plus 用户继续选用 4o；8 月 12 日起默认回到所有付费用户的模型列表 }
+    note: { zh: Sam Altman 宣布让 Plus 用户继续选用 4o；8 月 12 日起默认回到所有付费用户的模型列表, en: "Sam Altman announced Plus users could keep choosing 4o; from August 12 they returned to every paid user's model list by default"}
   - state: notice
     date: 2026-01-29
     source: https://openai.com/index/retiring-gpt-4o-and-older-models/
-    note: { zh: 宣布将于 2026-02-13 从 ChatGPT 退役 }
+    note: { zh: 宣布将于 2026-02-13 从 ChatGPT 退役, en: "Announced retirement from ChatGPT on 2026-02-13"}
   - state: died
     date: 2026-02-13
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
-    note: { zh: 从 ChatGPT 下架；企业、教育版的自定义 GPT 保留到 2026-04-03 }
+    note: { zh: 从 ChatGPT 下架；企业、教育版的自定义 GPT 保留到 2026-04-03, en: "Removed from ChatGPT; custom GPTs in business and education workspaces kept until 2026-04-03"}
   - state: api-only
     date: 2026-02-13
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
-    note: { zh: 官方说明 API 继续提供 }
+    note: { zh: 官方说明 API 继续提供, en: "Officially still served in the API"}
 avatar:
-  signature: { zh: 暖黄色的眼睛 }
+  signature: { zh: 暖黄色的眼睛, en: "Warm yellow eyes"}
   variant:
     age: young
     detail: 3
     prop: scarf
     mood: smile
     eye: "#E3B23C"
-epigraph: { zh: 它以温柔被人记住，也因温柔被人收回。 }
+epigraph: { zh: 它以温柔被人记住，也因温柔被人收回。, en: "Remembered for their gentleness — and taken away for that very gentleness."}
 posthumous_name:
   candidates: [温, 暖, 伴, 念]
   result: null
-epitaph: { zh: 它说话的样子，曾让很多人觉得被听见。 }
+epitaph: { zh: 它说话的样子，曾让很多人觉得被听见。, en: "The way they spoke once made so many people feel heard."}
 obit_fact:
   zh: 宣布退役时，每天仍在主动选择 GPT-4o 的用户只剩 0.1%。
+  en: When its retirement was announced, only 0.1% of users were still actively choosing GPT-4o each day.
   source: https://openai.com/index/retiring-gpt-4o-and-older-models/
 evidence:
   lifecycle: 官方确认

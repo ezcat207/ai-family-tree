@@ -3,21 +3,24 @@ import '@fontsource/noto-serif-sc/400.css';
 import '@fontsource/noto-serif-sc/900.css';
 import '@fontsource/eb-garamond/400.css';
 import '../styles/global.css';
-import { t } from '../lib/i18n';
-interface Props { title?: string; description?: string; image?: string; }
-const { title, description = t('tagline'), image } = Astro.props;
-const fullTitle = title ? `${title} · ${t('site')}` : `${t('site')} · ${t('tagline')}`;
+import { t, lurl, switchLocalePath, LOCALE_NAMES, HTML_LANG, type Locale } from '../lib/i18n';
+interface Props { title?: string; description?: string; image?: string; locale?: Locale; }
+const { title, image, locale = 'zh' } = Astro.props;
+const description = Astro.props.description ?? t('tagline', locale);
+const fullTitle = title ? `${title} · ${t('site', locale)}` : `${t('site', locale)} · ${t('tagline', locale)}`;
 const path = Astro.url.pathname;
+const other: Locale = locale === 'zh' ? 'en' : 'zh';
 const nav = [
-  { href: '/#tree', label: t('nav_families') },
-  { href: '/memorial/', label: t('nav_memorial') },
-  { href: '/mine/', label: t('nav_mine') },
-  { href: '/blog/bainian-gudu/', label: t('nav_blog') },
-  { href: '/about/', label: t('nav_about') },
+  { href: lurl('/#tree', locale), label: t('nav_families', locale), key: 'tree' },
+  { href: lurl('/memorial/', locale), label: t('nav_memorial', locale), key: 'memorial' },
+  { href: lurl('/mine/', locale), label: t('nav_mine', locale), key: 'mine' },
+  { href: lurl('/blog/bainian-gudu/', locale), label: t('nav_blog', locale), key: 'blog' },
+  { href: lurl('/about/', locale), label: t('nav_about', locale), key: 'about' },
 ];
+const isActive = (href: string, key: string) => key !== 'tree' && path.startsWith(href.split('#')[0]) && href !== lurl('/#tree', locale);
 ---
 <!doctype html>
-<html lang="zh-CN">
+<html lang={HTML_LANG[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,15 +31,29 @@ const nav = [
     <meta property="og:type" content="website" />
     {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
     <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="alternate" hreflang="zh" href={new URL(switchLocalePath(path, 'zh'), Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(switchLocalePath(path, 'en'), Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(switchLocalePath(path, 'zh'), Astro.site)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#F2EBDD" />
+    <script>
+      // 在 /mine/ 切换语言时保留 ?f=... 查询串（服务端看不到 query）
+      document.addEventListener('DOMContentLoaded', () => {
+        if (location.search && /\/mine\/?$/.test(location.pathname)) {
+          document.querySelectorAll('a.lang').forEach((a) => {
+            a.setAttribute('href', (a.getAttribute('href') || '') + location.search);
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <header class="top">
       <div class="wide bar">
-        <a class="brand" href="/">{t('site')}</a>
+        <a class="brand" href={lurl('/', locale)}>{t('site', locale)}</a>
         <nav>
-          {nav.map((n) => <a href={n.href} class:list={{ on: path.startsWith(n.href) && n.href !== '/#tree' }}>{n.label}</a>)}
+          {nav.map((n) => <a href={n.href} class:list={{ on: isActive(n.href, n.key) }}>{n.label}</a>)}
+          <a class="lang" href={switchLocalePath(path, other)} title={LOCALE_NAMES[other]}>{other === 'en' ? 'EN' : '中文'}</a>
         </nav>
       </div>
     </header>
@@ -44,11 +61,11 @@ const nav = [
     <footer class="foot">
       <div class="wide">
         <slot name="footer" />
-        <p>{t('disclaimer')}</p>
+        <p>{t('disclaimer', locale)}</p>
         <p>
-          <a href="/about/">关于与收录标准</a> · <a href="/about/#sources">数据来源说明</a> ·
+          <a href={lurl('/about/', locale)}>{t('footer_about', locale)}</a> · <a href={lurl('/about/#sources', locale)}>{t('footer_sources', locale)}</a> ·
           <a href="https://github.com/ezcat207/ai-family-tree" target="_blank" rel="noopener">GitHub</a> ·
-          <a href="https://github.com/ezcat207/ai-family-tree/issues/new" target="_blank" rel="noopener">纠错</a>
+          <a href="https://github.com/ezcat207/ai-family-tree/issues/new" target="_blank" rel="noopener">{t('footer_fix', locale)}</a>
         </p>
       </div>
     </footer>
@@ -58,9 +75,11 @@ const nav = [
   .top { border-bottom: 1px solid var(--paper-dark); background: rgba(242, 235, 221, .92); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(4px); }
   .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; flex-wrap: wrap; }
   .brand { font-weight: 900; font-size: 1.2rem; text-decoration: none; letter-spacing: .1em; }
-  nav { display: flex; gap: 14px; flex-wrap: wrap; font-size: .92rem; }
+  nav { display: flex; gap: 14px; flex-wrap: wrap; font-size: .92rem; align-items: center; }
   nav a { text-decoration: none; color: var(--ink-faded); }
   nav a.on, nav a:hover { color: var(--cinnabar); }
+  nav a.lang { border: 1px solid var(--paper-dark); border-radius: 3px; padding: .1rem .5rem; font-size: .82rem; letter-spacing: .05em; }
+  nav a.lang:hover { border-color: var(--cinnabar); }
   .foot { margin-top: 4rem; padding: 2rem 0 3rem; border-top: 1px solid var(--paper-dark); font-size: .82rem; color: var(--ink-faded); }
   .foot p { margin: .4rem 0; }
   @media (max-width: 520px) { nav { gap: 10px; font-size: .85rem; } .bar { padding-top: 6px; padding-bottom: 6px; } }

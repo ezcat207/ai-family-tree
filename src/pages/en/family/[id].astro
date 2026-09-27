@@ -1,0 +1,9 @@
+---
+import FamilyPage from '../../../components/pages/FamilyPage.astro';
+export async function getStaticPaths() {
+  const { loadAll } = await import('../../../lib/data');
+  const all = await loadAll();
+  return all.families.map((f) => ({ params: { id: f.id }, props: { id: f.id } }));
+}
+---
+<FamilyPage locale="en" id={Astro.props.id} />

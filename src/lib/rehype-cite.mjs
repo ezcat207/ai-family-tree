@@ -1,5 +1,6 @@
-// 把正文里的 [来源](url) 渲染成上标编号 [1]，并在文末附「本文引用」列表。
+// 把正文里的 [来源](url) 渲染成上标编号 [1]，并在文末附引用列表。
 // 同一个链接多次引用时共用一个编号。
+// 用法：rehypeCite({ heading: 'References' })；不传则用中文「本文引用」。
 const CITE_TEXT = /^(来源|出处|source)\s*\d*$/i;
 
 const textOf = (node) =>
@@ -16,7 +17,8 @@ const shortUrl = (href) => {
   }
 };
 
-export default function rehypeCite() {
+export default function rehypeCite(opts = {}) {
+  const heading = opts.heading || '本文引用';
   return (tree) => {
     const urls = [];
     const visit = (node) => {
@@ -57,7 +59,7 @@ export default function rehypeCite() {
       tagName: 'section',
       properties: { className: ['cites'] },
       children: [
-        { type: 'element', tagName: 'h3', properties: {}, children: [{ type: 'text', value: '本文引用' }] },
+        { type: 'element', tagName: 'h3', properties: {}, children: [{ type: 'text', value: heading }] },
         {
           type: 'element',
           tagName: 'ol',

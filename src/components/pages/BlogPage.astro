@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { renderMd } from '../../lib/markdown';
+import { fmt } from '../../lib/data';
+import LongImage from '../LongImage.astro';
+import ShareTools from '../ShareTools.astro';
+import { t, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale; slug: string; }
+const { locale, slug } = Astro.props;
+
+const posts = await getCollection(locale === 'en' ? 'blogEn' : 'blog');
+const post = posts.find((p) => p.id === slug)!;
+const html = await renderMd(post.body ?? '', locale);
+const kicker = locale === 'en' ? 'AI Family Tree · Stories' : 'AI 家谱 · 特辑';
+const draftNote = locale === 'en'
+  ? 'This is an AI first draft, pending human review. Facts are cited — click the numbers to verify.'
+  : '本篇为 AI 初稿，尚待人工审阅；文中事实均附来源，可点编号核对。';
+const longTitle = locale === 'en' ? 'Story long image' : '特辑长图';
+const longNote = locale === 'en'
+  ? 'A family-tree long image you can share on social media.'
+  : '一张可以发到小红书、朋友圈的家族树长图。';
+---
+<Base title={post.data.title} description={post.data.description} locale={locale}>
+  <article class="wrap">
+    <p class="muted small kicker">{kicker}</p>
+    <h1>{post.data.title}</h1>
+    {post.data.subtitle && <p class="sub">{post.data.subtitle}</p>}
+    <p class="muted small latin">{fmt(post.data.date)}</p>
+    {post.data.draft && <p class="draft small">{draftNote}</p>}
+    <div class="prose" set:html={html} />
+    {slug === 'bainian-gudu' && (
+      <section>
+        <h2>{longTitle}</h2>
+        <p class="muted small">{longNote}</p>
+        {locale === 'zh' && <LongImage />}
+        {locale === 'en' && (
+          <p class="muted small">{t('longimage_en_note', locale)}</p>
+        )}
+      </section>
+    )}
+  </article>
+  <ShareTools locale={locale} />
+</Base>
+<style>
+  h1 { margin: .2rem 0; font-size: clamp(1.6rem, 6vw, 2.3rem); }
+  .kicker { margin-top: 2rem; letter-spacing: .3em; }
+  .sub { font-size: 1.1rem; color: var(--ink-faded); margin: .2rem 0; }
+  .draft { background: rgba(227, 178, 60, .15); border-left: 3px solid var(--butterfly); padding: .4rem .8rem; }
+</style>

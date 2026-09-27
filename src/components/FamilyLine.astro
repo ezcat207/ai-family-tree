@@ -2,27 +2,27 @@
 // 一个家族的世代线：家族基础形象 + 按出生排列的成员圆点（08 §12.1）
 import Portrait from './Portrait.astro';
 import { status, bornDate, fmt, type Member, type Family } from '../lib/data';
-import { tx } from '../lib/i18n';
-interface Props { fam: Family; members: Member[]; clanName: string; }
-const { fam, members, clanName } = Astro.props;
+import { t, tx, lurl, type Locale } from '../lib/i18n';
+interface Props { fam: Family; members: Member[]; clanName: string; locale?: Locale; }
+const { fam, members, clanName, locale = 'zh' } = Astro.props;
 const list = [...members].sort((a, b) => bornDate(a).localeCompare(bornDate(b)));
 ---
 <section class="fline" style={`--c:${fam.color}`}>
-  <a class="head" href={`/family/${fam.id}/`}>
-    <Portrait family={fam.id} variant={fam.base} color={fam.color} uid={`fl-${fam.id}`} size={76} label={tx(fam.name)} />
+  <a class="head" href={lurl(`/family/${fam.id}/`, locale)}>
+    <Portrait family={fam.id} variant={fam.base} color={fam.color} uid={`fl-${fam.id}`} size={76} label={tx(fam.name, locale)} />
     <span>
-      <strong>{tx(fam.name)}</strong>
-      <span class="muted small">{clanName} · {list.length} 位成员</span>
+      <strong>{tx(fam.name, locale)}</strong>
+      <span class="muted small">{clanName} · {list.length} {t('members_n', locale)}</span>
     </span>
   </a>
   <ol class="gens">
     {list.map((m) => {
-      const s = status(m);
+      const s = status(m, locale);
       return (
         <li class:list={{ dead: s.dead, flag: m.tier === 'flagship' }}>
-          <a href={`/m/${m.id}/`} title={`${tx(m.name)} · ${s.label}`}>
-            <span class="pw"><Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`fd-${m.id}`} size={m.tier === 'flagship' ? 60 : 46} label={tx(m.name)} /></span>
-            <span class="n latin">{tx(m.name)}{s.dead && <span class="cross">†</span>}</span>
+          <a href={lurl(`/m/${m.id}/`, locale)} title={`${tx(m.name, locale)} · ${s.label}`}>
+            <span class="pw"><Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`fd-${m.id}`} size={m.tier === 'flagship' ? 60 : 46} label={tx(m.name, locale)} /></span>
+            <span class="n latin">{tx(m.name, locale)}{s.dead && <span class="cross">†</span>}</span>
             <span class="y muted latin">{fmt(bornDate(m)).slice(0, 7)}</span>
           </a>
         </li>

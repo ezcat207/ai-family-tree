@@ -12,15 +12,15 @@ lifecycle:
   - state: born
     date: 2025-11-24
     source: https://www.anthropic.com/news/claude-opus-4-5
-    note: { zh: 当天即在 Claude App、API 和三大云平台上线 }
+    note: { zh: 当天即在 Claude App、API 和三大云平台上线, en: "Live on day one across the Claude app, the API, and the three major cloud platforms" }
 avatar:
-  signature: { zh: 一盏长明灯：长长的对话不再撞墙 }
+  signature: { zh: 一盏长明灯：长长的对话不再撞墙, en: "An ever-burning lamp: long conversations no longer hit a wall" }
   variant:
     age: elder
     detail: 4
     prop: lantern
     mood: calm
-epigraph: { zh: Opus 3 在 API 上退役那天，官方推荐的接替者就是它。 }
+epigraph: { zh: Opus 3 在 API 上退役那天，官方推荐的接替者就是它。, en: "On the day Opus 3 retired from the API, Anthropic named them as the recommended successor." }
 references:
   - { title: Introducing Claude Opus 4.5, url: https://www.anthropic.com/news/claude-opus-4-5, publisher: Anthropic, kind: official }
   - { title: Claude Platform release notes, url: https://platform.claude.com/docs/en/release-notes/overview, publisher: Anthropic, kind: official }

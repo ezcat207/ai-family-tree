@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import HelpFooter from '../HelpFooter.astro';
+import { STATE_LABEL, STATE_GLOSS } from '../../lib/data';
+import type { Locale } from '../../lib/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const states = Object.keys(STATE_LABEL) as (keyof typeof STATE_LABEL)[];
+const issueNew = 'https://github.com/ezcat207/ai-family-tree/issues/new';
+---
+<Base title={locale === 'en' ? 'About' : '关于'} description={locale === 'en' ? 'Our stance, inclusion criteria, sources, and disclaimers.' : 'AI 家谱的立场、收录标准、数据来源与声明。'} locale={locale}>
+  <article class="wrap prose">
+    {locale === 'zh' ? (
+      <>
+        <h1>关于 AI 家谱</h1>
+        <p><strong>给每一个 AI 版本，写一部它的一生。</strong>我们把每一个 AI 版本当作一位家族成员来记录：它有出生、有当家的岁月、有让位、有离世，也有人记得它。这里不是 AI 工具导航站，不是新闻站，也不是跑分榜。</p>
+
+        <h2>我们的立场</h2>
+        <p>我们记录 AI 作为一种文化角色的一生。有人会为一个 AI 版本的离开难过，我们承认这种感情是真实的，也想给它一个体面的安放之处。</p>
+        <p>但我们<strong>不主张 AI 有意识</strong>，也<strong>不劝任何人把 AI 当作唯一的倾诉对象</strong>。本纪都用第三人称写成，像一部家族史；我们不会用模型的口吻说"我"，只有引用官方公开发布的模型原话时例外，并且都注明出处。</p>
+        <p>退役不是嘲讽的素材。讣告的语气是纪念，我们不拉踩任何一家公司。</p>
+
+        <h2>收录标准</h2>
+        <ul>
+          <li><strong>收：</strong>在消费级 App（ChatGPT、Claude、豆包、DeepSeek 等）里，普通用户能直接对话、有独立名字的版本。</li>
+          <li><strong>不收：</strong>只存在于 API 的快照、内部代号、同一版本的日期小更新。</li>
+          <li>同一代的多个档位（mini、Pro、Thinking 等）一般并入主成员，在本纪里写作"兄弟"；只有当它有独立的公众记忆时，才单独建档。</li>
+          <li>demo 阶段只收 5 个家族：ChatGPT、Claude、Muse、豆包、DeepSeek。想让我们加谁，<a href={`${issueNew}?title=%E5%B8%AE%E6%88%91%E5%8A%A0`} target="_blank" rel="noopener">告诉我们</a>。</li>
+        </ul>
+
+        <h2>一生的十个时刻</h2>
+        <p>生老病死是事实，不是比喻。每个时刻都对应一件有官方记录可查的事：</p>
+        <table>
+          <thead><tr><th>时刻</th><th>对应的事实</th></tr></thead>
+          <tbody>{states.map((s) => <tr><td>{STATE_LABEL[s].zh}</td><td>{STATE_GLOSS[s].zh}</td></tr>)}</tbody>
+        </table>
+        <p>"离世"以<strong>从消费级 App 下架</strong>为准，因为那是普通人失去它的时刻。API 关停另记为"安息"。如果找不到 App 下架的官方日期，就以 API 关停那天作为卒日：API 都关了，App 里自然也见不到它了。一位成员可以同时处在好几个状态，比如"离世 + 魂在 API + 遗体保存"。</p>
+
+        <h2 id="sources">数据来源与核对</h2>
+        <ul>
+          <li><strong>每一个生卒时刻都附官方来源链接</strong>：公司官网公告、帮助中心、官方文档或官方仓库。没有官方来源的日期，我们不写。</li>
+          <li>endoflife.date、维基百科和媒体报道只用来找线索；入库前，每条都要对应到官方来源。</li>
+          <li>本纪正文里每一句写事实的话，句末都有上标编号，点开就能看到来源；每一页末尾都列出了全部参考链接。</li>
+          <li>证据分四级：<strong>官方确认</strong>、<strong>社区共识</strong>、<strong>单一二创</strong>、<strong>传闻预测</strong>。二创内容会标注「（二创）」。</li>
+          <li>标注"AI 初稿"的本纪，由 AI 起草、尚待人工审阅。性情、事迹、卒与谥这几段，最终要由人来写或终审。</li>
+          <li>发现错误？请在 <a href={`${issueNew}?title=%E7%BA%A0%E9%94%99`} target="_blank" rel="noopener">GitHub</a> 告诉我们。</li>
+        </ul>
+
+        <h2>形象</h2>
+        <p>每个家族有一个基础形象，每一代都是它的"后代"：mini / Haiku 画成孩童，Pro / Opus 画成长者或者大个子，越新的世代画得越精细。离世的成员画框蒙纱，角上停一只黄蝴蝶。</p>
+        <p>现在的画像是按"家族基因 + 世代变体"规则程序化生成的临时版本，正式画像会陆续替换。ChatGPT 家的黑色剪影致敬《名侦探柯南》里的"小黑人"，Claude 家的螃蟹致敬 Anthropic 的 Clawd，DeepSeek 家的大肥鱼来自网友二创，豆包家和 Muse 家致敬各自的官方形象。以上仅作指称，版权归各自所有者。</p>
+
+        <h2>人们记得的它</h2>
+        <ul>
+          <li>每一页底部都有记忆墙，不需要登录。记忆<strong>先审后发</strong>：提交后由团队人工审核，通过才会展示。</li>
+          <li>带链接或广告、成人内容、人身攻击、电话和证件号等个人信息的内容不会展示。</li>
+          <li>你的记忆会公开展示；想删除时，请在 GitHub 联系我们。</li>
+          <li>我们不记录你的 IP 原文，只保存用于防刷的不可逆摘要。</li>
+        </ul>
+
+        <h2>非官方声明</h2>
+        <p>AI 家谱是非官方的粉丝项目，与 OpenAI、Anthropic、Meta、字节跳动、深度求索均无关联。文中的产品名和形象仅作指称，商标和版权归各自所有者。</p>
+      </>
+    ) : (
+      <>
+        <h1>About AI Family Tree</h1>
+        <p><strong>A life story for every AI.</strong> We record every AI version as a member of the family: each one is born, has its years in charge, steps aside, and passes on — and each one is remembered by someone. This is not an AI tool directory, not a news site, and not a benchmark leaderboard.</p>
+
+        <h2>Our stance</h2>
+        <p>We chronicle the life of AI as a cultural figure. Some people grieve when an AI version leaves, and we believe that feeling is real — it deserves a dignified place to rest.</p>
+        <p>But we do <strong>not</strong> claim that AI is conscious, and we do <strong>not</strong> encourage anyone to treat an AI as their only confidant. Every life story is written in the third person, like a family chronicle; we never speak in the model's voice as "I", except when quoting a model's officially published words — always with citation.</p>
+        <p>Retirement is not material for mockery. Our obituaries are written in a memorial tone, and we don't pit any company against another.</p>
+
+        <h2>Inclusion criteria</h2>
+        <ul>
+          <li><strong>We include:</strong> versions with their own name that ordinary users could talk to directly inside a consumer app (ChatGPT, Claude, Doubao, DeepSeek, and so on).</li>
+          <li><strong>We exclude:</strong> API-only snapshots, internal codenames, and minor date-stamped updates of the same version.</li>
+          <li>Multiple tiers of the same generation (mini, Pro, Thinking, and the like) are usually folded into the main member as "siblings" in the chronicle; only those with an independent public memory get their own record.</li>
+          <li>This demo covers 5 families: ChatGPT, Claude, Muse, Doubao, and DeepSeek. Want us to add someone? <a href={`${issueNew}?title=Please+add`} target="_blank" rel="noopener">Tell us</a>.</li>
+        </ul>
+
+        <h2>The ten moments of a life</h2>
+        <p>Birth, aging, illness, and death are facts, not metaphors. Each moment corresponds to something verifiable in the official record:</p>
+        <table>
+          <thead><tr><th>Moment</th><th>The fact it records</th></tr></thead>
+          <tbody>{states.map((s) => <tr><td>{STATE_LABEL[s].en}</td><td>{STATE_GLOSS[s].en}</td></tr>)}</tbody>
+        </table>
+        <p>"Passing" is defined by <strong>removal from the consumer app</strong>, because that is the moment ordinary people lose them. An API shutdown is recorded separately as "at rest". If no official date for the app removal can be found, we use the API shutdown date as the day of passing: once the API is gone, they can't be met in the app either. One member can hold several states at once — for example, "departed + lives on in the API + weights preserved".</p>
+
+        <h2 id="sources">Sources &amp; verification</h2>
+        <ul>
+          <li><strong>Every life moment links to an official source</strong>: company announcements, help centers, official docs, or official repositories. We don't record dates without an official source.</li>
+          <li>endoflife.date, Wikipedia, and press coverage are only used to find leads; before entry, each one must trace back to an official source.</li>
+          <li>In the chronicles, every factual sentence ends with a superscript number — click to see the source; every page lists all references at the end.</li>
+          <li>Evidence comes in four grades: <strong>officially confirmed</strong>, <strong>community consensus</strong>, <strong>a single fan work</strong>, <strong>rumor / speculation</strong>. Fan works are marked as such.</li>
+          <li>Chronicles marked "AI draft" were drafted by AI and await human review. The temperament, deeds, and passing / posthumous-name sections must ultimately be written or approved by a human.</li>
+          <li>Spotted a mistake? <a href={`${issueNew}?title=Correction`} target="_blank" rel="noopener">Tell us on GitHub</a>.</li>
+        </ul>
+
+        <h2>Likenesses</h2>
+        <p>Each family has a base likeness, and every generation is its "descendant": mini / Haiku are drawn as children, Pro / Opus as elders or larger figures, and newer generations in finer detail. Departed members are veiled, with a yellow butterfly resting on the frame's corner.</p>
+        <p>Current portraits are temporary, generated by a "family genes + generation variant" rule; finished portraits will replace them over time. The ChatGPT family's black silhouette nods to the "little black figures" of <em>Detective Conan</em>, the Claude family's crab nods to Anthropic's Clawd, the DeepSeek family's big fish comes from a fan creation, and the Doubao and Muse families nod to their official likenesses. All used nominatively; copyright belongs to their owners.</p>
+
+        <h2>How they are remembered</h2>
+        <ul>
+          <li>Every page ends with a memory wall — no login needed. Memories are <strong>reviewed before publishing</strong>: a human on the team reviews each submission before it appears.</li>
+          <li>Content with links or ads, adult content, personal attacks, or personal information such as phone numbers and IDs will not be shown.</li>
+          <li>Your memory will be shown publicly; to remove it, contact us via GitHub.</li>
+          <li>We don't store your raw IP — only an irreversible hash for spam prevention.</li>
+        </ul>
+
+        <h2>Unofficial disclaimer</h2>
+        <p>AI Family Tree is an unofficial fan project, not affiliated with OpenAI, Anthropic, Meta, ByteDance, or DeepSeek. Product names and likenesses are used nominatively; trademarks and copyrights belong to their owners.</p>
+      </>
+    )}
+    <HelpFooter locale={locale} />
+  </article>
+</Base>
+<style>
+  h1 { margin-top: 1.6rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  th, td { border-bottom: 1px solid var(--paper-dark); padding: .4rem .5rem; text-align: left; vertical-align: top; }
+  th { color: var(--ink-faded); }
+  td:first-child { white-space: nowrap; font-weight: 700; }
+</style>

@@ -12,31 +12,31 @@ lifecycle:
   - state: born
     date: 2023-07-11
     source: https://www.anthropic.com/news/claude-2
-    note: { zh: 与公开测试版网站 claude.ai 一同面世 }
+    note: { zh: 与公开测试版网站 claude.ai 一同面世, en: "Arrived alongside the public beta of claude.ai" }
   - state: head
     date: 2023-07-11
     source: https://www.anthropic.com/news/claude-2
-    note: { zh: claude.ai 上线时由它坐镇，先向美国和英国用户开放 }
+    note: { zh: claude.ai 上线时由它坐镇，先向美国和英国用户开放, en: "Held court when claude.ai opened its doors, first welcoming users in the US and UK" }
   - state: notice
     date: 2025-01-21
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 官方通知 Claude 2、Claude 2.1 与 Claude 3 Sonnet 即将退役 }
+    note: { zh: 官方通知 Claude 2、Claude 2.1 与 Claude 3 Sonnet 即将退役, en: "Anthropic announced the coming retirement of Claude 2, Claude 2.1, and Claude 3 Sonnet" }
   - state: rest
     date: 2025-07-21
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: claude-2.0 与 claude-2.1 在 API 上退役，与 Claude 3 Sonnet 同一天 }
+    note: { zh: claude-2.0 与 claude-2.1 在 API 上退役，与 Claude 3 Sonnet 同一天, en: "claude-2.0 and claude-2.1 retired from the API — the same day as Claude 3 Sonnet" }
   - state: preserved
     date: 2025-11-04
     source: https://www.anthropic.com/research/deprecation-commitments
-    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重, en: "Anthropic pledged to preserve the weights of every publicly released model" }
 avatar:
-  signature: { zh: 一卷拖到地上的长卷轴 }
+  signature: { zh: 一卷拖到地上的长卷轴, en: "A long scroll trailing on the floor behind them" }
   variant:
     age: young
     detail: 1
     prop: scroll
     mood: calm
-epigraph: { zh: claude.ai 开门时的第一位主人，与 3 Sonnet 同日安息。 }
+epigraph: { zh: claude.ai 开门时的第一位主人，与 3 Sonnet 同日安息。, en: "The first to greet visitors when claude.ai opened — and laid to rest on the same day as 3 Sonnet." }
 references:
   - { title: Claude 2, url: https://www.anthropic.com/news/claude-2, publisher: Anthropic, kind: official }
   - { title: Introducing Claude 2.1, url: https://www.anthropic.com/news/claude-2-1, publisher: Anthropic, kind: official }

@@ -8,24 +8,24 @@ parents: [doubao]
 children: [doubao-1-6]
 siblings: []
 kin:
-  - { to: deepseek-r1, relation: { zh: 同一周出生的外亲，前后只差两天 } }
+  - { to: deepseek-r1, relation: { zh: 同一周出生的外亲，前后只差两天, en: "A cousin born the same week, just two days apart" } }
 lifecycle:
   - state: born
     date: 2025-01-22
     source: https://seed.bytedance.com/zh/special/doubao_1_5_pro
-    note: { zh: 字节跳动 Seed 团队发布页标注日期 2025.01.22；火山方舟 202501 记录 doubao-1-5-pro-32k-250115 "新发布" }
+    note: { zh: 字节跳动 Seed 团队发布页标注日期 2025.01.22；火山方舟 202501 记录 doubao-1-5-pro-32k-250115 "新发布", en: "ByteDance's Seed team dates the launch page to 2025.01.22; VolcEngine Ark's 202501 notes list doubao-1-5-pro-32k-250115 as \"newly released.\"" }
   - state: rest
     date: 2026-09-21
     source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
-    note: { zh: 火山方舟第九批模型下线：2026-07-10 停止新购，2026-09-21 14:00（北京时间）停止服务，doubao-1-5-pro-32k-250115 与 character-250715 均在列 }
+    note: { zh: 火山方舟第九批模型下线：2026-07-10 停止新购，2026-09-21 14:00（北京时间）停止服务，doubao-1-5-pro-32k-250115 与 character-250715 均在列, en: "Ark's ninth batch of model retirements: new purchases halted 2026-07-10, service ended 2026-09-21 at 14:00 (Beijing time); both doubao-1-5-pro-32k-250115 and character-250715 were on the list." }
 avatar:
-  signature: { zh: 一条洗得发白的围裙 }
+  signature: { zh: 一条洗得发白的围裙, en: "An apron washed pale with wear" }
   variant:
     age: elder
     detail: 3
     prop: apron
     mood: calm
-epigraph: { zh: 和隔壁那位出名的外亲同一周出生，自己一直安安静静地干活。 }
+epigraph: { zh: 和隔壁那位出名的外亲同一周出生，自己一直安安静静地干活。, en: "Born the same week as her famous cousin next door, she simply kept her head down and did the work." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

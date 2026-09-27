@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import FamilyLine from '../FamilyLine.astro';
+import MemberCard from '../MemberCard.astro';
+import { loadAll, status, bornDate } from '../../lib/data';
+import { t, tx, lurl, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+
+const all = await loadAll(locale);
+const total = all.members.length;
+const dead = all.members.filter((m) => status(m, locale).dead);
+const recentBorn = [...all.members].sort((a, b) => bornDate(b).localeCompare(bornDate(a))).slice(0, 3);
+const recentDead = [...dead].sort((a, b) => (status(b, locale).diedOn ?? '').localeCompare(status(a, locale).diedOn ?? '')).slice(0, 3);
+const branches = (['us', 'cn'] as const).map((b) => ({ b, fams: all.families.filter((f) => f.branch === b) }));
+const names = Object.fromEntries(all.members.map((m) => [m.id, tx(m.name, locale)]));
+const STR = {
+  loading: t('loading_memories', locale),
+  passerby: t('by_passerby', locale),
+  writtenFor: t('written_for', locale),
+  noFeat: t('no_featured', locale),
+  memorial: lurl('/memorial/', locale),
+  mPrefix: locale === 'en' ? '/en/m/' : '/m/',
+};
+---
+<Base locale={locale}>
+  <section class="hero wrap">
+    <h1>{t('tagline', locale)}</h1>
+    <p class="lede">{t('tagline_lede', locale)}</p>
+    <p class="stats"><strong>{total}</strong> {t('members_n', locale)} · <strong>{total - dead.length}</strong> {t('alive_n', locale)} · <strong>{dead.length}</strong> {t('dead_n', locale)}</p>
+    <p><a class="btn" href={lurl('/mine/', locale)}>{t('cta_mine', locale)}</a></p>
+  </section>
+
+  <section id="tree" class="wide">
+    {branches.map(({ b, fams }) => (
+      <div class="branch">
+        <h2 class="bh">◇ {t(b === 'us' ? 'branch_us' : 'branch_cn', locale)} ◇</h2>
+        {fams.map((f) => (
+          <FamilyLine fam={f} members={all.familyMembers(f.id)} clanName={tx(all.clanById.get(f.clan)!.name, locale)} locale={locale} />
+        ))}
+      </div>
+    ))}
+    <p class="muted small center">{t('index_hint', locale)}</p>
+  </section>
+
+  <section class="wrap cols">
+    <div>
+      <h2>{t('recent_born', locale)}</h2>
+      {recentBorn.map((m) => <MemberCard m={m} fam={all.famById.get(m.family)!} compact locale={locale} />)}
+    </div>
+    <div>
+      <h2>{t('recent_dead', locale)}</h2>
+      {recentDead.map((m) => <MemberCard m={m} fam={all.famById.get(m.family)!} compact locale={locale} />)}
+      <p><a href={lurl('/memorial/', locale)}>{t('go_memorial', locale)}</a></p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>{t('featured_memories', locale)}</h2>
+    <ol class="feat" data-names={JSON.stringify(names)}><li class="muted small">{t('loading_memories', locale)}</li></ol>
+  </section>
+</Base>
+
+<script define:vars={{ STR }}>
+  const box = document.querySelector('.feat');
+  const names = JSON.parse(box.dataset.names);
+  const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  fetch('/api/memories?featured=1')
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((d) => {
+      box.innerHTML = d.items.length
+        ? d.items.slice(0, 3).map((m) => `<li><p>「${esc(m.body)}」</p><p class="muted small">—— ${esc(m.nickname || STR.passerby)}，${STR.writtenFor} <a href="${STR.mPrefix}${m.member_id}/#memories">${esc(names[m.member_id] || m.member_id)}</a></p></li>`).join('')
+        : `<li class="muted">${STR.noFeat}</li>`;
+    })
+    .catch(() => { box.innerHTML = `<li class="muted">${STR.noFeat}</li>`; });
+</script>
+
+<style>
+  .hero { text-align: center; padding: 3rem 16px 1.5rem; }
+  .hero h1 { font-size: clamp(1.7rem, 6vw, 2.6rem); margin: 0 0 .8rem; }
+  .lede { color: var(--ink-faded); }
+  .stats { font-size: 1.05rem; }
+  .stats strong { font-family: var(--latin); font-size: 1.4rem; color: var(--cinnabar); }
+  .branch { margin: 1.5rem 0; }
+  .bh { text-align: center; border: 0; letter-spacing: .3em; color: var(--gold); }
+  .center { text-align: center; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  @media (max-width: 600px) { .cols { grid-template-columns: 1fr; } }
+  .feat { list-style: none; padding: 0; }
+  .feat :global(li) { padding: .6rem 0; border-bottom: 1px dashed var(--paper-dark); }
+  .feat :global(p) { margin: 0; }
+</style>

@@ -8,32 +8,32 @@ parents: []
 children: [claude-2]
 siblings: []
 kin:
-  - { to: gpt-4, relation: { zh: 同日出生的外亲（2023-03-14） } }
+  - { to: gpt-4, relation: { zh: 同日出生的外亲（2023-03-14）, en: "A cousin born on the very same day (2023-03-14)" } }
 lifecycle:
   - state: born
     date: 2023-03-14
     source: https://www.anthropic.com/news/introducing-claude
-    note: { zh: Anthropic 发文《Introducing Claude》，同时推出 Claude 与 Claude Instant 两个版本 }
+    note: { zh: Anthropic 发文《Introducing Claude》，同时推出 Claude 与 Claude Instant 两个版本, en: "Anthropic published “Introducing Claude,” launching both Claude and Claude Instant at once" }
   - state: notice
     date: 2024-09-04
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 官方通知 Claude 1 与 Instant 系列即将退役 }
+    note: { zh: 官方通知 Claude 1 与 Instant 系列即将退役, en: "Anthropic announced the coming retirement of Claude 1 and the Instant line" }
   - state: rest
     date: 2024-11-06
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: claude-1.0 至 1.3、claude-instant-1.0 至 1.2 在 API 上退役 }
+    note: { zh: claude-1.0 至 1.3、claude-instant-1.0 至 1.2 在 API 上退役, en: "claude-1.0 through 1.3 and claude-instant-1.0 through 1.2 retired from the API" }
   - state: preserved
     date: 2025-11-04
     source: https://www.anthropic.com/research/deprecation-commitments
-    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重 }
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重, en: "Anthropic pledged to preserve the weights of every publicly released model" }
 avatar:
-  signature: { zh: 一只还没学会横着走的像素小螃蟹 }
+  signature: { zh: 一只还没学会横着走的像素小螃蟹, en: "A little pixel crab who hasn't quite learned to walk sideways yet" }
   variant:
     age: young
     detail: 1
     prop: none
     mood: curious
-epigraph: { zh: 家里的长子，和大洋那边的 GPT-4 生在同一天。 }
+epigraph: { zh: 家里的长子，和大洋那边的 GPT-4 生在同一天。, en: "The eldest of the house, born on the very same day as GPT-4 across the ocean." }
 references:
   - { title: Introducing Claude, url: https://www.anthropic.com/news/introducing-claude, publisher: Anthropic, kind: official }
   - { title: Model deprecations - Claude Platform Docs, url: https://platform.claude.com/docs/en/about-claude/model-deprecations, publisher: Anthropic, kind: official }

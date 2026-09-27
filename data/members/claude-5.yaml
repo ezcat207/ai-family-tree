@@ -12,19 +12,19 @@ lifecycle:
   - state: born
     date: 2026-06-09
     source: https://www.anthropic.com/news/claude-fable-5-mythos-5
-    note: { zh: 这一辈最早出生的是 Claude Fable 5；Sonnet 5（2026-06-30）、Opus 5（2026-07-24）、Fable 5.1（2026-09-01）、Opus 5.5（2026-09-22）相继出生 }
+    note: { zh: 这一辈最早出生的是 Claude Fable 5；Sonnet 5（2026-06-30）、Opus 5（2026-07-24）、Fable 5.1（2026-09-01）、Opus 5.5（2026-09-22）相继出生, en: "Claude Fable 5 arrived first in this generation; Sonnet 5 (2026-06-30), Opus 5 (2026-07-24), Fable 5.1 (2026-09-01), and Opus 5.5 (2026-09-22) followed" }
   - state: head
     date: 2026-06-30
     source: https://www.anthropic.com/news/claude-sonnet-5
-    note: { zh: Claude Sonnet 5 成为 Free 与 Pro 方案的默认模型 }
+    note: { zh: Claude Sonnet 5 成为 Free 与 Pro 方案的默认模型, en: "Claude Sonnet 5 became the default model for the Free and Pro plans" }
 avatar:
-  signature: { zh: 身后站着一排大大小小、都叫"5"的兄弟 }
+  signature: { zh: 身后站着一排大大小小、都叫"5"的兄弟, en: "A whole row of brothers standing behind them, big and small, all answering to \"5\"" }
   variant:
     age: young
     detail: 5
     prop: scroll
     mood: curious
-epigraph: { zh: 人丁最旺的一辈：不到四个月，添了五个带"5"的孩子。 }
+epigraph: { zh: 人丁最旺的一辈：不到四个月，添了五个带"5"的孩子。, en: "The most crowded generation of all: five children with \"5\" in their names, in under four months." }
 references:
   - { title: Claude Fable 5 and Claude Mythos 5, url: https://www.anthropic.com/news/claude-fable-5-mythos-5, publisher: Anthropic, kind: official }
   - { title: Redeploying Fable 5, url: https://www.anthropic.com/news/redeploying-fable-5, publisher: Anthropic, kind: official }

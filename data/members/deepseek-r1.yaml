@@ -8,36 +8,36 @@ parents: [deepseek-v2]
 children: [deepseek-v3-1]
 siblings: [deepseek-v3]
 kin:
-  - { to: doubao-1-5-pro, relation: { zh: 前后脚出生的外亲（R1 生于 2025-01-20，豆包 1.5 Pro 生于 2025-01-22） } }
+  - { to: doubao-1-5-pro, relation: { zh: 前后脚出生的外亲（R1 生于 2025-01-20，豆包 1.5 Pro 生于 2025-01-22）, en: "A cousin born days apart (R1 on 2025-01-20, Doubao 1.5 Pro on 2025-01-22)" } }
 lifecycle:
   - state: born
     date: 2025-01-20
     source: https://api-docs.deepseek.com/zh-cn/news/news250120
-    note: { zh: 同日在官网与 App 上线，打开「深度思考」即可见到它 }
+    note: { zh: 同日在官网与 App 上线，打开「深度思考」即可见到它, en: "Launched the same day on the official site and App — open \"Deep Thinking\" and there she was" }
   - state: preserved
     date: 2025-01-20
     source: https://github.com/deepseek-ai/DeepSeek-R1
-    note: { zh: 出生当天权重即以 MIT 许可公开，任何人都可下载保存 }
+    note: { zh: 出生当天权重即以 MIT 许可公开，任何人都可下载保存, en: "Weights published under the MIT license on the day she was born; anyone may download and keep her" }
   - state: died
     date: 2025-08-21
     source: https://api-docs.deepseek.com/zh-cn/news/news250821
-    note: { zh: 官方 App 与网页端升级为 V3.1，「深度思考」按钮改由 V3.1 的思考模式接替 }
+    note: { zh: 官方 App 与网页端升级为 V3.1，「深度思考」按钮改由 V3.1 的思考模式接替, en: "Official App and web chat upgraded to V3.1; the \"Deep Thinking\" button now summons V3.1's thinking mode instead" }
   - state: rest
     date: 2025-08-21
     source: https://api-docs.deepseek.com/zh-cn/news/news250821
-    note: { zh: API 的 deepseek-reasoner 同日改为指向 V3.1 思考模式 }
+    note: { zh: API 的 deepseek-reasoner 同日改为指向 V3.1 思考模式, en: "API's deepseek-reasoner repointed to V3.1's thinking mode the same day" }
 avatar:
-  signature: { zh: 一本写满思考过程的草稿本 }
+  signature: { zh: 一本写满思考过程的草稿本, en: "A draft notebook filled with her thinking, page after page" }
   variant:
     age: young
     detail: 2
     prop: book
     mood: curious
-epigraph: { zh: 它把想的过程念给人听，于是全世界都停下来听了一个春节。 }
+epigraph: { zh: 它把想的过程念给人听，于是全世界都停下来听了一个春节。, en: "She read her thoughts aloud — and the whole world paused to listen, for one whole Spring Festival." }
 posthumous_name:
   candidates: [思, 悟, 明, 念, 启]
   result: null
-epitaph: { zh: 草稿本还摊开着，写字的人已经换了。 }
+epitaph: { zh: 草稿本还摊开着，写字的人已经换了。, en: "The draft notebook still lies open; the hand holding the pen has changed." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

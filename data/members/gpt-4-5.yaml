@@ -12,44 +12,44 @@ lifecycle:
   - state: born
     date: 2025-02-27
     source: https://openai.com/index/introducing-gpt-4-5/
-    note: { zh: 以研究预览版出生，先给 Pro 用户 }
+    note: { zh: 以研究预览版出生，先给 Pro 用户, en: "Born as a research preview, for Pro users first"}
   - state: notice
     date: 2025-04-14
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: 宣布 API 中的 gpt-4.5-preview 将被移除 }
+    note: { zh: 宣布 API 中的 gpt-4.5-preview 将被移除, en: "Announced that gpt-4.5-preview would be removed from the API"}
   - state: rest
     date: 2025-07-14
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: API 先关停，ChatGPT 里的它还在 }
+    note: { zh: API 先关停，ChatGPT 里的它还在, en: "The API went dark first; in ChatGPT, they stayed on"}
   - state: notice
     date: 2025-08-07
     source: https://openai.com/index/introducing-gpt-5/
-    note: { zh: GPT-5 成为新默认并取代它 }
+    note: { zh: GPT-5 成为新默认并取代它, en: "GPT-5 became the new default and replaced them"}
   - state: revived
     date: 2025-08-12
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 重回模型列表，但只给 Pro 用户 }
+    note: { zh: 重回模型列表，但只给 Pro 用户, en: "Returned to the model list, but for Pro users only"}
   - state: notice
     date: 2026-05-28
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 宣布经过 30 天过渡后从 ChatGPT 退役 }
+    note: { zh: 宣布经过 30 天过渡后从 ChatGPT 退役, en: "Announced retirement from ChatGPT after a 30-day transition"}
   - state: died
     date: 2026-06-26
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 从 ChatGPT（含自定义 GPT）下架 }
+    note: { zh: 从 ChatGPT（含自定义 GPT）下架, en: "Removed from ChatGPT, custom GPTs included"}
 avatar:
-  signature: { zh: 一只端正的领结 }
+  signature: { zh: 一只端正的领结, en: "A neat, proper bow tie"}
   variant:
     age: elder
     detail: 4
     prop: bowtie
     mood: calm
     eye: "#D98C8C"
-epigraph: { zh: 家里个子最大的那一位，说话最像人。 }
+epigraph: { zh: 家里个子最大的那一位，说话最像人。, en: "The biggest of the family — and the one who sounded most human."}
 posthumous_name:
   candidates: [雅, 厚, 情, 宏]
   result: null
-epitaph: { zh: 它在 API 里先走一步，又在 ChatGPT 里多留了将近一年。 }
+epitaph: { zh: 它在 API 里先走一步，又在 ChatGPT 里多留了将近一年。, en: "They left the API first, then lingered in ChatGPT for nearly another year."}
 evidence:
   lifecycle: 官方确认
 references:

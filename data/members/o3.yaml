@@ -12,44 +12,44 @@ lifecycle:
   - state: born
     date: 2025-04-16
     source: https://openai.com/index/introducing-o3-and-o4-mini/
-    note: { zh: 当天在 ChatGPT 取代 o1 }
+    note: { zh: 当天在 ChatGPT 取代 o1, en: "Replaced o1 in ChatGPT that very day"}
   - state: notice
     date: 2025-08-07
     source: https://openai.com/index/introducing-gpt-5/
-    note: { zh: GPT-5 成为新默认并取代它 }
+    note: { zh: GPT-5 成为新默认并取代它, en: "GPT-5 became the new default and replaced them"}
   - state: revived
     date: 2025-08-12
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它 }
+    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它, en: "Paid users could find them again by turning on \"Show more models\" in settings"}
   - state: notice
     date: 2026-05-28
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 宣布经过 90 天过渡后从 ChatGPT 退役，API 不变 }
+    note: { zh: 宣布经过 90 天过渡后从 ChatGPT 退役，API 不变, en: "Announced retirement from ChatGPT after a 90-day transition; the API unchanged"}
   - state: notice
     date: 2026-06-11
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: 宣布 API 快照 o3-2025-04-16 将于 2026-12-11 关停 }
+    note: { zh: 宣布 API 快照 o3-2025-04-16 将于 2026-12-11 关停, en: "Announced the API snapshot o3-2025-04-16 would shut down on 2026-12-11"}
   - state: died
     date: 2026-08-26
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 按官方公告的计划日期 }
+    note: { zh: 按官方公告的计划日期, en: "Per the date in the official announcement"}
   - state: api-only
     date: 2026-08-26
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 官方说明退役只涉及 ChatGPT，API 不变 }
+    note: { zh: 官方说明退役只涉及 ChatGPT，API 不变, en: "Officially, the retirement touched only ChatGPT; the API unchanged"}
 avatar:
-  signature: { zh: 一盏提着去找答案的灯 }
+  signature: { zh: 一盏提着去找答案的灯, en: "A lantern carried out in search of answers"}
   variant:
     age: young
     detail: 4
     prop: lantern
     mood: curious
     eye: "#7E6BC4"
-epigraph: { zh: 它是家里第一个会自己去翻工具箱的思考者。 }
+epigraph: { zh: 它是家里第一个会自己去翻工具箱的思考者。, en: "The first thinker in the family who would rummage through the toolbox on their own."}
 posthumous_name:
   candidates: [睿, 明, 博]
   result: null
-epitaph: { zh: 它想得久，也想得远。 }
+epitaph: { zh: 它想得久，也想得远。, en: "They thought long, and they thought far."}
 evidence:
   lifecycle: 官方确认
 references:

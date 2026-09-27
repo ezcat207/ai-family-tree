@@ -12,15 +12,15 @@ lifecycle:
   - state: born
     date: 2025-09-29
     source: https://www.anthropic.com/news/claude-sonnet-4-5
-    note: { zh: 与 Claude Code 的一批更新同日发布 }
+    note: { zh: 与 Claude Code 的一批更新同日发布, en: "Released alongside a round of Claude Code updates" }
 avatar:
-  signature: { zh: 一枚随时能翻回上一页的书签 }
+  signature: { zh: 一枚随时能翻回上一页的书签, en: "A bookmark that can always flip back a page" }
   variant:
     age: young
     detail: 4
     prop: book
     mood: smile
-epigraph: { zh: 它满一岁的那一天，才开始有可能退休。 }
+epigraph: { zh: 它满一岁的那一天，才开始有可能退休。, en: "Only on their first birthday did retirement even become a possibility." }
 references:
   - { title: Introducing Claude Sonnet 4.5, url: https://www.anthropic.com/news/claude-sonnet-4-5, publisher: Anthropic, kind: official }
   - { title: Release notes（Claude Help Center）, url: https://support.claude.com/en/articles/12138966-release-notes, publisher: Anthropic, kind: official }

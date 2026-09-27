@@ -8,40 +8,40 @@ parents: [gpt-3-5]
 children: [gpt-4o]
 siblings: []
 kin:
-  - { to: claude-1, relation: { zh: 同日出生——都生于 2023-03-14，像一对被分到两家的双胞胎 } }
+  - { to: claude-1, relation: { zh: 同日出生——都生于 2023-03-14，像一对被分到两家的双胞胎, en: "Born the same day — both on 2023-03-14, like twins placed in two different families"} }
 lifecycle:
   - state: born
     date: 2023-03-14
     source: https://openai.com/index/gpt-4-research/
-    note: { zh: 同日在 ChatGPT Plus 上线 }
+    note: { zh: 同日在 ChatGPT Plus 上线, en: "Launched in ChatGPT Plus the same day"}
   - state: notice
     date: 2025-04-10
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 宣布 2025-04-30 从 ChatGPT 退休，由 GPT-4o 完全接替 }
+    note: { zh: 宣布 2025-04-30 从 ChatGPT 退休，由 GPT-4o 完全接替, en: "Announced retirement from ChatGPT on 2025-04-30, fully succeeded by GPT-4o"}
   - state: died
     date: 2025-04-30
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
   - state: api-only
     date: 2025-04-30
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 官方说明 API 中仍可使用 }
+    note: { zh: 官方说明 API 中仍可使用, en: "Officially still available in the API"}
   - state: notice
     date: 2026-04-22
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: 宣布 API 中的 gpt-4 将于 2026-10-23 关停 }
+    note: { zh: 宣布 API 中的 gpt-4 将于 2026-10-23 关停, en: "Announced that gpt-4 in the API would shut down on 2026-10-23"}
 avatar:
-  signature: { zh: 一副圆框眼镜 }
+  signature: { zh: 一副圆框眼镜, en: "A pair of round glasses"}
   variant:
     age: young
     detail: 2
     prop: glasses
     mood: calm
     eye: "#8FB8DE"
-epigraph: { zh: 它是 ChatGPT 长大的那一步。 }
+epigraph: { zh: 它是 ChatGPT 长大的那一步。, en: "They were the step where ChatGPT grew up."}
 posthumous_name:
   candidates: [开, 明, 基, 承]
   result: null
-epitaph: { zh: 官方说，它标志了 ChatGPT 演进中的关键时刻。 }
+epitaph: { zh: 官方说，它标志了 ChatGPT 演进中的关键时刻。, en: "In the official words: they marked a pivotal moment in ChatGPT's evolution."}
 evidence:
   lifecycle: 官方确认
 references:

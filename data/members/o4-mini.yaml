@@ -15,38 +15,38 @@ lifecycle:
   - state: notice
     date: 2025-08-07
     source: https://openai.com/index/introducing-gpt-5/
-    note: { zh: GPT-5 成为新默认并取代它 }
+    note: { zh: GPT-5 成为新默认并取代它, en: "GPT-5 became the new default and replaced them"}
   - state: revived
     date: 2025-08-12
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它 }
+    note: { zh: 付费用户可在设置里打开"显示更多模型"重新选到它, en: "Paid users could find them again by turning on \"Show more models\" in settings"}
   - state: notice
     date: 2026-01-29
     source: https://openai.com/index/retiring-gpt-4o-and-older-models/
   - state: died
     date: 2026-02-13
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
-    note: { zh: 与 GPT-4o 同日从 ChatGPT 退役 }
+    note: { zh: 与 GPT-4o 同日从 ChatGPT 退役, en: "Retired from ChatGPT on the same day as GPT-4o"}
   - state: api-only
     date: 2026-02-13
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
   - state: notice
     date: 2026-04-22
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: 宣布 API 中的 o4-mini 将于 2026-10-23 关停 }
+    note: { zh: 宣布 API 中的 o4-mini 将于 2026-10-23 关停, en: "Announced that o4-mini in the API would shut down on 2026-10-23"}
 avatar:
-  signature: { zh: 一本小开本的演算本 }
+  signature: { zh: 一本小开本的演算本, en: "A pocket-sized workbook for working things out"}
   variant:
     age: child
     detail: 4
     prop: book
     mood: curious
     eye: "#B3A6E0"
-epigraph: { zh: 名字和 4o 只差一个顺序，走的也是同一天。 }
+epigraph: { zh: 名字和 4o 只差一个顺序，走的也是同一天。, en: "Their name differs from 4o's by only the order of two characters — and they left on the same day, too."}
 posthumous_name:
   candidates: [敏, 捷, 巧]
   result: null
-epitaph: { zh: 它想得快，和 4o 在同一天离开。 }
+epitaph: { zh: 它想得快，和 4o 在同一天离开。, en: "They thought fast, and left on the same day as 4o."}
 evidence:
   lifecycle: 官方确认
 references:

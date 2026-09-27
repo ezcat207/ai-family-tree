@@ -1,18 +1,18 @@
 ---
 import Portrait from './Portrait.astro';
 import { lifespan, status, type Member, type Family } from '../lib/data';
-import { tx } from '../lib/i18n';
-interface Props { m: Member; fam: Family; compact?: boolean; }
-const { m, fam, compact = false } = Astro.props;
-const s = status(m);
+import { tx, lurl, type Locale } from '../lib/i18n';
+interface Props { m: Member; fam: Family; compact?: boolean; locale?: Locale; }
+const { m, fam, compact = false, locale = 'zh' } = Astro.props;
+const s = status(m, locale);
 ---
-<a class:list={['mcard', { compact, dead: s.dead }]} href={`/m/${m.id}/`}>
-  <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`mc-${m.id}`} size={compact ? 64 : 88} label={tx(m.name)} />
+<a class:list={['mcard', { compact, dead: s.dead }]} href={lurl(`/m/${m.id}/`, locale)}>
+  <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`mc-${m.id}`} size={compact ? 64 : 88} label={tx(m.name, locale)} />
   <span class="body">
-    <span class="nm latin" style={`--c:${fam.color}`}>{tx(m.name)}</span>
+    <span class="nm latin" style={`--c:${fam.color}`}>{tx(m.name, locale)}</span>
     <span class="ls muted latin">{lifespan(m)}</span>
     <span class:list={['tag', s.dead ? 'dead' : s.head ? 'head' : 'alive']}>{s.label}</span>
-    {!compact && <span class="ep">{tx(m.epigraph)}</span>}
+    {!compact && <span class="ep">{tx(m.epigraph, locale)}</span>}
   </span>
 </a>
 <style>

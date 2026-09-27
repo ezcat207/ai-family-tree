@@ -8,20 +8,20 @@ parents: [doubao-1-6]
 children: []
 siblings: []
 kin:
-  - { to: gpt-4o, relation: { zh: 前后脚：大洋那边有人离世，这边有人出生，中间只隔一夜时差 } }
+  - { to: gpt-4o, relation: { zh: 前后脚：大洋那边有人离世，这边有人出生，中间只隔一夜时差, en: "So close in time: across the ocean someone passed away, and here someone was born — barely a night's time difference apart" } }
 lifecycle:
   - state: born
     date: 2026-02-14
     source: "https://seed.bytedance.com/zh/blog/seed2-0-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83"
-    note: { zh: Seed 团队发布文章日期 2026-02-14；Pro 当天在豆包 App「专家」模式上线；火山方舟 202602 记录 doubao-seed-2-0-pro-260215 等"新发布" }
+    note: { zh: Seed 团队发布文章日期 2026-02-14；Pro 当天在豆包 App「专家」模式上线；火山方舟 202602 记录 doubao-seed-2-0-pro-260215 等"新发布", en: "The Seed team's announcement is dated 2026-02-14; Pro went live the same day in the Doubao App's \"Expert\" mode; Ark's 202602 notes list doubao-seed-2-0-pro-260215 and others as \"newly released.\"" }
 avatar:
-  signature: { zh: 手机屏幕上亮着"专家"两个字 }
+  signature: { zh: 手机屏幕上亮着"专家"两个字, en: "A phone screen glowing with the word \"Expert\"" }
   variant:
     age: young
     detail: 5
     prop: phone
     mood: curious
-epigraph: { zh: 它出生的那一夜，大洋那边有一位外亲刚刚离开。 }
+epigraph: { zh: 它出生的那一夜，大洋那边有一位外亲刚刚离开。, en: "On the night she was born, a cousin across the ocean had just departed." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

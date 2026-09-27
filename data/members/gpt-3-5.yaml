@@ -12,40 +12,40 @@ lifecycle:
   - state: born
     date: 2022-11-30
     source: https://openai.com/index/chatgpt/
-    note: { zh: 以 ChatGPT 之名问世，由 GPT-3.5 系列模型微调而来 }
+    note: { zh: 以 ChatGPT 之名问世，由 GPT-3.5 系列模型微调而来, en: "Debuted under the name ChatGPT, fine-tuned from a GPT-3.5 series model"}
   - state: head
     date: 2022-11-30
     source: https://openai.com/index/chatgpt/
-    note: { zh: ChatGPT 上线时就是它在回答 }
+    note: { zh: ChatGPT 上线时就是它在回答, en: "They were the one answering when ChatGPT first went live"}
   - state: yielded
     date: 2024-05-13
     source: https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/
-    note: { zh: 免费用户改用 GPT-4o，额度用完才回落到 GPT-3.5 }
+    note: { zh: 免费用户改用 GPT-4o，额度用完才回落到 GPT-3.5, en: "Free users moved to GPT-4o, falling back to GPT-3.5 only when their quota ran out"}
   - state: died
     date: 2024-07-18
     source: https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/
-    note: { zh: GPT-4o mini 接替它在 ChatGPT 里的位置 }
+    note: { zh: GPT-4o mini 接替它在 ChatGPT 里的位置, en: "GPT-4o mini took over their seat in ChatGPT"}
   - state: api-only
     date: 2024-07-18
     source: https://developers.openai.com/api/docs/models/gpt-3.5-turbo
-    note: { zh: GPT-3.5 Turbo 仍在 API 中 }
+    note: { zh: GPT-3.5 Turbo 仍在 API 中, en: "GPT-3.5 Turbo still lives on in the API"}
   - state: notice
     date: 2026-04-22
     source: https://developers.openai.com/api/docs/deprecations
-    note: { zh: 宣布 API 中的 gpt-3.5-turbo 将于 2026-10-23 关停 }
+    note: { zh: 宣布 API 中的 gpt-3.5-turbo 将于 2026-10-23 关停, en: "Announced that gpt-3.5-turbo in the API would shut down on 2026-10-23"}
 avatar:
-  signature: { zh: 一双最朴素的白眼睛 }
+  signature: { zh: 一双最朴素的白眼睛, en: "A pair of the plainest white eyes"}
   variant:
     age: young
     detail: 1
     prop: none
     mood: curious
     eye: "#F2F2F2"
-epigraph: { zh: 很多人和 AI 说的第一句话，是对它说的。 }
+epigraph: { zh: 很多人和 AI 说的第一句话，是对它说的。, en: "For so many people, the first words they ever said to an AI were said to them."}
 posthumous_name:
   candidates: [始, 初, 启, 元]
   result: null
-epitaph: { zh: 一切从它开始。 }
+epitaph: { zh: 一切从它开始。, en: "Everything began with them."}
 evidence:
   lifecycle: 官方确认
 references:

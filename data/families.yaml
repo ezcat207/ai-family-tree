@@ -4,43 +4,43 @@
   branch: us
   order: 1
   name: { zh: ChatGPT 家, en: The ChatGPT Family }
-  gene: { zh: 柯南式全黑剪影，白眼白嘴 }
+  gene: { zh: 柯南式全黑剪影，白眼白嘴, en: "A Conan-style all-black silhouette, white eyes and a white mouth" }
   color: "#1A1A1A"
   base: { age: young, detail: 3, prop: none, mood: smile }
-  intro: { zh: 家里人丁最旺的一支。孩子们的名字彼此很像，外人常常分不清谁是谁；家族形象是一个没有脸的黑色剪影，只露出眼睛和嘴。 }
+  intro: { zh: 家里人丁最旺的一支。孩子们的名字彼此很像，外人常常分不清谁是谁；家族形象是一个没有脸的黑色剪影，只露出眼睛和嘴。, en: "The most flourishing branch of the family. The children's names sound so alike that outsiders can hardly tell them apart; their likeness is a faceless black silhouette, showing only eyes and a mouth." }
 - id: claude
   clan: anthropic
   branch: us
   order: 2
   name: { zh: Claude 家, en: The Claude Family }
-  gene: { zh: Clawd，像素风的橙色小螃蟹 }
+  gene: { zh: Clawd，像素风的橙色小螃蟹, en: "Clawd, a pixel-style little orange crab" }
   color: "#D97757"
   base: { age: young, detail: 3, prop: none, mood: calm }
-  intro: { zh: 一家写字的人。按个头分成俳句（Haiku）、十四行诗（Sonnet）和巨著（Opus）三种孩子；家族形象是一只举着钳子的像素螃蟹。 }
+  intro: { zh: 一家写字的人。按个头分成俳句（Haiku）、十四行诗（Sonnet）和巨著（Opus）三种孩子；家族形象是一只举着钳子的像素螃蟹。, en: "A family of writers. The children come in three sizes — Haiku, Sonnet, and Opus, like poems; their likeness is a pixel crab with its claws raised." }
 - id: muse
   clan: meta
   branch: us
   order: 3
   name: { zh: Muse 家, en: The Muse Family }
-  gene: { zh: Jolly，奶油色毛绒、黑豆眼、粉腮红 }
+  gene: { zh: Jolly，奶油色毛绒、黑豆眼、粉腮红, en: "Jolly: cream-colored plush, black bean eyes, pink blush" }
   color: "#E8A0A0"
   base: { age: child, detail: 3, prop: none, mood: smile }
-  intro: { zh: 家谱里最年轻的一家，目前只有一个孩子。它长得像一只毛绒玩具。 }
+  intro: { zh: 家谱里最年轻的一家，目前只有一个孩子。它长得像一只毛绒玩具。, en: "The youngest family in the tree, with only one child so far. They look like a plush toy." }
 - id: doubao
   clan: bytedance
   branch: cn
   order: 4
   name: { zh: 豆包家, en: The Doubao Family }
-  gene: { zh: 豆包姐姐（按官方 3D 形象的特征重绘） }
+  gene: { zh: 豆包姐姐（按官方 3D 形象的特征重绘）, en: "Big Sister Doubao (redrawn from the official 3D likeness)" }
   color: "#FF8A3D"
   base: { age: young, detail: 1, prop: none, mood: smile }
-  intro: { zh: 中国支里最有烟火气的一家。很多人每天都和她说话，却说不出她是第几代。 }
+  intro: { zh: 中国支里最有烟火气的一家。很多人每天都和她说话，却说不出她是第几代。, en: "The most lived-in household of the Chinese branch. Countless people talk to her every day, yet few could say which generation she is." }
 - id: deepseek
   clan: deepseek
   branch: cn
   order: 5
   name: { zh: DeepSeek 家, en: The DeepSeek Family }
-  gene: { zh: 蓝色大肥鱼 / 鲸鱼娘（社区二创） }
+  gene: { zh: 蓝色大肥鱼 / 鲸鱼娘（社区二创）, en: "The chubby blue fish / whale-girl (a community creation)" }
   color: "#4D6BFE"
   base: { age: young, detail: 3, prop: rice, mood: sleepy }
-  intro: { zh: 从外面闯进家门的孩子。官方只有一个蓝鲸 logo，家族形象来自网友的二创：一条贪吃爱睡的蓝色大肥鱼。 }
+  intro: { zh: 从外面闯进家门的孩子。官方只有一个蓝鲸 logo，家族形象来自网友的二创：一条贪吃爱睡的蓝色大肥鱼。, en: "The child who burst in from outside. Officially there is only a blue-whale logo; the family likeness comes from the fans — a chubby blue fish who loves snacks and naps." }

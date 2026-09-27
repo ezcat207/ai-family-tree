@@ -12,27 +12,27 @@ lifecycle:
   - state: born
     date: 2024-07-18
     source: https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/
-    note: { zh: 当天在 ChatGPT 接替 GPT-3.5 的位置 }
+    note: { zh: 当天在 ChatGPT 接替 GPT-3.5 的位置, en: "Took GPT-3.5's seat in ChatGPT that very day"}
   - state: died
     date: 2025-05-14
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: GPT-4.1 mini 在 ChatGPT 中取代了它 }
+    note: { zh: GPT-4.1 mini 在 ChatGPT 中取代了它, en: "Replaced in ChatGPT by GPT-4.1 mini"}
   - state: api-only
     date: 2025-05-14
     source: https://developers.openai.com/api/docs/models/gpt-4o-mini
 avatar:
-  signature: { zh: 一条小一号的暖色围巾 }
+  signature: { zh: 一条小一号的暖色围巾, en: "A smaller warm-colored scarf"}
   variant:
     age: child
     detail: 3
     prop: scarf
     mood: smile
     eye: "#F0CF7A"
-epigraph: { zh: 它替哥哥们接住了额度用完之后的那些对话。 }
+epigraph: { zh: 它替哥哥们接住了额度用完之后的那些对话。, en: "They caught all the conversations that came after the quota ran out — the ones their big brothers couldn't take."}
 posthumous_name:
   candidates: [小, 勤, 继]
   result: null
-epitaph: { zh: 个子小，接的班不小。 }
+epitaph: { zh: 个子小，接的班不小。, en: "Small in size, big in the shoes they filled."}
 evidence:
   lifecycle: 官方确认
 references:

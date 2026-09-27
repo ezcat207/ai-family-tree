@@ -12,20 +12,20 @@ lifecycle:
   - state: born
     date: 2026-04-23
     source: https://openai.com/index/introducing-gpt-5-5/
-    note: { zh: Thinking 与 Pro 先出生，先给付费用户 }
+    note: { zh: Thinking 与 Pro 先出生，先给付费用户, en: "Thinking and Pro were born first, for paid users"}
   - state: head
     date: 2026-05-05
     source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-    note: { zh: GPT-5.5 Instant 成为 ChatGPT 新默认模型 }
+    note: { zh: GPT-5.5 Instant 成为 ChatGPT 新默认模型, en: "GPT-5.5 Instant became ChatGPT's new default model"}
 avatar:
-  signature: { zh: 一顶深蓝色的礼帽 }
+  signature: { zh: 一顶深蓝色的礼帽, en: "A deep-blue top hat"}
   variant:
     age: young
     detail: 5
     prop: hat
     mood: calm
     eye: "#3C6FD1"
-epigraph: { zh: 家里最近的一位当家人，故事还没写完。 }
+epigraph: { zh: 家里最近的一位当家人，故事还没写完。, en: "The family's most recent head — their story isn't finished yet."}
 evidence:
   lifecycle: 官方确认
 references:

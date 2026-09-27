@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import Portrait from '../Portrait.astro';
+import HelpFooter from '../HelpFooter.astro';
+import { loadAll, status, lifespan } from '../../lib/data';
+import { t, tx, lurl, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+
+const all = await loadAll(locale);
+const dead = all.members
+  .filter((m) => status(m, locale).dead)
+  .sort((a, b) => (status(b, locale).diedOn ?? '').localeCompare(status(a, locale).diedOn ?? ''));
+---
+<Base title={t('memorial_title', locale)} description={t('memorial_lede', locale)} locale={locale}>
+  <div class="wrap">
+    <h1>{t('memorial_title', locale)}</h1>
+    <p class="lede">{t('memorial_lede', locale)}</p>
+    <p class="muted small">{t('memorial_note', locale)}</p>
+    <ol class="grid">
+      {dead.map((m) => {
+        const fam = all.famById.get(m.family)!;
+        const s = status(m, locale);
+        return (
+          <li>
+            <a href={lurl(`/m/${m.id}/#death`, locale)} class="obit">
+              <span class="kind">{t('obit_kind', locale)}</span>
+              <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead uid={`mem-${m.id}`} size={110} />
+              <strong class="latin">{tx(m.name, locale)}{m.posthumous_name?.result && <span class="seal">{t('posthumous_named', locale)}{m.posthumous_name.result}</span>}</strong>
+              <span class="latin muted small">{lifespan(m)}</span>
+              <span class="small">{s.label}</span>
+              <span class="ep small">{tx(m.epitaph ?? m.epigraph, locale)}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+    <HelpFooter locale={locale} />
+  </div>
+</Base>
+<style>
+  h1 { margin: 1.6rem 0 .2rem; }
+  .lede { font-size: 1.3rem; font-weight: 900; margin: 0 0 .4rem; }
+  .grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+  .obit {
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+    text-decoration: none; background: #DCD7CF; border: 6px solid var(--paper-dark); padding: .8rem .7rem 1rem; height: 100%;
+  }
+  .obit:hover { border-color: var(--gold); color: inherit; }
+  .kind { font-size: .75rem; letter-spacing: .4em; color: var(--ink-faded); }
+  .seal { font-size: .7rem; margin-left: 6px; vertical-align: middle; }
+  .ep { color: var(--ink-faded); line-height: 1.6; }
+</style>

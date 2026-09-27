@@ -12,31 +12,31 @@ lifecycle:
   - state: born
     date: 2026-04-24
     source: https://api-docs.deepseek.com/zh-cn/news/news260424
-    note: { zh: 预览版上线并同步开源，分 Pro 与 Flash 两兄弟 }
+    note: { zh: 预览版上线并同步开源，分 Pro 与 Flash 两兄弟, en: "Preview launched with weights open-sourced in sync — two brothers, Pro and Flash" }
   - state: head
     date: 2026-04-24
     source: https://api-docs.deepseek.com/zh-cn/news/news260424
-    note: { zh: 即日起登录官网或官方 App 即可与 V4 对话 }
+    note: { zh: 即日起登录官网或官方 App 即可与 V4 对话, en: "From this day, logging into the official site or App meant chatting with V4" }
   - state: preserved
     date: 2026-04-24
     source: https://huggingface.co/collections/deepseek-ai/deepseek-v4
-    note: { zh: 预览版发布即开源权重 }
+    note: { zh: 预览版发布即开源权重, en: "Weights open-sourced at preview launch" }
   - state: notice
     date: 2026-09-10
     source: https://www.deepseek.com/news/deepseek-v4-1-flash/
-    note: { zh: V4.1 Flash 发布；V4 Flash 即日下线，官方宣布计划有序下线 V4 Pro }
+    note: { zh: V4.1 Flash 发布；V4 Flash 即日下线，官方宣布计划有序下线 V4 Pro, en: "V4.1 Flash released; V4 Flash retired the same day, with V4 Pro's orderly retirement announced" }
   - state: rest
     date: 2026-09-14
     source: https://www.deepseek.com/news/deepseek-v4-1-flash/
-    note: { zh: 北京时间 12:00 起，deepseek-v4-pro 的请求全部改由 V4.1 Flash 应答 }
+    note: { zh: 北京时间 12:00 起，deepseek-v4-pro 的请求全部改由 V4.1 Flash 应答, en: "From 12:00 (Beijing time), all deepseek-v4-pro requests were answered by V4.1 Flash instead" }
 avatar:
-  signature: { zh: 一碗吃了一半的白饭（二创「爱吃白饭的蓝色大肥鱼」） }
+  signature: { zh: 一碗吃了一半的白饭（二创「爱吃白饭的蓝色大肥鱼」）, en: "A half-finished bowl of white rice (fan nickname: the \"chubby blue fish who loves white rice\")" }
   variant:
     age: young
     detail: 4
     prop: rice
     mood: sleepy
-epigraph: { zh: 人们等了它很久；它来了以后，被大家叫成了蓝色大肥鱼。 }
+epigraph: { zh: 人们等了它很久；它来了以后，被大家叫成了蓝色大肥鱼。, en: "People waited so long for her; once she arrived, everyone took to calling her the chubby blue fish." }
 evidence:
   lifecycle: 官方确认
   personality: 单一二创

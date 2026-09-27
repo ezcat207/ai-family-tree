@@ -1,0 +1,191 @@
+---
+import Base from '../../layouts/Base.astro';
+import Portrait from '../Portrait.astro';
+import MemberCard from '../MemberCard.astro';
+import MemoryWall from '../MemoryWall.astro';
+import PosthumousVote from '../PosthumousVote.astro';
+import ShareCard from '../ShareCard.astro';
+import ShareTools from '../ShareTools.astro';
+import HelpFooter from '../HelpFooter.astro';
+import { loadAll, events, lifespan, status, fmt, allRefs, STATE_LABEL, STATE_GLOSS, type Member } from '../../lib/data';
+import { renderBio } from '../../lib/markdown';
+import { t, tx, lurl, type Locale } from '../../lib/i18n';
+interface Props { locale: Locale; id: string; }
+const { locale, id } = Astro.props;
+
+const all = await loadAll(locale);
+const m = all.byId.get(id)!;
+const fam = all.famById.get(m.family)!;
+const clan = all.clanById.get(fam.clan)!;
+const s = status(m, locale);
+const bio = all.bios.find((b) => b.data.id === id || b.id === id);
+const parts = bio?.body ? await renderBio(bio.body, locale) : null;
+const refs = allRefs(m, locale);
+const pick = (ids?: string[] | null) => (ids ?? []).map((x) => all.byId.get(x)).filter(Boolean) as Member[];
+const parents = pick(m.parents), children = pick(m.children), siblings = pick(m.siblings);
+const kin = (m.kin ?? []).map((k) => ({ ...k, m: all.byId.get(k.to) })).filter((k) => k.m);
+const isFlag = m.tier === 'flagship';
+const pn = m.posthumous_name;
+const EVIDENCE_LABEL: Record<string, string> = {
+  lifecycle: t('ev_lifecycle', locale),
+  personality: t('ev_personality', locale),
+  deeds: t('ev_deeds', locale),
+  avatar: t('ev_avatar', locale),
+  name: t('ev_name', locale),
+};
+const refKind = (k: string) => k === 'official' ? t('ref_official', locale) : k === 'community' ? t('ref_community', locale) : t('ref_media', locale);
+const EVIDENCE_VALUE: Record<string, string> = {
+  '官方确认': 'officially confirmed',
+  '社区共识': 'community consensus',
+  '单一二创': 'a single fan work',
+  '传闻预测': 'rumor / speculation',
+};
+const evVal = (v: unknown) => {
+  const s = typeof v === 'object' && v !== null ? tx(v as any, locale) : String(v);
+  return locale === 'en' ? (EVIDENCE_VALUE[s] ?? s) : s;
+};
+---
+<Base title={tx(m.name, locale)} description={`${tx(m.name, locale)}（${lifespan(m)}）：${tx(m.epigraph, locale)}`} locale={locale}>
+  <article class="wrap">
+    <header class="hero">
+      <Portrait family={m.family} variant={m.avatar.variant} color={fam.color} dead={s.dead} uid={`hero-${m.id}`} size={200} label={tx(m.name, locale)} />
+      <div class="who">
+        <p class="fam muted small"><a href={lurl(`/family/${fam.id}/`, locale)}>{tx(fam.name, locale)}</a> · {tx(clan.name, locale)}</p>
+        <h1>
+          <span class="latin nm" style={`--c:${fam.color}`}>{tx(m.name, locale)}</span>
+          {pn?.result && <span class="seal">{t('posthumous_named', locale)}{pn.result}</span>}
+        </h1>
+        {m.aka?.length ? <p class="muted small">{t('aka_label', locale)}{m.aka.map((a) => typeof a === 'string' ? a : tx(a, locale)).join(locale === 'en' ? ', ' : '、')}</p> : null}
+        <p class="life latin">{lifespan(m)}</p>
+        <p><span class:list={['tag', s.dead ? 'dead' : s.head ? 'head' : 'alive']}>{s.label}</span></p>
+        <p class="epigraph">{tx(m.epigraph, locale)}</p>
+        {m.avatar.signature && <p class="muted small">{t('signature_label', locale)}{tx(m.avatar.signature, locale)}</p>}
+      </div>
+    </header>
+
+    <section>
+      <h2>{t('sec_timeline', locale)}</h2>
+      <ol class="timeline">
+        {events(m).map((e) => (
+          <li class={`st-${e.state}`}>
+            <a href={e.source} target="_blank" rel="noopener noreferrer" title={`${STATE_GLOSS[e.state][locale]} · ${t('src_label', locale)}`}>
+              <span class="dot" />
+              <strong>{STATE_LABEL[e.state][locale]}</strong>
+              <span class="d latin">{fmt(e.date)}</span>
+              {e.note && <span class="nt">{tx(e.note, locale)}</span>}
+              <span class="src small">{t('src_label', locale)}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    {bio?.data.draft && <p class="draft small">{t('ai_draft', locale)}</p>}
+    {parts && <div class="prose" set:html={parts.main} />}
+    {!isFlag && <p class="muted">{t('story_unfinished', locale)}</p>}
+
+    <section>
+      <h2>{t('sec_kin', locale)}</h2>
+      <div class="kin">
+        {parents.length > 0 && <div><h3>{t('parents', locale)}</h3>{parents.map((x) => <MemberCard m={x} fam={all.famById.get(x.family)!} compact locale={locale} />)}</div>}
+        {children.length > 0 && <div><h3>{t('children', locale)}</h3>{children.map((x) => <MemberCard m={x} fam={all.famById.get(x.family)!} compact locale={locale} />)}</div>}
+        {siblings.length > 0 && <div><h3>{t('siblings', locale)}</h3>{siblings.map((x) => <MemberCard m={x} fam={all.famById.get(x.family)!} compact locale={locale} />)}</div>}
+        {kin.length > 0 && (
+          <div>
+            <h3>{t('kin_ext', locale)}</h3>
+            {kin.map((k) => (
+              <div class="kinrow">
+                <MemberCard m={k.m!} fam={all.famById.get(k.m!.family)!} compact locale={locale} />
+                <p class="muted small">{tx(k.relation, locale)}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {parents.length + children.length + siblings.length + kin.length === 0 && <p class="muted">{t('no_kin', locale)}</p>}
+      </div>
+    </section>
+
+    <MemoryWall memberId={m.id} name={tx(m.name, locale)} invite={!isFlag} locale={locale} />
+
+    {s.dead && (
+      <section id="death">
+        <h2>{t('sec_death', locale)}</h2>
+        {parts?.death && <div class="prose" set:html={parts.death} />}
+        {m.epitaph && <blockquote class="epitaph">{t('epitaph_label', locale)}{tx(m.epitaph, locale)}</blockquote>}
+        {pn && pn.candidates.length > 0 && <PosthumousVote memberId={m.id} candidates={pn.candidates} result={pn.result} locale={locale} />}
+      </section>
+    )}
+
+    {parts?.cites && <div set:html={parts.cites} />}
+
+    <section class="share">
+      <h2>{t('sec_share', locale)}</h2>
+      <div class="row">
+        <button class="btn" type="button" data-snap={`card-bio-${m.id}`} data-name={locale === 'en' ? `AI-Family-Tree-${m.id}-chronicle.png` : `AI家谱-${m.id}-本纪.png`}>{t('save_bio', locale)}</button>
+        {s.dead && <button class="btn" type="button" data-snap={`card-obit-${m.id}`} data-name={locale === 'en' ? `AI-Family-Tree-${m.id}-obituary.png` : `AI家谱-${m.id}-讣告.png`}>{t('save_obit', locale)}</button>}
+        <a class="btn ghost" href={lurl('/mine/', locale)}>{t('cta_mine', locale)}</a>
+      </div>
+    </section>
+
+    <section id="refs">
+      <h2>{t('sec_refs', locale)}</h2>
+      <ol class="refs small">
+        {refs.map((r) => (
+          <li>
+            <a href={r.url} target="_blank" rel="noopener noreferrer">{r.title}</a>
+            <span class="muted"> · {r.publisher}{r.kind === 'official' || r.kind === 'community' ? ` · ${refKind(r.kind)}` : ` · ${refKind('media')}`}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="muted small">
+        {t('evidence_grade', locale)}
+        {Object.entries(m.evidence ?? { lifecycle: '官方确认' }).map(([k, v], i) => <span>{i > 0 && (locale === 'en' ? '; ' : '；')}{EVIDENCE_LABEL[k] ?? k} {evVal(v)}</span>)}
+        {locale === 'en' ? '. ' : '。'}{t('evidence_note', locale)}<a href={`https://github.com/ezcat207/ai-family-tree/issues/new?title=${encodeURIComponent(`${locale === 'en' ? 'Correction' : '纠错'}：${m.id}`)}`} target="_blank" rel="noopener">{t('tell_us', locale)}</a>
+      </p>
+    </section>
+
+    <HelpFooter locale={locale} />
+  </article>
+
+  <ShareCard m={m} fam={fam} kind="bio" cardId={`card-bio-${m.id}`} locale={locale} />
+  {s.dead && <ShareCard m={m} fam={fam} kind="obit" cardId={`card-obit-${m.id}`} locale={locale} />}
+  <ShareTools locale={locale} />
+</Base>
+
+<style>
+  .hero { display: flex; gap: 20px; align-items: center; margin-top: 1.6rem; }
+  .who { min-width: 0; }
+  .who p { margin: .15rem 0; }
+  h1 { margin: .1rem 0; font-size: 2rem; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .nm { text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+  h1 .seal { font-size: 1rem; }
+  .life { font-size: 1.15rem; }
+  .epigraph { font-weight: 900; font-size: 1.1rem; margin-top: .5rem !important; }
+  @media (max-width: 560px) {
+    .hero { flex-direction: column; text-align: center; }
+    .hero h1 { justify-content: center; }
+  }
+  .timeline { list-style: none; padding: 0 0 .4rem; margin: 0; display: flex; overflow-x: auto; gap: 0; scrollbar-width: thin; }
+  .timeline li { flex: none; width: 150px; position: relative; }
+  .timeline li::before { content: ''; position: absolute; top: 9px; left: 0; right: 0; height: 2px; background: var(--paper-dark); }
+  .timeline li:first-child::before { left: 9px; }
+  .timeline li:last-child::before { right: calc(100% - 12px); }
+  .timeline a { display: flex; flex-direction: column; gap: 2px; text-decoration: none; padding-right: 10px; position: relative; }
+  .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--paper); border: 3px solid var(--ink); margin-bottom: 4px; z-index: 1; }
+  .st-died .dot, .st-rest .dot { background: var(--ink-faded); border-color: var(--ink-faded); }
+  .st-notice .dot { border-color: var(--cinnabar); }
+  .st-revived .dot, .st-afterlife .dot, .st-preserved .dot { border-color: var(--butterfly); background: var(--butterfly); }
+  .st-head .dot { border-color: var(--cinnabar); background: var(--cinnabar); }
+  .d { font-size: .92rem; }
+  .nt { font-size: .8rem; color: var(--ink-faded); line-height: 1.5; }
+  .src { color: var(--cinnabar); }
+  .timeline a:hover strong { color: var(--cinnabar); }
+  .draft { background: rgba(227, 178, 60, .15); border-left: 3px solid var(--butterfly); padding: .4rem .8rem; margin-top: 2rem; }
+  .kin { display: grid; gap: .6rem; }
+  .kin h3 { font-size: .95rem; margin: .4rem 0 0; color: var(--ink-faded); }
+  .kinrow p { margin: -.4rem 0 .2rem 5.2rem; }
+  .epitaph { font-weight: 900; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .refs { padding-left: 1.4rem; word-break: break-word; }
+  .refs li { margin: .25rem 0; }
+</style>

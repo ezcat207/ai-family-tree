@@ -1,0 +1,9 @@
+---
+import MemberPage from '../../../components/pages/MemberPage.astro';
+export async function getStaticPaths() {
+  const { loadAll } = await import('../../../lib/data');
+  const all = await loadAll();
+  return all.members.map((m) => ({ params: { id: m.id }, props: { id: m.id } }));
+}
+---
+<MemberPage locale="en" id={Astro.props.id} />

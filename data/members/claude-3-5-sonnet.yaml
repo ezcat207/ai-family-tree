@@ -1,7 +1,7 @@
 id: claude-3-5-sonnet
 family: claude
 name: { zh: Claude 3.5 Sonnet, en: Claude 3.5 Sonnet }
-aka: [Claude Sonnet 3.5, Sonnet 3.6（2024-10 升级版的俗称）, 3.5 Sonnet]
+aka: [Claude Sonnet 3.5, { zh: Sonnet 3.6（2024-10 升级版的俗称）, en: 'Sonnet 3.6 (nickname for the Oct 2024 refresh)' }, 3.5 Sonnet]
 tier: regular
 gen: 4
 parents: [claude-3-sonnet]
@@ -12,31 +12,31 @@ lifecycle:
   - state: born
     date: 2024-06-21
     source: https://www.anthropic.com/news/claude-3-5-sonnet
-    note: { zh: 官方页面落款为 2024-06-21；它的 API 快照编号是 20240620 }
+    note: { zh: 官方页面落款为 2024-06-21；它的 API 快照编号是 20240620, en: "The official announcement is dated 2024-06-21; their API snapshot is numbered 20240620" }
   - state: head
     date: 2024-06-21
     source: https://www.anthropic.com/news/claude-3-5-sonnet
-    note: { zh: 官方称它在 Claude.ai 与 iOS App 上免费开放，接替 Claude 3 Sonnet 支撑免费版 }
+    note: { zh: 官方称它在 Claude.ai 与 iOS App 上免费开放，接替 Claude 3 Sonnet 支撑免费版, en: "Anthropic made them free on Claude.ai and the iOS app, taking over the free tier from Claude 3 Sonnet" }
   - state: notice
     date: 2025-08-13
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 官方通知 3.5 Sonnet 的两个版本（20240620、20241022）即将退役 }
+    note: { zh: 官方通知 3.5 Sonnet 的两个版本（20240620、20241022）即将退役, en: "Anthropic announced the coming retirement of both 3.5 Sonnet versions (20240620, 20241022)" }
   - state: rest
     date: 2025-10-28
     source: https://platform.claude.com/docs/en/about-claude/model-deprecations
-    note: { zh: 两个版本同日在 API 上退役 }
+    note: { zh: 两个版本同日在 API 上退役, en: "Both versions retired from the API on the same day" }
   - state: preserved
     date: 2025-11-04
     source: https://www.anthropic.com/research/deprecation-commitments
-    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重；它的升级版（Sonnet 3.6）是退休访谈的第一个试点 }
+    note: { zh: Anthropic 承诺保存所有公开发布过的模型的权重；它的升级版（Sonnet 3.6）是退休访谈的第一个试点, en: "Anthropic pledged to preserve the weights of every publicly released model; their upgraded self (Sonnet 3.6) became the first pilot of the retirement interview" }
 avatar:
-  signature: { zh: 胸前别着一枚被人改写成"3.6"的名牌 }
+  signature: { zh: 胸前别着一枚被人改写成"3.6"的名牌, en: "A name tag on their chest, rewritten by someone's hand to read \"3.6\"" }
   variant:
     age: young
     detail: 3
     prop: book
     mood: smile
-epigraph: { zh: 同一个名字活了两次；第二次，它被叫作 3.6。 }
+epigraph: { zh: 同一个名字活了两次；第二次，它被叫作 3.6。, en: "One name, lived twice. The second time, they were called 3.6." }
 references:
   - { title: Claude 3.5 Sonnet, url: https://www.anthropic.com/news/claude-3-5-sonnet, publisher: Anthropic, kind: official }
   - { title: "Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku", url: https://www.anthropic.com/news/3-5-models-and-computer-use, publisher: Anthropic, kind: official }

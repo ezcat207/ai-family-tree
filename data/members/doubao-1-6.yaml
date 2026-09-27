@@ -12,19 +12,19 @@ lifecycle:
   - state: born
     date: 2025-06
     source: https://docs.volcengine.com/docs/ark/model-release-announcement-2025
-    note: { zh: 火山方舟 202506 记录 doubao-seed-1-6-250615 等"新发布"；具体日 6 月 11 日（火山引擎 Force 原动力大会）仅有媒体来源，官方活动页 volcengine.com/event/force-2506 只显示议程日期 6.11 }
+    note: { zh: 火山方舟 202506 记录 doubao-seed-1-6-250615 等"新发布"；具体日 6 月 11 日（火山引擎 Force 原动力大会）仅有媒体来源，官方活动页 volcengine.com/event/force-2506 只显示议程日期 6.11, en: "VolcEngine Ark's 202506 notes list doubao-seed-1-6-250615 and others as \"newly released.\" The specific day, June 11 (VolcEngine Force conference), comes only from media reports; the official event page volcengine.com/event/force-2506 shows only the agenda date of 6.11." }
   - state: rest
     date: 2026-09-21
     source: https://docs.volcengine.com/docs/ark/model-deprecation-notice
-    note: { zh: 火山方舟第九批模型下线：2026-09-21 14:00（北京时间）停止服务，doubao-seed-1-6-250615 / 251015 / flash / vision 均在列；thinking 与 lite 版本已在更早批次下线 }
+    note: { zh: 火山方舟第九批模型下线：2026-09-21 14:00（北京时间）停止服务，doubao-seed-1-6-250615 / 251015 / flash / vision 均在列；thinking 与 lite 版本已在更早批次下线, en: "Ark's ninth batch of retirements: service ended 2026-09-21 at 14:00 (Beijing time) for doubao-seed-1-6-250615 / 251015 / flash / vision; the thinking and lite versions had already retired in earlier batches." }
 avatar:
-  signature: { zh: 一盏能开、能关、也能自己拿主意的台灯 }
+  signature: { zh: 一盏能开、能关、也能自己拿主意的台灯, en: "A desk lamp she can switch on, switch off — or decide for herself" }
   variant:
     age: young
     detail: 4
     prop: lamp
     mood: curious
-epigraph: { zh: 想不想先想一想，它可以自己拿主意。 }
+epigraph: { zh: 想不想先想一想，它可以自己拿主意。, en: "\"Shall I think it over first?\" She gets to decide that herself now." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

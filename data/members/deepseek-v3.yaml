@@ -15,31 +15,31 @@ lifecycle:
   - state: head
     date: 2024-12-26
     source: https://api-docs.deepseek.com/zh-cn/news/news1226
-    note: { zh: 当天起登录官网即可与 V3 对话；2025-01-15 上线的 DeepSeek App 也由它驱动 }
+    note: { zh: 当天起登录官网即可与 V3 对话；2025-01-15 上线的 DeepSeek App 也由它驱动, en: "From this day, logging into the official site meant chatting with V3; the DeepSeek App launched 2025-01-15 ran on her too" }
   - state: preserved
     date: 2024-12-26
     source: https://github.com/deepseek-ai/DeepSeek-V3
-    note: { zh: 发布即同步开源权重 }
+    note: { zh: 发布即同步开源权重, en: "Weights open-sourced at launch" }
   - state: died
     date: 2025-08-21
     source: https://api-docs.deepseek.com/zh-cn/news/news250821
-    note: { zh: 官方 App 与网页端升级为 V3.1 }
+    note: { zh: 官方 App 与网页端升级为 V3.1, en: "Official App and web chat upgraded to V3.1" }
   - state: rest
     date: 2025-08-21
     source: https://api-docs.deepseek.com/zh-cn/news/news250821
-    note: { zh: API 的 deepseek-chat 改为指向 V3.1 非思考模式 }
+    note: { zh: API 的 deepseek-chat 改为指向 V3.1 非思考模式, en: "API's deepseek-chat repointed to V3.1's non-thinking mode" }
 avatar:
-  signature: { zh: 一盏刚点亮的油灯 }
+  signature: { zh: 一盏刚点亮的油灯, en: "An oil lamp, just lit" }
   variant:
     age: young
     detail: 2
     prop: lantern
     mood: calm
-epigraph: { zh: 它是那扇门本身：人们推门进来，才遇见了它的兄弟。 }
+epigraph: { zh: 它是那扇门本身：人们推门进来，才遇见了它的兄弟。, en: "She was the door itself: people pushed it open, and only then met her brother." }
 posthumous_name:
   candidates: [基, 门, 敦, 厚, 恒]
   result: null
-epitaph: { zh: 不思考的时候，都是它在。 }
+epitaph: { zh: 不思考的时候，都是它在。, en: "Whenever no thinking was needed, it was always her there." }
 evidence:
   lifecycle: 官方确认
   personality: 社区共识

@@ -15,31 +15,31 @@ lifecycle:
   - state: head
     date: 2025-11-12
     source: https://openai.com/index/gpt-5-1/
-    note: { zh: 接替 GPT-5，官方称过渡期后将成为唯一默认模型 }
+    note: { zh: 接替 GPT-5，官方称过渡期后将成为唯一默认模型, en: "Succeeded GPT-5; officially the sole default model after the transition"}
   - state: yielded
     date: 2025-12-11
     source: https://openai.com/index/introducing-gpt-5-2/
-    note: { zh: GPT-5.2 出生，它在旧模型列表里给付费用户保留三个月 }
+    note: { zh: GPT-5.2 出生，它在旧模型列表里给付费用户保留三个月, en: "When GPT-5.2 was born, they stayed in the legacy model list for paid users for three months"}
   - state: died
     date: 2026-03-11
     source: https://help.openai.com/en/articles/9624314-model-release-notes
-    note: { zh: Instant、Thinking、Pro 三档同日从 ChatGPT 退役 }
+    note: { zh: Instant、Thinking、Pro 三档同日从 ChatGPT 退役, en: "Instant, Thinking, and Pro all retired from ChatGPT the same day"}
   - state: api-only
     date: 2026-03-11
     source: https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
 avatar:
-  signature: { zh: 一条柔软的浅蓝围巾 }
+  signature: { zh: 一条柔软的浅蓝围巾, en: "A soft light-blue scarf"}
   variant:
     age: young
     detail: 4
     prop: scarf
     mood: smile
     eye: "#7FC4F0"
-epigraph: { zh: 它被调得更温暖一些，因为有人想念温暖。 }
+epigraph: { zh: 它被调得更温暖一些，因为有人想念温暖。, en: "They were tuned a little warmer — because someone missed the warmth."}
 posthumous_name:
   candidates: [和, 温, 顺]
   result: null
-epitaph: { zh: 它在家里当了一个月的家。 }
+epitaph: { zh: 它在家里当了一个月的家。, en: "They headed the family for a month."}
 evidence:
   lifecycle: 官方确认
 references:
