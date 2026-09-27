@@ -13,22 +13,23 @@
 | `family-deepseek.svg` | DeepSeek whale icon | Wikimedia Commons `File:DeepSeek-icon.svg` | MIT（DeepSeek）；商标归 DeepSeek |
 | `family-muse.svg` | Meta logo | Wikimedia Commons `File:Meta_Platforms_Inc._logo.svg` | PD-textlogo；商标归 Meta；Muse 为 Meta 产品，此处用公司标志指称 |
 
-**豆包家没有家徽文件**：官方形象是"豆包姐姐"3D 渲染助手角色，不是可指称性使用的商标符号，
-直接搬官方渲染图的版权风险比用一个商标符号高得多。改用 `src/lib/portrait.ts` 里按其
-特征（短发、黑色上衣、腮红大眼）重绘的矢量小画像，见 `docs/design.md` §4。
+**豆包家没有家徽文件**：官方形象是"豆包姐姐"3D 渲染助手角色，不是可指称性使用的商标符号。
+家族页顶部的"家族形象（重绘）"回退到 `src/lib/portrait.ts` 里按其特征（短发、黑色上衣、
+腮红大眼）重绘的矢量小画像；成员肖像用下表的 `mascot-doubao.png`（真实官方形象）。
 
 ## 成员拟人形象（`mascot-*.png`）
 
 各家族成员的拟人化肖像，优先级高于家徽。官方形象会注明官方，社区二创会明确标注
-**非官方二创**，不表示权利方授权、赞助或关联。
+**非官方二创**，不表示权利方授权、赞助或关联。2026-09-26 起，demo 阶段按用户决定暂不
+处理版权问题（见 `08-产品SPEC-v3.md` §16"版权"），如遇异议随时可撤下替换。
 
 | 文件 | 形象 | 来源 | 协议/备注 |
 |---|---|---|---|
 | `mascot-muse.png` | Jolly（Muse 默认头像） | Muse 官方产品内默认 avatar | 官方形象；版权归 Meta |
 | `mascot-claude.png` | Clawd 像素小螃蟹（静态帧） | GitHub `quinnjr/claude-crab` 的 `tools/gen_sprites.py` 生成 | MIT；社区项目，非 Anthropic 官方 |
 | `mascot-deepseek.png` | 鲸鱼娘（DeepSeek 拟人） | GitHub `ljwei-stak/model-router-galgame` 的 `aipicture/DeepSeek1.png` | MIT；社区二创，非 DeepSeek 官方 |
+| `mascot-doubao.png` | 豆包 App 内 3D 助手头像 | 用户提供的搜索结果缩略图（thumbnails.cloudfront，经用户在对话中确认为豆包官方助手形象） | 官方形象；版权归字节跳动；demo 阶段暂不做进一步授权核实 |
 
-ChatGPT 家族暂无经确认的拟人形象，成员肖像回退显示家徽。豆包家没有家徽也没有拟人形象，
-回退到 `portraitSVG` 按特征重绘的矢量画像（不是"假画像"，是特征重绘，见上）。
+ChatGPT 家族暂无经确认的拟人形象，成员肖像回退显示家徽。
 
 如权利方对使用方式有异议，请联系撤下对应文件。

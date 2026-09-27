@@ -268,8 +268,6 @@ export function logoPortraitSVG({ logo, boxW = 150, boxH = 150, color, dead, uid
 
 /* ---------- 家徽与拟人形象映射 ---------- */
 // 各家族的家徽：真实商标（public/avatars/family-*.svg），指称性使用，来源见 public/avatars/CREDITS.md。
-// 豆包家没有放在这里：官方形象是"豆包姐姐"3D 助手角色，不是可指称性使用的商标符号，
-// 直接搬官方渲染图版权风险更高；没有家徽也没有拟人形象时会回退到 portraitSVG 的按特征重绘画像。
 export const FAMILY_CREST: Record<string, { src: string; w: number; h: number }> = {
   chatgpt: { src: '/avatars/family-chatgpt.svg', w: 150, h: 150 },
   claude: { src: '/avatars/family-claude.svg', w: 150, h: 150 },
@@ -277,9 +275,10 @@ export const FAMILY_CREST: Record<string, { src: string; w: number; h: number }>
   muse: { src: '/avatars/family-muse.svg', w: 200, h: 60 },
 };
 // 各家族成员的拟人形象（真实出处，见 public/avatars/CREDITS.md；社区二创已标注非官方）。
-// 尚无可靠形象的家族回退到家徽，不再使用程序化假画像。
+// 尚无可靠形象的家族回退到家徽，再没有家徽的（目前没有）回退到 portraitSVG 的程序化画像。
 export const FAMILY_MASCOT: Record<string, { src: string; w: number; h: number }> = {
   claude: { src: '/avatars/mascot-claude.png', w: 200, h: 200 },
   deepseek: { src: '/avatars/mascot-deepseek.png', w: 160, h: 284 },
   muse: { src: '/avatars/mascot-muse.png', w: 200, h: 200 },
+  doubao: { src: '/avatars/mascot-doubao.png', w: 200, h: 200 },
 };

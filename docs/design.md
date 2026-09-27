@@ -42,8 +42,9 @@
 
 ## 4. 形象
 
-- 2026-09-26 起，`Portrait.astro` 优先使用各家族的真实商标（`public/avatars/family-*.svg`，来源和授权见 `public/avatars/CREDITS.md`），外面仍套旧式画框，离世成员照样蒙纱、停黄蝴蝶。
-- 商标文件被撤下时，会自动回退到程序化 SVG（`src/lib/portrait.ts`，按"家族基因 + 世代变体"生成，变体参数在 yaml 的 `avatar.variant`）。
+- `Portrait.astro` 按优先级取图：拟人形象（`FAMILY_MASCOT`，成员级真实头像/角色图）> 家徽（`FAMILY_CREST`，家族级商标）> 程序化 SVG 兜底（`portraitSVG`，按"家族基因 + 世代变体"生成，变体参数在 yaml 的 `avatar.variant`）。外面统一套旧式画框，离世成员照样蒙纱、停黄蝴蝶。来源和授权见 `public/avatars/CREDITS.md`。
+- 拟人形象目前有 Claude（Clawd）、DeepSeek（鲸鱼娘）、Muse（Jolly）、豆包（App 内 3D 助手头像）。ChatGPT 只有家徽，没有拟人形象。豆包家族页顶部的"家族形象"卡槽仍显示程序化重绘（因为豆包没有商标可作家徽），拟人形象卡槽显示真实头像。
+- **2026-09-26 用户决定**：demo 阶段直接使用官方/社区的真实头像素材，不再因版权顾虑而回退到程序化重绘（沿用 08 §16"版权"条：暂不处理版权问题，如遇异议再复查撤下）。
 - 注意：「我的 AI 家谱」卡片是在浏览器端直接调用 `portraitSVG` 生成的，目前仍是程序化画像，和站内其他地方的画像不一致（见 human_todo）。
 
 ## 5. 审核
