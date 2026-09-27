@@ -33,7 +33,7 @@
   name: { zh: 豆包家, en: The Doubao Family }
   gene: { zh: 豆包姐姐（按官方 3D 形象的特征重绘） }
   color: "#FF8A3D"
-  base: { age: young, detail: 3, prop: none, mood: smile }
+  base: { age: young, detail: 1, prop: none, mood: smile }
   intro: { zh: 中国支里最有烟火气的一家。很多人每天都和她说话，却说不出她是第几代。 }
 - id: deepseek
   clan: deepseek

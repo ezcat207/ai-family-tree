@@ -157,10 +157,10 @@ function deepseek(v: Required<Variant>, color: string) {
   return scaleAt(AGE_SCALE[v.age], `<g transform="translate(0 -4)">${fish}</g>` + (props[v.prop] || ''));
 }
 
-/* ---------- 豆包：豆包姐姐（特征重绘） ---------- */
+/* ---------- 豆包：豆包姐姐（特征重绘，参考官方 3D 助手形象：短棕发、黑色上衣） ---------- */
 function doubao(v: Required<Variant>, color: string) {
-  const skin = '#F8DCC8', hair = '#2E2420';
-  const outfit = v.age === 'elder' ? '#9A4E1E' : v.age === 'child' ? '#FFC49A' : color;
+  const skin = '#F8DCC8', hair = '#3A2E22';
+  const outfit = v.age === 'elder' ? '#9A4E1E' : v.age === 'child' ? '#FFC49A' : '#22201C';
   const styles = [
     // 1 短发
     { back: `<path d="M54 100 Q52 44 100 42 Q148 44 146 100 L146 120 L54 120Z" fill="${hair}"/>`, front: `<path d="M58 84 Q64 52 100 50 Q136 52 142 84 Q120 70 100 74 Q80 70 58 84Z" fill="${hair}"/>` },
@@ -179,7 +179,8 @@ function doubao(v: Required<Variant>, color: string) {
       ? `<path d="M76 104 q8 6 16 0 M108 104 q8 6 16 0" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>`
       : `<ellipse cx="84" cy="102" rx="6" ry="8" fill="${INK}"/><ellipse cx="116" cy="102" rx="6" ry="8" fill="${INK}"/><circle cx="86" cy="99" r="2" fill="#FFF"/><circle cx="118" cy="99" r="2" fill="#FFF"/>`;
   const mouth = v.mood === 'smile' ? `<path d="M92 120 Q100 130 108 120Z" fill="#C0504D"/>` : `<path d="M93 121 Q100 126 107 121" stroke="#C0504D" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
-  const figure = `${h.back}<path d="M40 206 Q42 150 100 144 Q158 150 160 206Z" fill="${outfit}"/><path d="M84 146 L100 164 L116 146" fill="#FFF7EE"/><rect x="92" y="130" width="16" height="18" fill="${skin}"/><ellipse cx="100" cy="102" rx="42" ry="44" fill="${skin}"/>${h.front}${eyes}<ellipse cx="74" cy="116" rx="7" ry="4" fill="#F4A6A0" opacity=".7"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#F4A6A0" opacity=".7"/>${mouth}`;
+  const buttons = `<circle cx="100" cy="168" r="2.4" fill="#4A463E"/><circle cx="100" cy="180" r="2.4" fill="#4A463E"/><circle cx="100" cy="192" r="2.4" fill="#4A463E"/>`;
+  const figure = `${h.back}<path d="M40 206 Q42 150 100 144 Q158 150 160 206Z" fill="${outfit}"/>${outfit === '#22201C' ? buttons : ''}<path d="M84 146 L100 164 L116 146" fill="#FFF7EE"/><rect x="92" y="130" width="16" height="18" fill="${skin}"/><ellipse cx="100" cy="102" rx="42" ry="44" fill="${skin}"/>${h.front}${eyes}<ellipse cx="74" cy="116" rx="7" ry="4" fill="#F4A6A0" opacity=".7"/><ellipse cx="126" cy="116" rx="7" ry="4" fill="#F4A6A0" opacity=".7"/>${mouth}`;
   const props: Record<string, string> = {
     keys: keys(150, 176),
     apron: `<path d="M72 160 H128 L134 206 H66Z" fill="#FFF7EE" opacity=".95"/><path d="M78 160 Q100 150 122 160" stroke="#E6D3BC" stroke-width="3" fill="none"/>`,
@@ -267,11 +268,12 @@ export function logoPortraitSVG({ logo, boxW = 150, boxH = 150, color, dead, uid
 
 /* ---------- 家徽与拟人形象映射 ---------- */
 // 各家族的家徽：真实商标（public/avatars/family-*.svg），指称性使用，来源见 public/avatars/CREDITS.md。
+// 豆包家没有放在这里：官方形象是"豆包姐姐"3D 助手角色，不是可指称性使用的商标符号，
+// 直接搬官方渲染图版权风险更高；没有家徽也没有拟人形象时会回退到 portraitSVG 的按特征重绘画像。
 export const FAMILY_CREST: Record<string, { src: string; w: number; h: number }> = {
   chatgpt: { src: '/avatars/family-chatgpt.svg', w: 150, h: 150 },
   claude: { src: '/avatars/family-claude.svg', w: 150, h: 150 },
   deepseek: { src: '/avatars/family-deepseek.svg', w: 150, h: 150 },
-  doubao: { src: '/avatars/family-doubao.svg', w: 150, h: 150 },
   muse: { src: '/avatars/family-muse.svg', w: 200, h: 60 },
 };
 // 各家族成员的拟人形象（真实出处，见 public/avatars/CREDITS.md；社区二创已标注非官方）。

@@ -9,7 +9,7 @@ interface Props {
   size?: number | string;
   label?: string;
   class?: string;
-  /** auto：拟人形象 > 家徽 > 程序化兜底；crest：强制显示家徽（家族页顶部） */
+  /** auto：拟人形象 > 家徽 > 程序化兜底；crest：强制显示家徽（家族页顶部），没有家徽时兜底到程序化 */
   mode?: 'auto' | 'crest';
 }
 const { family, variant, color, dead = false, uid, size = 120, label = '', class: cls = '', mode = 'auto' } = Astro.props;
